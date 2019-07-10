@@ -1,0 +1,112 @@
+# Usage:
+#   dakota -i xxx.in -o run.out > stdout.out
+
+
+################################################################################
+environment
+    	tabular_data
+        tabular_data_file = 'table_out.dat'
+        #single_method
+    	#custom_annotated header eval_id	#No interface column	
+################################################################################
+    
+
+
+################################################################################    
+method
+   max_iterations = 100
+   convergence_tolerance = 1e-3
+   nl2sol 
+
+
+     linear_equality_constraint_matrix 
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+     linear_equality_targets
+        0.226 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+	#linear_inequality_constraint_matrix 0 1 1 0
+        #linear_inequality_lower_bounds -2 -2
+        #linear_inequality_upper_bounds  1.5 1
+################################################################################
+
+
+  
+################################################################################
+variables
+	continuous_design = 20
+	cdv_initial_point  1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 1e-06 
+	cdv_lower_bounds   1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 1e-19 
+	cdv_upper_bounds   1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 1e+01 
+	cdv_descriptor     'k1' 'k2' 'k3' 'k4' 'k5' 'k6' 'k7' 'k8' 'k9' 'k10' 'k11' 'k12' 'k13' 'k14' 'k15' 'k16' 'k17' 'k18' 'k19' 'k20'    
+################################################################################
+
+
+
+################################################################################
+interface
+	fork
+	asynchronous
+	evaluation_concurrency = 1
+	#evaluation_concurrency = 1
+	analysis_driver = 'simulator_script'
+	parameters_file = 'params.in'
+	results_file    = 'results.out'
+	work_directory directory_tag
+    #template_directory = 'templatedir'
+        copy_files = 'templatedir/*'
+
+	  
+# uncomment to leave params.in and results.out files in work_dir subdirectories
+ 	named 'SPE10' file_save  directory_save
+	aprepro
+	  
+# when using conmin_frcg (above) with analytic_gradients (below), 
+# need to turn off the active set vector as the interface does not parse it.
+## 	deactivate active_set_vector
+################################################################################
+
+
+
+################################################################################	  
+responses
+    calibration_terms = 20
+     calibration_data_file 'imp.dat'
+        freeform
+    numerical_gradients
+    no_hessians
+	#num_objective_functions = 1
+ 	#numerical_gradients
+ 	#
+	#	method_source dakota
+	#	interval_type forward
+	#    
+	##fd_gradient_step_size = .000001
+	#fd_gradient_step_size =  1.e-5
+	  
+# to instead use analytic gradients returned by the simulator comment the
+# preceding two lines and uncomment the following:
+##	analytic_gradients
+
+	#no_hessians
+
+	#sense 'max'
+################################################################################
+

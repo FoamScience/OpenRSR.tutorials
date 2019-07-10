@@ -1,0 +1,44 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      wellsProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Planned senario
+
+wellModel   PeacemanWellModel;
+
+
+wells 
+(
+    //PROD0
+    //{
+    //    flowRate            flowRate [0 3 -1 0 0 0 0] 8e-3;
+    //    orientation         verticalWell;
+    //    position            (0.4 0.8 0);
+    //}
+    //INJE0
+    //{
+    //    flowRate            flowRate [0 3 -1 0 0 0 0] 1e-3;
+    //    position            (5 8.1 0); // Ignored if well appears in a group below
+    //    orientation         verticalWell;  // or horizontalWell [Not implemented]
+    //    type                injection;  // production is default
+    //    operational         on;   // off to turn off well [Not implemented]
+    //}
+);
+
+wellsPlacement (
+);
+
+// ************************************************************************* //

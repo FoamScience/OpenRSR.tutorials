@@ -1,0 +1,81 @@
+FoamFile
+{
+  version     2.0;
+  format      ascii;
+  class       dictionary;
+  location    "constant";
+  object      transportProperties;
+}
+
+phases (water oil);
+
+oil
+{
+    rhoSc   rhoSc [1 -3 0 0 0 0 0] 700.0;
+    wettingStatus   nonWetting;
+    FVFModel        tabulated;
+    viscosityModel  tabulated;
+    FVFData
+    {
+        fileName    "constant/PVT/iFVF";
+        outOfBounds exit;
+    }
+    viscosityData
+    {
+        fileName    "constant/PVT/oil.mu";
+        outOfBounds exit;
+    }
+}
+	
+water
+{
+    rhoSc   rhoSc [1 -3 0 0 0 0 0] 1.0;
+    FVFModel        tabulated;
+    viscosityModel  tabulated;
+    FVFData
+    {
+        fileName    "constant/PVT/iFVF";
+        outOfBounds repeat;
+    }
+    viscosityData
+    {
+        fileName    "constant/PVT/water.mu";
+        outOfBounds repeat;
+    }
+}
+
+//// relative permeability model ////
+
+relativePermeabilityModel   BrooksCorey;
+
+krData
+{
+    fileName    "constant/kr.dat";
+    outOfBounds warn;
+}
+
+capillaryPressureModel      BrooksCorey;
+
+BrooksCoreyCoeffs
+{
+    n              5;
+    water.alphaMin 0.1;
+    oil.alphaMin   0.25;
+    water.krMax    1.0;
+    oil.krMax      1.0;
+
+    water.pcSmin   0;
+    water.pcSmax   0.75;
+    pc0            6e3;
+    pc.alpha       0.238;
+}
+
+wellKrModel<INJ0> 0.0 0.25 1 1 0.1 0.1;
+
+bubblePointModel            constantPb;
+constantPbCoeffs
+{
+    Pb                      -1e10;
+}
+
+// ************************************************************************* //

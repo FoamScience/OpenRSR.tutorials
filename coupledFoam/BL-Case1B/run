@@ -1,0 +1,4 @@
+#!/bin/bash
+
+blockMesh | tee log.blockMesh
+$1        | tee log.$1

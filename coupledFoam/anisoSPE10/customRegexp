@@ -1,0 +1,43 @@
+rates
+{
+    type dynamic;
+    idNr 1;
+    theTitle "Rates";
+    expr "wellFlowRate: ([A-Za-z0-9]+)\t-?(%f%)\t(%f%)";
+    titles (W O);
+    logscale true;
+    ylabel "Q [cm/s]";
+    xlabel "Time [s]";
+}
+deltaT
+{
+    theTitle "DeltaT";
+    expr "deltaT = (%f%).*";
+    titles (Dt);
+    ylabel "Dt [s]";
+    xlabel "Time [s]";
+}
+linearCoupled
+{
+    theTitle "Coupled linear residuals";
+    expr ".*Solving for Swp.*Final residual = \((%f%) (%f%)\)";
+    titles (Sw p);
+    ylabel "Res";
+    xlabel "Time [s]";
+}
+saturation
+{
+    theTitle "Water saturation Bounds";
+    expr "Saturation w  Min = (%f%) Max = (%f%)";
+    titles (min max);
+    ylabel "Sw";
+    xlabel "Time [s]";
+}
+CNVs
+{
+    theTitle "CNV convergence check";
+    expr "CNV numbers: water.CNV (%f%), oil.CNV (%f%)";
+    titles (SwEqn pEqn);
+    ylabel "CNV";
+    xlabel "Time [s]";
+}

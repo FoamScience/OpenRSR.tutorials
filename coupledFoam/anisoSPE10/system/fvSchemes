@@ -1,0 +1,65 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSchemes;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+ddtSchemes
+{
+    default         CrankNicolson 0.9;
+    //default           backward;
+}
+
+gradSchemes
+{
+    default         Gauss linear;
+}
+
+divSchemes
+{
+    default         none;
+}
+
+laplacianSchemes
+{
+    default         	Gauss linear corrected;
+    //laplacian(-PROD0.Tf,PROD0.pTest) Gauss linear uncorrected;
+}
+
+interpolationSchemes
+{
+    default		none;
+    K			harmonic;
+    pc		    linear;
+    krn	        upwind oil.phi;
+    krw         upwind water.phi;
+    flux(U)     linear;
+    "(mu|rho|rhon|rhow|mun|muw|rFVF)" linear;
+    // For anisotropic cases
+    interpolate(grad(p)) linear;
+    gradP linear;
+}
+
+snGradSchemes
+{
+    default         corrected;
+}
+
+fluxRequired
+{
+    default         no;
+    p;
+}
+
+// ************************************************************************* //

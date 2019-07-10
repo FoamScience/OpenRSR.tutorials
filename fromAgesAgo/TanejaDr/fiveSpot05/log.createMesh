@@ -1,0 +1,147 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : cartesian2DMesh
+Date   : Feb 27 2019
+Time   : 18:08:59
+Host   : "elwardi"
+PID    : 23534
+Case   : /home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/TanejaDr/fiveSpot05
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Using #calcEntry at line 28 in file "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/TanejaDr/fiveSpot05/system/controlDict"
+Using #codeStream with "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/TanejaDr/fiveSpot05/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libcodeStream_033dbd752947219024abb850bca21c37bded607c.so"
+Detected a 2D surface in the x-y plane
+Setting root cube size and refinement parameters
+Root box (-128 -128 -127.5) (128 128 128.5)
+Requested cell size corresponds to octree level 7
+Refining boundary
+Refining boundary boxes to the given size
+Finished refining boundary boxes
+Refining boxes intersecting surface meshes
+Finished refinement of boxes intersecting surface meshes
+Performing automatic refinement
+Requested min cell size corresponds to octree level 9
+Performing automatic refinement
+0 boxes marked by curvature criteria!
+4 edge groups found!
+0 boxes marked by the corner criteria
+0 boxed marked by partitioning criteria
+0 boxed marked by proximity criteria
+Finished with automatic refinement
+Marking inside/outside.
+Number of internal boxes is 5722
+Number of outside boxes is 276
+Number of data boxes is 604
+Number of unknown boxes is 3365
+Refining boxes near DATA boxes
+Marking inside/outside.
+Number of internal boxes is 6934
+Number of outside boxes is 276
+Number of data boxes is 604
+Number of unknown boxes is 3365
+Finished refining boxes near DATA boxes
+Extracting polyMesh
+Creating octree vertices
+Octree nodes 16184
+Resizing points!
+Finished creating octree vertices
+Creating polyMesh from octree
+Reordering boundary faces 
+Finished reordering boundary faces
+Found 14872 boundary faces 
+Finished creating polyMesh
+Mesh has :
+15228 vertices 
+29028 faces
+7138 cells
+Finished extracting polyMesh
+Checking for irregular surface connections
+Checking cells connected to surface vertices
+Found 14872 boundary faces 
+Found 0 problematic vertices
+Finished checking cells connected to surface vertices
+Checking for non-manifold surface edges
+Found 0 non-manifold edges
+Finished checking for non-manifold surface edges
+Checking faces connections to surface vertices
+Found 0 invalid connections
+Finished checking faces connections to surface vertices
+Finished checking for irregular surface connections
+Found 14872 boundary faces 
+Found 0 non-mappable cells
+Checking cell connections
+Finished checking cell connections
+Found 14872 boundary faces 
+Marked 0 faces for decomposition
+Found 14872 boundary faces 
+Found 0 corners at the surface of the volume mesh
+Found 1192 edge points at the surface of the volume mesh
+Smoothing mesh surface before mapping. Iteration:..
+Found 14872 boundary faces 
+Found 8 corners at the surface of the volume mesh
+Found 1184 edge points at the surface of the volume mesh
+Found 14872 boundary faces 
+Found 8 corners at the surface of the volume mesh
+Found 1184 edge points at the surface of the volume mesh
+Found 8 corners at the surface of the volume mesh
+Found 1184 edge points at the surface of the volume mesh
+Optimizing edges. Iteration:.....
+Optimizing surface vertices. Iteration:.....
+--> FOAM Warning : 
+    From function bool checkFacePyramids(const polyMeshGen&, const bool, const scalar, labelHashSet*, const boolList*)
+    in file utilities/meshes/polyMeshGenChecks/polyMeshGenChecksGeometry.C at line 1122
+    Error in face pyramids: 1 faces pointing the wrong way!
+--> FOAM Warning : 
+    From function bool checkCellPartTetrahedra(const polyMeshGen&, const bool, const scalar, labelHashSet*, const boolList*)
+    in file utilities/meshes/polyMeshGenChecks/polyMeshGenChecksGeometry.C at line 615
+    3 zero or negative part tetrahedra detected.
+Iteration 0. Number of bad faces 3
+Iteration 1. Number of bad faces 0
+Found 14872 boundary faces 
+Found 8 corners at the surface of the volume mesh
+Found 1184 edge points at the surface of the volume mesh
+Found 8 corners at the surface of the volume mesh
+Found 1184 edge points at the surface of the volume mesh
+Resizing points!
+Starting creating layer cells
+Adding 600 cells to the mesh
+Finished adding cells to the mesh
+Reordering boundary faces 
+Finished reordering boundary faces
+Finished creating layer cells
+Found 16080 boundary faces 
+Found 8 corners at the surface of the volume mesh
+Found 1200 edge points at the surface of the volume mesh
+Found 8 corners at the surface of the volume mesh
+Found 1200 edge points at the surface of the volume mesh
+Optimizing edges. Iteration:.....
+Optimizing surface vertices. Iteration:.....
+Iteration 0. Number of bad faces 0
+--> FOAM Warning : 
+    From function void refineBoundaryLayers::setGlobalNumberOfLayers(const label)
+    in file utilities/boundaryLayers/refineBoundaryLayers/refineBoundaryLayers.C at line 123
+    The specified global number of boundary layers is less than 2
+Found 16080 boundary faces 
+Found 8 corners at the surface of the volume mesh
+Found 1200 edge points at the surface of the volume mesh
+Iteration 0. Number of bad faces 0
+Renumbering the mesh
+Finished renumbering the mesh
+Renaming boundary patches
+Finished renaming boundary patches
+ExecutionTime = 3.06 s
+ClockTime = 1 s
+End
+

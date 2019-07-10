@@ -1,0 +1,70 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : blockMesh
+Date   : Feb 23 2019
+Time   : 12:21:24
+Host   : "elwardi"
+PID    : 17396
+Case   : /home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/krBrooksCorey
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from
+    "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/krBrooksCorey/system/blockMeshDict"
+Creating curved edges
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 1
+    Block 0 cell size :
+        i : 1 .. 1
+        j : 0.1 .. 0.1
+        k : 1 .. 1
+
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 0 0) (1 10 1)
+  nPoints: 404
+  nCells: 100
+  nFaces: 501
+  nInternalFaces: 99
+----------------
+Patches
+----------------
+  patch 0 (start: 99 size: 1) name: inlet
+  patch 1 (start: 100 size: 1) name: outlet
+  patch 2 (start: 101 size: 400) name: frontAndBack
+
+End
+

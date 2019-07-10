@@ -1,0 +1,76 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      wellsProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+wellModel Peaceman;
+
+wells 
+(
+    PROD0
+    {
+        controlMode         totalFlowRate;
+        operationMode       production;
+        orientation         verticalWell;
+        skin 0;
+        radius              0.2;
+        re                  1.2;
+        PI                  6.12e-9;
+        datumDepth          0;
+        BHP                 1e6;
+        flowRateData
+        {
+            fileName            "prod.rate";
+            outOfBounds         warn;
+        }
+
+        perforations
+        (
+            oneInterval
+            {
+                p1    (5 0 5);
+                p2    (5 1 5);
+                radius $radius;
+            }
+        );
+    }
+    INJ0
+    {
+        controlMode         totalFlowRate;
+        operationMode       injection;
+        orientation         verticalWell;
+        PI                  6.12e-9;
+        datumDepth          0;
+        BHP                 6e5;
+        radius              0.3;
+        flowRateData
+        {
+            fileName            "inj.rate";
+            outOfBounds         warn;
+        }
+
+        perforations
+        (
+            twoIntervals
+            {
+                p1    (5 99 5);
+                p2    (5 100 5);
+                radius 0.3;
+            }
+        );
+    }
+);
+
+// ************************************************************************* //

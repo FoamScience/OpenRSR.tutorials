@@ -1,0 +1,90 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : checkMesh
+Date   : Feb 22 2019
+Time   : 11:02:51
+Host   : "elwardi"
+PID    : 1665
+Case   : /home/elwardi/gitea-repositories/elwardi/reservoir-simulator.git/tutorials/impesFoam/TanejaDr/fiveSpot06
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Using #calcEntry at line 28 in file "/home/elwardi/gitea-repositories/elwardi/reservoir-simulator.git/tutorials/impesFoam/TanejaDr/fiveSpot06/system/controlDict"
+Using #codeStream with "/home/elwardi/gitea-repositories/elwardi/reservoir-simulator.git/tutorials/impesFoam/TanejaDr/fiveSpot06/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libcodeStream_033dbd752947219024abb850bca21c37bded607c.so"
+Create polyMesh for time = 0
+
+Time = 0
+
+Mesh stats
+    points:           17476
+    internal points:  0
+    faces:            33836
+    internal faces:   16664
+    cells:            8366
+    faces per cell:   6.03634
+    boundary patches: 6
+    point zones:      0
+    face zones:       0
+    cell zones:       0
+
+Overall number of cells of each type:
+    hexahedra:     8154
+    prisms:        0
+    wedges:        0
+    pyramids:      0
+    tet wedges:    0
+    tetrahedra:    0
+    polyhedra:     212
+    Breakdown of polyhedra by number of faces:
+        faces   number of cells
+            7   120
+            8   92
+
+Checking topology...
+    Boundary definition OK.
+    Cell to face addressing OK.
+    Point usage OK.
+    Upper triangular ordering OK.
+    Face vertices OK.
+    Number of regions: 1 (OK).
+
+Checking patch topology for multiply connected surfaces...
+                   Patch    Faces   Points                  Surface topology
+                     top       50      102  ok (non-closed singly connected)
+                  bottom       50      102  ok (non-closed singly connected)
+                    left       50      102  ok (non-closed singly connected)
+                   right       50      102  ok (non-closed singly connected)
+                   fault      240      480  ok (non-closed singly connected)
+            frontAndBack    16732    17476  ok (non-closed singly connected)
+
+Checking geometry...
+    Overall domain bounding box (-50 -50 0) (50 50 1)
+    Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
+    Mesh has 2 solution (non-empty) directions (1 1 0)
+    All edges aligned with or perpendicular to non-empty directions.
+    Boundary openness (1.747e-19 7.42477e-19 8.1251e-16) OK.
+    Max cell openness = 2.21946e-16 OK.
+    Max aspect ratio = 1.89183 OK.
+    Minimum face area = 0.0343675. Maximum face area = 4.74444.  Face area magnitudes OK.
+    Min volume = 0.0343675. Max volume = 4.74444.  Total volume = 9925.99.  Cell volumes OK.
+    Mesh non-orthogonality Max: 36.5663 average: 6.67046
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 2.01044 OK.
+    Coupled point location match (average 0) OK.
+
+Mesh OK.
+
+End
+

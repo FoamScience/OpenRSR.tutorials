@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Build the mesh
+echo "Building mesh ...\n"
+cartesian2DMesh > log.createMesh
+
+# Check its validity
+echo "Checking mesh validity ...\n"
+checkMesh       > log.checkMesh
+
+# Copy initial files
+cp -r 0.orig/* 0/
+
+# Set initial conditions
+setFields       > log.setFields
+
+# Run solver
+impesFoam       | tee log.impesFoam

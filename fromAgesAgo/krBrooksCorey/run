@@ -1,0 +1,4 @@
+#!/bin/sh
+
+blockMesh | tee mesh.log
+impesFoam | tee solver.log

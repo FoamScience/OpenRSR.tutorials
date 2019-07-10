@@ -1,0 +1,64 @@
+solid fault1
+  facet normal 0 20 0
+    outer loop
+      vertex -20 20 0
+      vertex -20 20 1
+      vertex 0 20 1
+    endloop
+  endfacet
+  facet normal 0 20 0
+    outer loop
+      vertex -20 20 0
+      vertex 0 20 1
+      vertex 0 20 0
+    endloop
+  endfacet
+endsolid fault1
+solid fault3
+  facet normal 40 0 0
+    outer loop
+      vertex 0 20 0
+      vertex 0 20 1
+      vertex 0 -20 1
+    endloop
+  endfacet
+  facet normal 40 0 0
+    outer loop
+      vertex 0 20 0
+      vertex 0 -20 1
+      vertex 0 -20 0
+    endloop
+  endfacet
+endsolid fault3
+solid fault2
+  facet normal 0 -20 0
+    outer loop
+      vertex 0 -20 0
+      vertex 0 -20 1
+      vertex -20 -20 1
+    endloop
+  endfacet
+  facet normal 0 -20 0
+    outer loop
+      vertex 0 -20 0
+      vertex -20 -20 1
+      vertex -20 -20 0
+    endloop
+  endfacet
+endsolid fault2
+solid fault4
+  facet normal -40 0 0
+    outer loop
+      vertex -20 -20 0
+      vertex -20 -20 1
+      vertex -20 20 1
+    endloop
+  endfacet
+  facet normal -40 0 0
+    outer loop
+      vertex -20 -20 0
+      vertex -20 20 1
+      vertex -20 20 0
+    endloop
+  endfacet
+endsolid fault4

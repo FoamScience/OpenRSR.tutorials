@@ -1,0 +1,44 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  | =========                 |                                                 |
+  | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+  |  \\    /   O peration     | Version:  4.1                                   |
+  |   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+  |    \\/     M anipulation  |                                                 |
+  \*---------------------------------------------------------------------------*/
+FoamFile
+{
+  version     2.0;
+  format      ascii;
+  class       dictionary;
+  location    "constant";
+  object      transportProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+phases (water oil);
+//phase.a
+oil
+{
+    rho	    rho [1 -3 0 0 0 0 0] 	1e0;
+    mu	    mu [1 -1 -1 0 0 0 0]	1.76e-5;
+    wettingStatus nonWetting;
+}
+	
+//phase.b
+water
+{
+    rho	    rho [1 -3 0 0 0 0 0] 	1e3;
+    mu	    mu [1 -1 -1 0 0 0 0]	1e-3;
+}
+
+//// relative permeability model ////
+
+relativePermeabilityModel   tabulated;
+krData
+{
+    fileName "constant/kr.dat";
+    outOfBounds     stop;
+}
+capillaryPressureModel      none;
+
+// ************************************************************************* //

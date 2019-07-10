@@ -1,0 +1,91 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     impesFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         302400000; // 3500 days, 9.6 years
+
+deltaT          100;  // 3 days
+//deltaT          100;  // 3 days
+
+writeControl    adjustableRunTime;
+
+writeInterval   8640000; // each year
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;
+
+dSmax           0.05;
+Cm              0.75;
+//dSmax           0.01;// needed with capillary effect
+
+maxDeltaT  864000; // 1days
+
+libs
+(
+    "libreservoirBCs.so"
+    "libreservoirProcessing.so"
+);
+
+functions
+(
+    wellFlowRate
+    {
+        type            wellFlowRate;
+        functionObjectLibs ( "libreservoirProcessing.so");
+        enabled         true;
+        outputControl   timeStep;
+        outputInterval  1;
+        log 1;
+        wells (PROD0);
+    }
+    probes
+    {
+        type            probes;
+        functionObjectLibs ("libsampling.so");
+        enabled         true;
+        outputControl   timeStep;
+        outputInterval  1;
+        probeLocations
+        (
+            // Sw at production well
+            (5 0.5 5)
+        );
+        fields ( water.alpha );
+    }
+);
+ 
+
+
+// ************************************************************************* //

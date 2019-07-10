@@ -1,0 +1,76 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : blockMesh
+Date   : Feb 27 2019
+Time   : 17:30:52
+Host   : "elwardi"
+PID    : 26442
+Case   : /home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/BuckleyLeverett
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Using #calcEntry at line 28 in file "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/BuckleyLeverett/system/controlDict"
+Using #codeStream with "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/BuckleyLeverett/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libcodeStream_5047b4e695aac01261cba2fe8596341b1388f270.so"
+Using #calcEntry at line 30 in file "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/BuckleyLeverett/system/controlDict"
+Using #codeStream with "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/BuckleyLeverett/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libcodeStream_1a182dd175ca1256a22ec43f096a131affeb3ab3.so"
+Using #calcEntry at line 34 in file "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/BuckleyLeverett/system/controlDict"
+Using #codeStream with "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/BuckleyLeverett/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libcodeStream_dc363596cc2d19d60414184bb6afc768ed6445f2.so"
+Creating block mesh from
+    "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/BuckleyLeverett/system/blockMeshDict"
+Creating curved edges
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 1
+    Block 0 cell size :
+        i : 10 .. 10
+        j : 1 .. 1
+        k : 10 .. 10
+
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 0 0) (10 100 10)
+  nPoints: 404
+  nCells: 100
+  nFaces: 501
+  nInternalFaces: 99
+----------------
+Patches
+----------------
+  patch 0 (start: 99 size: 1) name: inlet
+  patch 1 (start: 100 size: 1) name: outlet
+  patch 2 (start: 101 size: 400) name: frontAndBack
+
+End
+

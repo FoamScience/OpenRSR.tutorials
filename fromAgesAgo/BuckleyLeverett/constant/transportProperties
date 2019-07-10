@@ -1,0 +1,53 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  | =========                 |                                                 |
+  | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+  |  \\    /   O peration     | Version:  4.1                                   |
+  |   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+  |    \\/     M anipulation  |                                                 |
+  \*---------------------------------------------------------------------------*/
+FoamFile
+{
+  version     2.0;
+  format      ascii;
+  class       dictionary;
+  location    "constant";
+  object      transportProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+phases (water oil);
+//phase.a
+oil
+{
+    nu	    nu [1 -1 -1 0 0 0 0]	1.76e-5;
+    rhoSc	    rho [1 -3 0 0 0 0 0] 	1e0;
+    mu	    mu [1 -1 -1 0 0 0 0]	1.76e-5;
+    wettingStatus nonWetting;
+    FVFModel        tabulated;
+    FVFData
+    {
+        fileName    "iFVF";
+        outOfBounds repeat;
+    }
+}
+	
+//phase.b
+water
+{
+    nu	    nu [1 -1 -1 0 0 0 0]	1e-6;
+    rhoSc	    rho [1 -3 0 0 0 0 0] 	1e3;
+    mu	    mu [1 -1 -1 0 0 0 0]	1e-3;
+    FVFModel        tabulated;
+    FVFData
+    {
+        fileName    "iFVF";
+        outOfBounds repeat;
+    }
+}
+
+//// relative permeability model ////
+
+relativePermeabilityModel   BrooksCorey;
+capillaryPressureModel      none;
+
+// ************************************************************************* //

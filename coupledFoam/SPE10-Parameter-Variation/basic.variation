@@ -1,0 +1,19 @@
+defaults
+{
+}
+values 
+{
+    solver  (pSwCoupledFoam);
+    gravity (0 -9.81 9.81);
+    pcModel ("none" BrooksCorey);
+    pc      (34.473786e3);
+    krModel (tabulated);
+    SgInit  (0.10000001);
+    pIni (0.68947573e6);
+    pRef (0.68947573e6);
+    simulationTime (86400000);
+    waterRho (1.0);
+    oilRho (700.0);
+    porousMedia (iso);
+    functionObjects (wellFlowRate);
+}

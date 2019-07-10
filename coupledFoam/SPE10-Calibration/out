@@ -1,0 +1,2975 @@
+Dakota version 6.5 released Nov 11 2016.
+Repository revision f928f89 (2016-11-10) built Nov 11 2016 04:27:33.
+Running MPI Dakota executable in serial mode.
+Start time: Tue Jun 11 21:49:40 2019
+
+-----------------------
+Begin DAKOTA input file
+dakota_spe10_soga.in
+-----------------------
+# Usage:
+#   dakota -i xxx.in -o run.out > stdout.out
+
+
+################################################################################
+environment
+    	tabular_data
+        tabular_data_file = 'table_out.dat'
+        #single_method
+    	#custom_annotated header eval_id	#No interface column	
+################################################################################
+    
+
+
+################################################################################    
+method
+   max_iterations = 130
+   convergence_tolerance = 1e-3
+   nl2sol 
+   # soga
+   #  #output_verbose
+   #  max_function_evaluations = 700
+   #  seed = 10983
+   #  population_size = 20
+   #  initialization_type simple_random
+   #  print_each_pop
+
+   #  mutation_type replace_uniform
+   #     mutation_rate = 0.1
+
+   #  crossover_type multi_point_real 4
+   #     crossover_rate = 0.8
+
+   #  replacement_type elitist
+   #  fitness_type merit_function
+   #  #contraint_penalty = 0.9
+   #  convergence_type best_fitness_tracker
+   #  num_generations = 100
+   #  percent_change = 0.05
+   # #linear_equality_constraint_matrix 
+   # #   1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+   # #linear_equality_targets
+   # #   0.226 
+   # #    linear_inequality_lower_bounds -2 -2
+   # #    linear_inequality_upper_bounds  1.5 1
+################################################################################
+################################################################################
+variables
+	continuous_design = 5
+	cdv_initial_point  -0.1    6    6    1     1
+	cdv_lower_bounds   -1.0    1    1    0     0
+	cdv_upper_bounds   -0.01   7    7    1     1
+	cdv_descriptor     'Swmin' 'nw' 'no' 'krw' 'kro'
+  #continuous_design 20
+  #  descriptors 'x0' 'x1' 'x2' 'x3' 'x4' 'x5' 'x6' 'x7' 'x8' 'x9' 'x10' 'x11' 
+  #  'x12' 'x13' 'x14' 'x15' 'x16' 'x17' 'x18' 'x19'
+
+  #linear_equality_constraint_matrix = 
+  #  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+  #linear_equality_target = 1
+
+  #linear_inequality_upper_bounds = 0.226
+  #linear_inequality_lower_bounds = 0.000
+                                  
+################################################################################
+
+
+
+################################################################################
+interface
+	fork
+	asynchronous
+	evaluation_concurrency = 1
+	#evaluation_concurrency = 1
+	analysis_driver = 'simulator_script'
+	parameters_file = 'params.in'
+	results_file    = 'results.out'
+	work_directory directory_tag
+    #template_directory = 'templatedir'
+        copy_files = 'templatedir/*'
+
+	  
+# uncomment to leave params.in and results.out files in work_dir subdirectories
+ 	named 'SPE10' file_save  directory_save
+	aprepro
+	  
+# when using conmin_frcg (above) with analytic_gradients (below), 
+# need to turn off the active set vector as the interface does not parse it.
+## 	deactivate active_set_vector
+################################################################################
+
+
+
+################################################################################	  
+responses
+    #num_objective_functions = 1
+    calibration_terms = 20
+     calibration_data_file 'imp.dat'
+        freeform
+    numerical_gradients
+    no_hessians
+	#num_objective_functions = 1
+ 	#numerical_gradients
+ 	#
+	#	method_source dakota
+	#	interval_type forward
+	#    
+	##fd_gradient_step_size = .000001
+	#fd_gradient_step_size =  1.e-5
+	  
+# to instead use analytic gradients returned by the simulator comment the
+# preceding two lines and uncomment the following:
+##	analytic_gradients
+
+	#no_hessians
+
+	#sense 'max'
+################################################################################
+
+---------------------
+End DAKOTA input file
+---------------------
+
+Using Dakota input file 'dakota_spe10_soga.in'
+Writing new restart file dakota.rst
+
+Reading scalar experimental data from file imp.dat:
+  1 experiment(s) for
+  20 scalar responses
+
+>>>>> Executing environment.
+
+>>>>> Running nl2sol iterator.
+
+---------------------
+Begin Evaluation    1
+---------------------
+Parameters for evaluation 1:
+                     -1.0000000000e-01 Swmin
+                      6.0000000000e+00 nw
+                      6.0000000000e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 1:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.3651200000e-01 least_sq_term_1
+                      3.3651100000e-01 least_sq_term_2
+                      3.3651200000e-01 least_sq_term_3
+                      3.3651100000e-01 least_sq_term_4
+                      3.3651100000e-01 least_sq_term_5
+                      3.3651100000e-01 least_sq_term_6
+                      3.3651100000e-01 least_sq_term_7
+                      3.3651200000e-01 least_sq_term_8
+                      3.3651100000e-01 least_sq_term_9
+                      3.3651100000e-01 least_sq_term_10
+                      3.3651100000e-01 least_sq_term_11
+                      3.3651100000e-01 least_sq_term_12
+                      3.3651100000e-01 least_sq_term_13
+                      3.3651100000e-01 least_sq_term_14
+                      3.3651200000e-01 least_sq_term_15
+                      3.3651100000e-01 least_sq_term_16
+                      3.3651400000e-01 least_sq_term_17
+                      3.3651100000e-01 least_sq_term_18
+                      3.3651100000e-01 least_sq_term_19
+                      3.3651100000e-01 least_sq_term_20
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> map at X performed previously and results retrieved
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation    2
+---------------------
+Parameters for evaluation 2:
+                     -1.0010000000e-01 Swmin
+                      6.0000000000e+00 nw
+                      6.0000000000e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 2:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.3645400000e-01 least_sq_term_1
+                      3.3645300000e-01 least_sq_term_2
+                      3.3645400000e-01 least_sq_term_3
+                      3.3645300000e-01 least_sq_term_4
+                      3.3645300000e-01 least_sq_term_5
+                      3.3645300000e-01 least_sq_term_6
+                      3.3645300000e-01 least_sq_term_7
+                      3.3645400000e-01 least_sq_term_8
+                      3.3645300000e-01 least_sq_term_9
+                      3.3645300000e-01 least_sq_term_10
+                      3.3645300000e-01 least_sq_term_11
+                      3.3645300000e-01 least_sq_term_12
+                      3.3645300000e-01 least_sq_term_13
+                      3.3645300000e-01 least_sq_term_14
+                      3.3645400000e-01 least_sq_term_15
+                      3.3645300000e-01 least_sq_term_16
+                      3.3645600000e-01 least_sq_term_17
+                      3.3645300000e-01 least_sq_term_18
+                      3.3645300000e-01 least_sq_term_19
+                      3.3645300000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation    3
+---------------------
+Parameters for evaluation 3:
+                     -1.0000000000e-01 Swmin
+                      6.0060000000e+00 nw
+                      6.0000000000e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 3:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.3672200000e-01 least_sq_term_1
+                      3.3672100000e-01 least_sq_term_2
+                      3.3672200000e-01 least_sq_term_3
+                      3.3672100000e-01 least_sq_term_4
+                      3.3672100000e-01 least_sq_term_5
+                      3.3672100000e-01 least_sq_term_6
+                      3.3672100000e-01 least_sq_term_7
+                      3.3672200000e-01 least_sq_term_8
+                      3.3672100000e-01 least_sq_term_9
+                      3.3672100000e-01 least_sq_term_10
+                      3.3672100000e-01 least_sq_term_11
+                      3.3672100000e-01 least_sq_term_12
+                      3.3672100000e-01 least_sq_term_13
+                      3.3672100000e-01 least_sq_term_14
+                      3.3672200000e-01 least_sq_term_15
+                      3.3672100000e-01 least_sq_term_16
+                      3.3672400000e-01 least_sq_term_17
+                      3.3672100000e-01 least_sq_term_18
+                      3.3672100000e-01 least_sq_term_19
+                      3.3672100000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[3] + h:
+
+---------------------
+Begin Evaluation    4
+---------------------
+Parameters for evaluation 4:
+                     -1.0000000000e-01 Swmin
+                      6.0000000000e+00 nw
+                      6.0060000000e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 4:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.3639600000e-01 least_sq_term_1
+                      3.3639500000e-01 least_sq_term_2
+                      3.3639600000e-01 least_sq_term_3
+                      3.3639500000e-01 least_sq_term_4
+                      3.3639500000e-01 least_sq_term_5
+                      3.3639500000e-01 least_sq_term_6
+                      3.3639500000e-01 least_sq_term_7
+                      3.3639600000e-01 least_sq_term_8
+                      3.3639500000e-01 least_sq_term_9
+                      3.3639500000e-01 least_sq_term_10
+                      3.3639500000e-01 least_sq_term_11
+                      3.3639500000e-01 least_sq_term_12
+                      3.3639500000e-01 least_sq_term_13
+                      3.3639500000e-01 least_sq_term_14
+                      3.3639600000e-01 least_sq_term_15
+                      3.3639500000e-01 least_sq_term_16
+                      3.3639800000e-01 least_sq_term_17
+                      3.3639500000e-01 least_sq_term_18
+                      3.3639500000e-01 least_sq_term_19
+                      3.3639500000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[4] + h:
+
+---------------------
+Begin Evaluation    5
+---------------------
+Parameters for evaluation 5:
+                     -1.0000000000e-01 Swmin
+                      6.0000000000e+00 nw
+                      6.0000000000e+00 no
+                      9.9900000000e-01 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 5:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.3655000000e-01 least_sq_term_1
+                      3.3654900000e-01 least_sq_term_2
+                      3.3655000000e-01 least_sq_term_3
+                      3.3654900000e-01 least_sq_term_4
+                      3.3654900000e-01 least_sq_term_5
+                      3.3654900000e-01 least_sq_term_6
+                      3.3654900000e-01 least_sq_term_7
+                      3.3655000000e-01 least_sq_term_8
+                      3.3654900000e-01 least_sq_term_9
+                      3.3654900000e-01 least_sq_term_10
+                      3.3654900000e-01 least_sq_term_11
+                      3.3654900000e-01 least_sq_term_12
+                      3.3654900000e-01 least_sq_term_13
+                      3.3654900000e-01 least_sq_term_14
+                      3.3655000000e-01 least_sq_term_15
+                      3.3654900000e-01 least_sq_term_16
+                      3.3655200000e-01 least_sq_term_17
+                      3.3654900000e-01 least_sq_term_18
+                      3.3654900000e-01 least_sq_term_19
+                      3.3654900000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[5] + h:
+
+---------------------
+Begin Evaluation    6
+---------------------
+Parameters for evaluation 6:
+                     -1.0000000000e-01 Swmin
+                      6.0000000000e+00 nw
+                      6.0000000000e+00 no
+                      1.0000000000e+00 krw
+                      9.9900000000e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 6:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.3647400000e-01 least_sq_term_1
+                      3.3647300000e-01 least_sq_term_2
+                      3.3647400000e-01 least_sq_term_3
+                      3.3647300000e-01 least_sq_term_4
+                      3.3647300000e-01 least_sq_term_5
+                      3.3647300000e-01 least_sq_term_6
+                      3.3647300000e-01 least_sq_term_7
+                      3.3647400000e-01 least_sq_term_8
+                      3.3647300000e-01 least_sq_term_9
+                      3.3647300000e-01 least_sq_term_10
+                      3.3647300000e-01 least_sq_term_11
+                      3.3647300000e-01 least_sq_term_12
+                      3.3647300000e-01 least_sq_term_13
+                      3.3647300000e-01 least_sq_term_14
+                      3.3647400000e-01 least_sq_term_15
+                      3.3647300000e-01 least_sq_term_16
+                      3.3647600000e-01 least_sq_term_17
+                      3.3647300000e-01 least_sq_term_18
+                      3.3647300000e-01 least_sq_term_19
+                      3.3647300000e-01 least_sq_term_20
+
+
+>>>>> Total response returned to iterator:
+
+Active set vector = { 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 } Deriv vars vector = { 1 2 3 4 5 }
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_1 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_2 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_3 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_4 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_5 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_6 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_7 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_8 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_9 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_10 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_11 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_12 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_13 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_14 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_15 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_16 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_17 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_18 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_19 gradient
+ [  5.8000000000e-01  3.5000000000e-02 -1.9333333333e-02 -3.8000000000e-02 
+    3.8000000000e-02 ] least_sq_term_20 gradient
+
+
+
+---------------------
+Begin Evaluation    7
+---------------------
+Parameters for evaluation 7:
+                     -5.3738183393e-02 Swmin
+                      1.0000000000e+00 nw
+                      1.5777836273e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 7:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      8.8625000000e-02 least_sq_term_1
+                      8.8637200000e-02 least_sq_term_2
+                      8.8630700000e-02 least_sq_term_3
+                      8.8643300000e-02 least_sq_term_4
+                      8.8641900000e-02 least_sq_term_5
+                      8.8640000000e-02 least_sq_term_6
+                      8.8641600000e-02 least_sq_term_7
+                      8.8628600000e-02 least_sq_term_8
+                      8.8645600000e-02 least_sq_term_9
+                      8.8645600000e-02 least_sq_term_10
+                      8.8644700000e-02 least_sq_term_11
+                      8.8644600000e-02 least_sq_term_12
+                      8.8641900000e-02 least_sq_term_13
+                      8.8636100000e-02 least_sq_term_14
+                      8.8622300000e-02 least_sq_term_15
+                      8.8628100000e-02 least_sq_term_16
+                      8.8613400000e-02 least_sq_term_17
+                      8.8645500000e-02 least_sq_term_18
+                      8.8645400000e-02 least_sq_term_19
+                      8.8642000000e-02 least_sq_term_20
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> map at X performed previously and results retrieved
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation    8
+---------------------
+Parameters for evaluation 8:
+                     -5.3791921577e-02 Swmin
+                      1.0000000000e+00 nw
+                      1.5777836273e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 8:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      8.8593900000e-02 least_sq_term_1
+                      8.8606000000e-02 least_sq_term_2
+                      8.8599600000e-02 least_sq_term_3
+                      8.8612200000e-02 least_sq_term_4
+                      8.8610800000e-02 least_sq_term_5
+                      8.8608900000e-02 least_sq_term_6
+                      8.8610500000e-02 least_sq_term_7
+                      8.8597500000e-02 least_sq_term_8
+                      8.8614400000e-02 least_sq_term_9
+                      8.8614400000e-02 least_sq_term_10
+                      8.8613500000e-02 least_sq_term_11
+                      8.8613400000e-02 least_sq_term_12
+                      8.8610800000e-02 least_sq_term_13
+                      8.8605000000e-02 least_sq_term_14
+                      8.8591200000e-02 least_sq_term_15
+                      8.8597000000e-02 least_sq_term_16
+                      8.8582300000e-02 least_sq_term_17
+                      8.8614400000e-02 least_sq_term_18
+                      8.8614300000e-02 least_sq_term_19
+                      8.8610900000e-02 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation    9
+---------------------
+Parameters for evaluation 9:
+                     -5.3738183393e-02 Swmin
+                      1.0010000000e+00 nw
+                      1.5777836273e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 9:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      8.8739400000e-02 least_sq_term_1
+                      8.8758100000e-02 least_sq_term_2
+                      8.8745800000e-02 least_sq_term_3
+                      8.8764400000e-02 least_sq_term_4
+                      8.8762700000e-02 least_sq_term_5
+                      8.8760000000e-02 least_sq_term_6
+                      8.8762700000e-02 least_sq_term_7
+                      8.8740400000e-02 least_sq_term_8
+                      8.8766800000e-02 least_sq_term_9
+                      8.8766900000e-02 least_sq_term_10
+                      8.8765500000e-02 least_sq_term_11
+                      8.8765900000e-02 least_sq_term_12
+                      8.8763200000e-02 least_sq_term_13
+                      8.8756700000e-02 least_sq_term_14
+                      8.8737500000e-02 least_sq_term_15
+                      8.8748500000e-02 least_sq_term_16
+                      8.8721800000e-02 least_sq_term_17
+                      8.8766700000e-02 least_sq_term_18
+                      8.8766700000e-02 least_sq_term_19
+                      8.8762300000e-02 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[3] + h:
+
+---------------------
+Begin Evaluation   10
+---------------------
+Parameters for evaluation 10:
+                     -5.3738183393e-02 Swmin
+                      1.0000000000e+00 nw
+                      1.5793614109e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 10:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      8.8614900000e-02 least_sq_term_1
+                      8.8627100000e-02 least_sq_term_2
+                      8.8620700000e-02 least_sq_term_3
+                      8.8633300000e-02 least_sq_term_4
+                      8.8631800000e-02 least_sq_term_5
+                      8.8629900000e-02 least_sq_term_6
+                      8.8631500000e-02 least_sq_term_7
+                      8.8618600000e-02 least_sq_term_8
+                      8.8635500000e-02 least_sq_term_9
+                      8.8635500000e-02 least_sq_term_10
+                      8.8634600000e-02 least_sq_term_11
+                      8.8634500000e-02 least_sq_term_12
+                      8.8631900000e-02 least_sq_term_13
+                      8.8626000000e-02 least_sq_term_14
+                      8.8612300000e-02 least_sq_term_15
+                      8.8618100000e-02 least_sq_term_16
+                      8.8603400000e-02 least_sq_term_17
+                      8.8635500000e-02 least_sq_term_18
+                      8.8635300000e-02 least_sq_term_19
+                      8.8631900000e-02 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[4] + h:
+
+---------------------
+Begin Evaluation   11
+---------------------
+Parameters for evaluation 11:
+                     -5.3738183393e-02 Swmin
+                      1.0000000000e+00 nw
+                      1.5777836273e+00 no
+                      9.9900000000e-01 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 11:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      8.8678100000e-02 least_sq_term_1
+                      8.8691100000e-02 least_sq_term_2
+                      8.8683800000e-02 least_sq_term_3
+                      8.8697300000e-02 least_sq_term_4
+                      8.8695900000e-02 least_sq_term_5
+                      8.8693800000e-02 least_sq_term_6
+                      8.8695600000e-02 least_sq_term_7
+                      8.8681200000e-02 least_sq_term_8
+                      8.8699500000e-02 least_sq_term_9
+                      8.8699600000e-02 least_sq_term_10
+                      8.8698600000e-02 least_sq_term_11
+                      8.8698600000e-02 least_sq_term_12
+                      8.8696000000e-02 least_sq_term_13
+                      8.8690100000e-02 least_sq_term_14
+                      8.8675600000e-02 least_sq_term_15
+                      8.8682200000e-02 least_sq_term_16
+                      8.8665600000e-02 least_sq_term_17
+                      8.8699500000e-02 least_sq_term_18
+                      8.8699400000e-02 least_sq_term_19
+                      8.8695800000e-02 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[5] + h:
+
+---------------------
+Begin Evaluation   12
+---------------------
+Parameters for evaluation 12:
+                     -5.3738183393e-02 Swmin
+                      1.0000000000e+00 nw
+                      1.5777836273e+00 no
+                      1.0000000000e+00 krw
+                      9.9900000000e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 12:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      8.8570900000e-02 least_sq_term_1
+                      8.8583000000e-02 least_sq_term_2
+                      8.8576600000e-02 least_sq_term_3
+                      8.8589200000e-02 least_sq_term_4
+                      8.8587800000e-02 least_sq_term_5
+                      8.8585900000e-02 least_sq_term_6
+                      8.8587500000e-02 least_sq_term_7
+                      8.8574500000e-02 least_sq_term_8
+                      8.8591400000e-02 least_sq_term_9
+                      8.8591400000e-02 least_sq_term_10
+                      8.8590500000e-02 least_sq_term_11
+                      8.8590400000e-02 least_sq_term_12
+                      8.8587800000e-02 least_sq_term_13
+                      8.8582000000e-02 least_sq_term_14
+                      8.8568200000e-02 least_sq_term_15
+                      8.8574000000e-02 least_sq_term_16
+                      8.8559300000e-02 least_sq_term_17
+                      8.8591400000e-02 least_sq_term_18
+                      8.8591300000e-02 least_sq_term_19
+                      8.8587900000e-02 least_sq_term_20
+
+
+>>>>> Total response returned to iterator:
+
+Active set vector = { 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 } Deriv vars vector = { 1 2 3 4 5 }
+ [  5.7873188180e-01  1.1440000000e-01 -6.4013847181e-03 -5.3100000000e-02 
+    5.4100000000e-02 ] least_sq_term_1 gradient
+ [  5.8059275602e-01  1.2090000000e-01 -6.4013847181e-03 -5.3900000000e-02 
+    5.4200000000e-02 ] least_sq_term_2 gradient
+ [  5.7873188180e-01  1.1510000000e-01 -6.3380046714e-03 -5.3100000000e-02 
+    5.4100000000e-02 ] least_sq_term_3 gradient
+ [  5.7873188180e-01  1.2110000000e-01 -6.3380046714e-03 -5.4000000000e-02 
+    5.4100000000e-02 ] least_sq_term_4 gradient
+ [  5.7873188180e-01  1.2080000000e-01 -6.4013847181e-03 -5.4000000000e-02 
+    5.4100000000e-02 ] least_sq_term_5 gradient
+ [  5.7873188180e-01  1.2000000000e-01 -6.4013847181e-03 -5.3800000000e-02 
+    5.4100000000e-02 ] least_sq_term_6 gradient
+ [  5.7873188180e-01  1.2110000000e-01 -6.4013847181e-03 -5.4000000000e-02 
+    5.4100000000e-02 ] least_sq_term_7 gradient
+ [  5.7873188180e-01  1.1180000000e-01 -6.3380046714e-03 -5.2600000000e-02 
+    5.4100000000e-02 ] least_sq_term_8 gradient
+ [  5.8059275602e-01  1.2120000000e-01 -6.4013847181e-03 -5.3900000000e-02 
+    5.4200000000e-02 ] least_sq_term_9 gradient
+ [  5.8059275602e-01  1.2130000000e-01 -6.4013847181e-03 -5.4000000000e-02 
+    5.4200000000e-02 ] least_sq_term_10 gradient
+ [  5.8059275602e-01  1.2080000000e-01 -6.4013847181e-03 -5.3900000000e-02 
+    5.4200000000e-02 ] least_sq_term_11 gradient
+ [  5.8059275602e-01  1.2130000000e-01 -6.4013847181e-03 -5.4000000000e-02 
+    5.4200000000e-02 ] least_sq_term_12 gradient
+ [  5.7873188180e-01  1.2130000000e-01 -6.3380046714e-03 -5.4100000000e-02 
+    5.4100000000e-02 ] least_sq_term_13 gradient
+ [  5.7873188180e-01  1.2060000000e-01 -6.4013847181e-03 -5.4000000000e-02 
+    5.4100000000e-02 ] least_sq_term_14 gradient
+ [  5.7873188180e-01  1.1520000000e-01 -6.3380046714e-03 -5.3300000000e-02 
+    5.4100000000e-02 ] least_sq_term_15 gradient
+ [  5.7873188180e-01  1.2040000000e-01 -6.3380046714e-03 -5.4100000000e-02 
+    5.4100000000e-02 ] least_sq_term_16 gradient
+ [  5.7873188180e-01  1.0840000000e-01 -6.3380046714e-03 -5.2200000000e-02 
+    5.4100000000e-02 ] least_sq_term_17 gradient
+ [  5.7873188180e-01  1.2120000000e-01 -6.3380046714e-03 -5.4000000000e-02 
+    5.4100000000e-02 ] least_sq_term_18 gradient
+ [  5.7873188180e-01  1.2130000000e-01 -6.4013847181e-03 -5.4000000000e-02 
+    5.4100000000e-02 ] least_sq_term_19 gradient
+ [  5.7873188180e-01  1.2030000000e-01 -6.4013847181e-03 -5.3800000000e-02 
+    5.4100000000e-02 ] least_sq_term_20 gradient
+
+
+
+---------------------
+Begin Evaluation   13
+---------------------
+Parameters for evaluation 13:
+                     -7.8801748654e-01 Swmin
+                      5.5590001017e+00 nw
+                      7.0000000000e+00 no
+                      0.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 13:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.0000000000e-06 least_sq_term_1
+                      1.0000000000e-06 least_sq_term_2
+                      1.0000000000e-06 least_sq_term_3
+                      1.0000000000e-06 least_sq_term_4
+                      1.0000000000e-06 least_sq_term_5
+                      1.0000000000e-06 least_sq_term_6
+                      1.0000000000e-06 least_sq_term_7
+                      1.0000000000e-06 least_sq_term_8
+                      1.0000000000e-06 least_sq_term_9
+                      1.0000000000e-06 least_sq_term_10
+                      1.0000000000e-06 least_sq_term_11
+                      1.0000000000e-06 least_sq_term_12
+                      1.0000000000e-06 least_sq_term_13
+                      1.0000000000e-06 least_sq_term_14
+                      1.0000000000e-06 least_sq_term_15
+                      1.0000000000e-06 least_sq_term_16
+                      1.0000000000e-06 least_sq_term_17
+                      1.0000000000e-06 least_sq_term_18
+                      1.0000000000e-06 least_sq_term_19
+                      1.0000000000e-06 least_sq_term_20
+
+
+
+---------------------
+Begin Evaluation   14
+---------------------
+Parameters for evaluation 14:
+                     -1.0000000000e-02 Swmin
+                      1.0000000000e+00 nw
+                      1.5777836273e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 14:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.1910100000e-01 least_sq_term_1
+                      1.1910200000e-01 least_sq_term_2
+                      1.1910500000e-01 least_sq_term_3
+                      1.1910500000e-01 least_sq_term_4
+                      1.1910400000e-01 least_sq_term_5
+                      1.1910400000e-01 least_sq_term_6
+                      1.1910400000e-01 least_sq_term_7
+                      1.1910800000e-01 least_sq_term_8
+                      1.1910600000e-01 least_sq_term_9
+                      1.1910600000e-01 least_sq_term_10
+                      1.1910600000e-01 least_sq_term_11
+                      1.1910500000e-01 least_sq_term_12
+                      1.1910200000e-01 least_sq_term_13
+                      1.1909900000e-01 least_sq_term_14
+                      1.1909800000e-01 least_sq_term_15
+                      1.1909600000e-01 least_sq_term_16
+                      1.1910600000e-01 least_sq_term_17
+                      1.1910700000e-01 least_sq_term_18
+                      1.1910600000e-01 least_sq_term_19
+                      1.1910500000e-01 least_sq_term_20
+
+
+
+---------------------
+Begin Evaluation   15
+---------------------
+Parameters for evaluation 15:
+                     -1.0000000000e-02 Swmin
+                      1.0945950588e+00 nw
+                      1.5777836273e+00 no
+                      0.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 15:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.0000000000e-06 least_sq_term_1
+                      1.0000000000e-06 least_sq_term_2
+                      1.0000000000e-06 least_sq_term_3
+                      1.0000000000e-06 least_sq_term_4
+                      1.0000000000e-06 least_sq_term_5
+                      1.0000000000e-06 least_sq_term_6
+                      1.0000000000e-06 least_sq_term_7
+                      1.0000000000e-06 least_sq_term_8
+                      1.0000000000e-06 least_sq_term_9
+                      1.0000000000e-06 least_sq_term_10
+                      1.0000000000e-06 least_sq_term_11
+                      1.0000000000e-06 least_sq_term_12
+                      1.0000000000e-06 least_sq_term_13
+                      1.0000000000e-06 least_sq_term_14
+                      1.0000000000e-06 least_sq_term_15
+                      1.0000000000e-06 least_sq_term_16
+                      1.0000000000e-06 least_sq_term_17
+                      1.0000000000e-06 least_sq_term_18
+                      1.0000000000e-06 least_sq_term_19
+                      1.0000000000e-06 least_sq_term_20
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> map at X performed previously and results retrieved
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   16
+---------------------
+Parameters for evaluation 16:
+                     -1.0010000000e-02 Swmin
+                      1.0000000000e+00 nw
+                      1.5777836273e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 16:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.1908900000e-01 least_sq_term_1
+                      1.1909400000e-01 least_sq_term_2
+                      1.1909300000e-01 least_sq_term_3
+                      1.1909700000e-01 least_sq_term_4
+                      1.1909600000e-01 least_sq_term_5
+                      1.1909500000e-01 least_sq_term_6
+                      1.1909600000e-01 least_sq_term_7
+                      1.1909500000e-01 least_sq_term_8
+                      1.1909800000e-01 least_sq_term_9
+                      1.1909800000e-01 least_sq_term_10
+                      1.1909800000e-01 least_sq_term_11
+                      1.1909700000e-01 least_sq_term_12
+                      1.1909400000e-01 least_sq_term_13
+                      1.1909100000e-01 least_sq_term_14
+                      1.1908700000e-01 least_sq_term_15
+                      1.1908800000e-01 least_sq_term_16
+                      1.1909100000e-01 least_sq_term_17
+                      1.1909900000e-01 least_sq_term_18
+                      1.1909800000e-01 least_sq_term_19
+                      1.1909700000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   17
+---------------------
+Parameters for evaluation 17:
+                     -1.0000000000e-02 Swmin
+                      1.0010000000e+00 nw
+                      1.5777836273e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 17:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.1923700000e-01 least_sq_term_1
+                      1.1923700000e-01 least_sq_term_2
+                      1.1924000000e-01 least_sq_term_3
+                      1.1924000000e-01 least_sq_term_4
+                      1.1924000000e-01 least_sq_term_5
+                      1.1924000000e-01 least_sq_term_6
+                      1.1924000000e-01 least_sq_term_7
+                      1.1924400000e-01 least_sq_term_8
+                      1.1924200000e-01 least_sq_term_9
+                      1.1924200000e-01 least_sq_term_10
+                      1.1924200000e-01 least_sq_term_11
+                      1.1924000000e-01 least_sq_term_12
+                      1.1923800000e-01 least_sq_term_13
+                      1.1923500000e-01 least_sq_term_14
+                      1.1923400000e-01 least_sq_term_15
+                      1.1923100000e-01 least_sq_term_16
+                      1.1924200000e-01 least_sq_term_17
+                      1.1924200000e-01 least_sq_term_18
+                      1.1924200000e-01 least_sq_term_19
+                      1.1924100000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[3] + h:
+
+---------------------
+Begin Evaluation   18
+---------------------
+Parameters for evaluation 18:
+                     -1.0000000000e-02 Swmin
+                      1.0000000000e+00 nw
+                      1.5793614109e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 18:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.1909200000e-01 least_sq_term_1
+                      1.1909300000e-01 least_sq_term_2
+                      1.1909600000e-01 least_sq_term_3
+                      1.1909600000e-01 least_sq_term_4
+                      1.1909500000e-01 least_sq_term_5
+                      1.1909500000e-01 least_sq_term_6
+                      1.1909500000e-01 least_sq_term_7
+                      1.1909900000e-01 least_sq_term_8
+                      1.1909700000e-01 least_sq_term_9
+                      1.1909700000e-01 least_sq_term_10
+                      1.1909700000e-01 least_sq_term_11
+                      1.1909600000e-01 least_sq_term_12
+                      1.1909300000e-01 least_sq_term_13
+                      1.1909000000e-01 least_sq_term_14
+                      1.1908900000e-01 least_sq_term_15
+                      1.1908700000e-01 least_sq_term_16
+                      1.1909700000e-01 least_sq_term_17
+                      1.1909800000e-01 least_sq_term_18
+                      1.1909700000e-01 least_sq_term_19
+                      1.1909600000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[4] + h:
+
+---------------------
+Begin Evaluation   19
+---------------------
+Parameters for evaluation 19:
+                     -1.0000000000e-02 Swmin
+                      1.0000000000e+00 nw
+                      1.5777836273e+00 no
+                      9.9900000000e-01 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 19:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.1915700000e-01 least_sq_term_1
+                      1.1915800000e-01 least_sq_term_2
+                      1.1916100000e-01 least_sq_term_3
+                      1.1916100000e-01 least_sq_term_4
+                      1.1916000000e-01 least_sq_term_5
+                      1.1916000000e-01 least_sq_term_6
+                      1.1916000000e-01 least_sq_term_7
+                      1.1916400000e-01 least_sq_term_8
+                      1.1916300000e-01 least_sq_term_9
+                      1.1916300000e-01 least_sq_term_10
+                      1.1916200000e-01 least_sq_term_11
+                      1.1916100000e-01 least_sq_term_12
+                      1.1915900000e-01 least_sq_term_13
+                      1.1915500000e-01 least_sq_term_14
+                      1.1915400000e-01 least_sq_term_15
+                      1.1915200000e-01 least_sq_term_16
+                      1.1916200000e-01 least_sq_term_17
+                      1.1916300000e-01 least_sq_term_18
+                      1.1916300000e-01 least_sq_term_19
+                      1.1916200000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[5] + h:
+
+---------------------
+Begin Evaluation   20
+---------------------
+Parameters for evaluation 20:
+                     -1.0000000000e-02 Swmin
+                      1.0000000000e+00 nw
+                      1.5777836273e+00 no
+                      1.0000000000e+00 krw
+                      9.9900000000e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 20:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.1904500000e-01 least_sq_term_1
+                      1.1904600000e-01 least_sq_term_2
+                      1.1904900000e-01 least_sq_term_3
+                      1.1904900000e-01 least_sq_term_4
+                      1.1904800000e-01 least_sq_term_5
+                      1.1904800000e-01 least_sq_term_6
+                      1.1904800000e-01 least_sq_term_7
+                      1.1905200000e-01 least_sq_term_8
+                      1.1905100000e-01 least_sq_term_9
+                      1.1905000000e-01 least_sq_term_10
+                      1.1905000000e-01 least_sq_term_11
+                      1.1904900000e-01 least_sq_term_12
+                      1.1904600000e-01 least_sq_term_13
+                      1.1904300000e-01 least_sq_term_14
+                      1.1904200000e-01 least_sq_term_15
+                      1.1904000000e-01 least_sq_term_16
+                      1.1905000000e-01 least_sq_term_17
+                      1.1905100000e-01 least_sq_term_18
+                      1.1905000000e-01 least_sq_term_19
+                      1.1904900000e-01 least_sq_term_20
+
+
+>>>>> Total response returned to iterator:
+
+Active set vector = { 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 } Deriv vars vector = { 1 2 3 4 5 }
+ [  1.2000000000e+00  1.3600000000e-01 -5.7042042042e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_1 gradient
+ [  8.0000000000e-01  1.3500000000e-01 -5.7042042042e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_2 gradient
+ [  1.2000000000e+00  1.3500000000e-01 -5.7042042043e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_3 gradient
+ [  8.0000000000e-01  1.3500000000e-01 -5.7042042043e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_4 gradient
+ [  8.0000000000e-01  1.3600000000e-01 -5.7042042042e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_5 gradient
+ [  9.0000000000e-01  1.3600000000e-01 -5.7042042042e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_6 gradient
+ [  8.0000000000e-01  1.3600000000e-01 -5.7042042042e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_7 gradient
+ [  1.3000000000e+00  1.3600000000e-01 -5.7042042043e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_8 gradient
+ [  8.0000000000e-01  1.3600000000e-01 -5.7042042043e-03 -5.7000000000e-02 
+    5.5000000000e-02 ] least_sq_term_9 gradient
+ [  8.0000000000e-01  1.3600000000e-01 -5.7042042043e-03 -5.7000000000e-02 
+    5.6000000000e-02 ] least_sq_term_10 gradient
+ [  8.0000000000e-01  1.3600000000e-01 -5.7042042043e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_11 gradient
+ [  8.0000000000e-01  1.3500000000e-01 -5.7042042043e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_12 gradient
+ [  8.0000000000e-01  1.3600000000e-01 -5.7042042042e-03 -5.7000000000e-02 
+    5.6000000000e-02 ] least_sq_term_13 gradient
+ [  8.0000000000e-01  1.3600000000e-01 -5.7042042042e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_14 gradient
+ [  1.1000000000e+00  1.3600000000e-01 -5.7042042042e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_15 gradient
+ [  8.0000000000e-01  1.3500000000e-01 -5.7042042042e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_16 gradient
+ [  1.5000000000e+00  1.3600000000e-01 -5.7042042043e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_17 gradient
+ [  8.0000000000e-01  1.3500000000e-01 -5.7042042043e-03 -5.6000000000e-02 
+    5.6000000000e-02 ] least_sq_term_18 gradient
+ [  8.0000000000e-01  1.3600000000e-01 -5.7042042043e-03 -5.7000000000e-02 
+    5.6000000000e-02 ] least_sq_term_19 gradient
+ [  8.0000000000e-01  1.3600000000e-01 -5.7042042043e-03 -5.7000000000e-02 
+    5.6000000000e-02 ] least_sq_term_20 gradient
+
+
+
+---------------------
+Begin Evaluation   21
+---------------------
+Parameters for evaluation 21:
+                     -1.0000000000e-02 Swmin
+                      1.6112228771e+00 nw
+                      6.0082937270e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 21:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.5780000000e-01 least_sq_term_1
+                      1.5779800000e-01 least_sq_term_2
+                      1.5780100000e-01 least_sq_term_3
+                      1.5779800000e-01 least_sq_term_4
+                      1.5779800000e-01 least_sq_term_5
+                      1.5779900000e-01 least_sq_term_6
+                      1.5779800000e-01 least_sq_term_7
+                      1.5780300000e-01 least_sq_term_8
+                      1.5779900000e-01 least_sq_term_9
+                      1.5779900000e-01 least_sq_term_10
+                      1.5779900000e-01 least_sq_term_11
+                      1.5779900000e-01 least_sq_term_12
+                      1.5779800000e-01 least_sq_term_13
+                      1.5779700000e-01 least_sq_term_14
+                      1.5780000000e-01 least_sq_term_15
+                      1.5779700000e-01 least_sq_term_16
+                      1.5780600000e-01 least_sq_term_17
+                      1.5779900000e-01 least_sq_term_18
+                      1.5779900000e-01 least_sq_term_19
+                      1.5779900000e-01 least_sq_term_20
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> map at X performed previously and results retrieved
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   22
+---------------------
+Parameters for evaluation 22:
+                     -1.0010000000e-02 Swmin
+                      1.6112228771e+00 nw
+                      6.0082937270e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 22:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.5779200000e-01 least_sq_term_1
+                      1.5779000000e-01 least_sq_term_2
+                      1.5779200000e-01 least_sq_term_3
+                      1.5779000000e-01 least_sq_term_4
+                      1.5779000000e-01 least_sq_term_5
+                      1.5779000000e-01 least_sq_term_6
+                      1.5779000000e-01 least_sq_term_7
+                      1.5779500000e-01 least_sq_term_8
+                      1.5779100000e-01 least_sq_term_9
+                      1.5779100000e-01 least_sq_term_10
+                      1.5779100000e-01 least_sq_term_11
+                      1.5779000000e-01 least_sq_term_12
+                      1.5779000000e-01 least_sq_term_13
+                      1.5778900000e-01 least_sq_term_14
+                      1.5779100000e-01 least_sq_term_15
+                      1.5778900000e-01 least_sq_term_16
+                      1.5779800000e-01 least_sq_term_17
+                      1.5779100000e-01 least_sq_term_18
+                      1.5779100000e-01 least_sq_term_19
+                      1.5779100000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   23
+---------------------
+Parameters for evaluation 23:
+                     -1.0000000000e-02 Swmin
+                      1.6128341000e+00 nw
+                      6.0082937270e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 23:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.5794200000e-01 least_sq_term_1
+                      1.5794000000e-01 least_sq_term_2
+                      1.5794300000e-01 least_sq_term_3
+                      1.5794100000e-01 least_sq_term_4
+                      1.5794100000e-01 least_sq_term_5
+                      1.5794100000e-01 least_sq_term_6
+                      1.5794100000e-01 least_sq_term_7
+                      1.5794500000e-01 least_sq_term_8
+                      1.5794200000e-01 least_sq_term_9
+                      1.5794200000e-01 least_sq_term_10
+                      1.5794200000e-01 least_sq_term_11
+                      1.5794100000e-01 least_sq_term_12
+                      1.5794100000e-01 least_sq_term_13
+                      1.5794000000e-01 least_sq_term_14
+                      1.5794200000e-01 least_sq_term_15
+                      1.5794000000e-01 least_sq_term_16
+                      1.5794800000e-01 least_sq_term_17
+                      1.5794200000e-01 least_sq_term_18
+                      1.5794200000e-01 least_sq_term_19
+                      1.5794200000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[3] + h:
+
+---------------------
+Begin Evaluation   24
+---------------------
+Parameters for evaluation 24:
+                     -1.0000000000e-02 Swmin
+                      1.6112228771e+00 nw
+                      6.0143020208e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 24:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.5775900000e-01 least_sq_term_1
+                      1.5775700000e-01 least_sq_term_2
+                      1.5776000000e-01 least_sq_term_3
+                      1.5775700000e-01 least_sq_term_4
+                      1.5775700000e-01 least_sq_term_5
+                      1.5775800000e-01 least_sq_term_6
+                      1.5775700000e-01 least_sq_term_7
+                      1.5776200000e-01 least_sq_term_8
+                      1.5775800000e-01 least_sq_term_9
+                      1.5775800000e-01 least_sq_term_10
+                      1.5775800000e-01 least_sq_term_11
+                      1.5775700000e-01 least_sq_term_12
+                      1.5775700000e-01 least_sq_term_13
+                      1.5775600000e-01 least_sq_term_14
+                      1.5775900000e-01 least_sq_term_15
+                      1.5775600000e-01 least_sq_term_16
+                      1.5776500000e-01 least_sq_term_17
+                      1.5775800000e-01 least_sq_term_18
+                      1.5775800000e-01 least_sq_term_19
+                      1.5775800000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[4] + h:
+
+---------------------
+Begin Evaluation   25
+---------------------
+Parameters for evaluation 25:
+                     -1.0000000000e-02 Swmin
+                      1.6112228771e+00 nw
+                      6.0082937270e+00 no
+                      9.9900000000e-01 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 25:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.5784400000e-01 least_sq_term_1
+                      1.5784200000e-01 least_sq_term_2
+                      1.5784500000e-01 least_sq_term_3
+                      1.5784300000e-01 least_sq_term_4
+                      1.5784300000e-01 least_sq_term_5
+                      1.5784300000e-01 least_sq_term_6
+                      1.5784300000e-01 least_sq_term_7
+                      1.5784700000e-01 least_sq_term_8
+                      1.5784400000e-01 least_sq_term_9
+                      1.5784300000e-01 least_sq_term_10
+                      1.5784400000e-01 least_sq_term_11
+                      1.5784300000e-01 least_sq_term_12
+                      1.5784200000e-01 least_sq_term_13
+                      1.5784200000e-01 least_sq_term_14
+                      1.5784300000e-01 least_sq_term_15
+                      1.5784100000e-01 least_sq_term_16
+                      1.5785000000e-01 least_sq_term_17
+                      1.5784400000e-01 least_sq_term_18
+                      1.5784300000e-01 least_sq_term_19
+                      1.5784300000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[5] + h:
+
+---------------------
+Begin Evaluation   26
+---------------------
+Parameters for evaluation 26:
+                     -1.0000000000e-02 Swmin
+                      1.6112228771e+00 nw
+                      6.0082937270e+00 no
+                      1.0000000000e+00 krw
+                      9.9900000000e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 26:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.5775500000e-01 least_sq_term_1
+                      1.5775400000e-01 least_sq_term_2
+                      1.5775600000e-01 least_sq_term_3
+                      1.5775400000e-01 least_sq_term_4
+                      1.5775400000e-01 least_sq_term_5
+                      1.5775400000e-01 least_sq_term_6
+                      1.5775400000e-01 least_sq_term_7
+                      1.5775800000e-01 least_sq_term_8
+                      1.5775500000e-01 least_sq_term_9
+                      1.5775500000e-01 least_sq_term_10
+                      1.5775500000e-01 least_sq_term_11
+                      1.5775400000e-01 least_sq_term_12
+                      1.5775400000e-01 least_sq_term_13
+                      1.5775300000e-01 least_sq_term_14
+                      1.5775500000e-01 least_sq_term_15
+                      1.5775300000e-01 least_sq_term_16
+                      1.5776200000e-01 least_sq_term_17
+                      1.5775500000e-01 least_sq_term_18
+                      1.5775500000e-01 least_sq_term_19
+                      1.5775500000e-01 least_sq_term_20
+
+
+>>>>> Total response returned to iterator:
+
+Active set vector = { 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 } Deriv vars vector = { 1 2 3 4 5 }
+ [  8.0000000000e-01  8.8131817154e-02 -6.8239007383e-03 -4.4000000000e-02 
+    4.5000000000e-02 ] least_sq_term_1 gradient
+ [  8.0000000000e-01  8.8131817154e-02 -6.8239007383e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_2 gradient
+ [  9.0000000000e-01  8.8131817154e-02 -6.8239007383e-03 -4.4000000000e-02 
+    4.5000000000e-02 ] least_sq_term_3 gradient
+ [  8.0000000000e-01  8.8752463754e-02 -6.8239007383e-03 -4.5000000000e-02 
+    4.4000000000e-02 ] least_sq_term_4 gradient
+ [  8.0000000000e-01  8.8752463754e-02 -6.8239007383e-03 -4.5000000000e-02 
+    4.4000000000e-02 ] least_sq_term_5 gradient
+ [  9.0000000000e-01  8.8131817154e-02 -6.8239007383e-03 -4.4000000000e-02 
+    4.5000000000e-02 ] least_sq_term_6 gradient
+ [  8.0000000000e-01  8.8752463754e-02 -6.8239007383e-03 -4.5000000000e-02 
+    4.4000000000e-02 ] least_sq_term_7 gradient
+ [  8.0000000000e-01  8.8131817154e-02 -6.8239007383e-03 -4.4000000000e-02 
+    4.5000000000e-02 ] least_sq_term_8 gradient
+ [  8.0000000000e-01  8.8752463754e-02 -6.8239007383e-03 -4.5000000000e-02 
+    4.4000000000e-02 ] least_sq_term_9 gradient
+ [  8.0000000000e-01  8.8752463754e-02 -6.8239007383e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_10 gradient
+ [  8.0000000000e-01  8.8752463754e-02 -6.8239007383e-03 -4.5000000000e-02 
+    4.4000000000e-02 ] least_sq_term_11 gradient
+ [  9.0000000000e-01  8.8131817154e-02 -6.9903373417e-03 -4.4000000000e-02 
+    4.5000000000e-02 ] least_sq_term_12 gradient
+ [  8.0000000000e-01  8.8752463754e-02 -6.8239007383e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_13 gradient
+ [  8.0000000000e-01  8.8752463754e-02 -6.8239007383e-03 -4.5000000000e-02 
+    4.4000000000e-02 ] least_sq_term_14 gradient
+ [  9.0000000000e-01  8.8131817154e-02 -6.8239007383e-03 -4.3000000000e-02 
+    4.5000000000e-02 ] least_sq_term_15 gradient
+ [  8.0000000000e-01  8.8752463754e-02 -6.8239007383e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_16 gradient
+ [  8.0000000000e-01  8.8131817154e-02 -6.8239007383e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_17 gradient
+ [  8.0000000000e-01  8.8752463754e-02 -6.8239007383e-03 -4.5000000000e-02 
+    4.4000000000e-02 ] least_sq_term_18 gradient
+ [  8.0000000000e-01  8.8752463754e-02 -6.8239007383e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_19 gradient
+ [  8.0000000000e-01  8.8752463754e-02 -6.8239007383e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_20 gradient
+
+
+
+---------------------
+Begin Evaluation   27
+---------------------
+Parameters for evaluation 27:
+                     -1.0000000000e-02 Swmin
+                      1.8369634426e+00 nw
+                      6.2852117704e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 27:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.7492000000e-01 least_sq_term_1
+                      1.7491800000e-01 least_sq_term_2
+                      1.7492100000e-01 least_sq_term_3
+                      1.7491900000e-01 least_sq_term_4
+                      1.7491900000e-01 least_sq_term_5
+                      1.7491900000e-01 least_sq_term_6
+                      1.7491800000e-01 least_sq_term_7
+                      1.7492300000e-01 least_sq_term_8
+                      1.7491900000e-01 least_sq_term_9
+                      1.7491900000e-01 least_sq_term_10
+                      1.7491900000e-01 least_sq_term_11
+                      1.7491900000e-01 least_sq_term_12
+                      1.7491900000e-01 least_sq_term_13
+                      1.7491800000e-01 least_sq_term_14
+                      1.7492000000e-01 least_sq_term_15
+                      1.7491800000e-01 least_sq_term_16
+                      1.7492600000e-01 least_sq_term_17
+                      1.7491900000e-01 least_sq_term_18
+                      1.7491900000e-01 least_sq_term_19
+                      1.7491900000e-01 least_sq_term_20
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> map at X performed previously and results retrieved
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   28
+---------------------
+Parameters for evaluation 28:
+                     -1.0010000000e-02 Swmin
+                      1.8369634426e+00 nw
+                      6.2852117704e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 28:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.7491200000e-01 least_sq_term_1
+                      1.7491000000e-01 least_sq_term_2
+                      1.7491300000e-01 least_sq_term_3
+                      1.7491000000e-01 least_sq_term_4
+                      1.7491000000e-01 least_sq_term_5
+                      1.7491100000e-01 least_sq_term_6
+                      1.7491000000e-01 least_sq_term_7
+                      1.7491500000e-01 least_sq_term_8
+                      1.7491100000e-01 least_sq_term_9
+                      1.7491100000e-01 least_sq_term_10
+                      1.7491100000e-01 least_sq_term_11
+                      1.7491100000e-01 least_sq_term_12
+                      1.7491000000e-01 least_sq_term_13
+                      1.7491000000e-01 least_sq_term_14
+                      1.7491200000e-01 least_sq_term_15
+                      1.7491000000e-01 least_sq_term_16
+                      1.7491800000e-01 least_sq_term_17
+                      1.7491100000e-01 least_sq_term_18
+                      1.7491100000e-01 least_sq_term_19
+                      1.7491100000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   29
+---------------------
+Parameters for evaluation 29:
+                     -1.0000000000e-02 Swmin
+                      1.8388004060e+00 nw
+                      6.2852117704e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 29:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.7507000000e-01 least_sq_term_1
+                      1.7506800000e-01 least_sq_term_2
+                      1.7507100000e-01 least_sq_term_3
+                      1.7506800000e-01 least_sq_term_4
+                      1.7506800000e-01 least_sq_term_5
+                      1.7506900000e-01 least_sq_term_6
+                      1.7506800000e-01 least_sq_term_7
+                      1.7507300000e-01 least_sq_term_8
+                      1.7506900000e-01 least_sq_term_9
+                      1.7506900000e-01 least_sq_term_10
+                      1.7506900000e-01 least_sq_term_11
+                      1.7506900000e-01 least_sq_term_12
+                      1.7506800000e-01 least_sq_term_13
+                      1.7506800000e-01 least_sq_term_14
+                      1.7507000000e-01 least_sq_term_15
+                      1.7506800000e-01 least_sq_term_16
+                      1.7507600000e-01 least_sq_term_17
+                      1.7506900000e-01 least_sq_term_18
+                      1.7506900000e-01 least_sq_term_19
+                      1.7506900000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[3] + h:
+
+---------------------
+Begin Evaluation   30
+---------------------
+Parameters for evaluation 30:
+                     -1.0000000000e-02 Swmin
+                      1.8369634426e+00 nw
+                      6.2914969821e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 30:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.7487200000e-01 least_sq_term_1
+                      1.7487000000e-01 least_sq_term_2
+                      1.7487300000e-01 least_sq_term_3
+                      1.7487000000e-01 least_sq_term_4
+                      1.7487000000e-01 least_sq_term_5
+                      1.7487100000e-01 least_sq_term_6
+                      1.7487000000e-01 least_sq_term_7
+                      1.7487500000e-01 least_sq_term_8
+                      1.7487100000e-01 least_sq_term_9
+                      1.7487100000e-01 least_sq_term_10
+                      1.7487100000e-01 least_sq_term_11
+                      1.7487100000e-01 least_sq_term_12
+                      1.7487000000e-01 least_sq_term_13
+                      1.7487000000e-01 least_sq_term_14
+                      1.7487200000e-01 least_sq_term_15
+                      1.7487000000e-01 least_sq_term_16
+                      1.7487800000e-01 least_sq_term_17
+                      1.7487100000e-01 least_sq_term_18
+                      1.7487100000e-01 least_sq_term_19
+                      1.7487100000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[4] + h:
+
+---------------------
+Begin Evaluation   31
+---------------------
+Parameters for evaluation 31:
+                     -1.0000000000e-02 Swmin
+                      1.8369634426e+00 nw
+                      6.2852117704e+00 no
+                      9.9900000000e-01 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 31:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.7496400000e-01 least_sq_term_1
+                      1.7496200000e-01 least_sq_term_2
+                      1.7496500000e-01 least_sq_term_3
+                      1.7496200000e-01 least_sq_term_4
+                      1.7496200000e-01 least_sq_term_5
+                      1.7496300000e-01 least_sq_term_6
+                      1.7496200000e-01 least_sq_term_7
+                      1.7496700000e-01 least_sq_term_8
+                      1.7496300000e-01 least_sq_term_9
+                      1.7496300000e-01 least_sq_term_10
+                      1.7496300000e-01 least_sq_term_11
+                      1.7496300000e-01 least_sq_term_12
+                      1.7496200000e-01 least_sq_term_13
+                      1.7496200000e-01 least_sq_term_14
+                      1.7496400000e-01 least_sq_term_15
+                      1.7496100000e-01 least_sq_term_16
+                      1.7497000000e-01 least_sq_term_17
+                      1.7496300000e-01 least_sq_term_18
+                      1.7496300000e-01 least_sq_term_19
+                      1.7496300000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[5] + h:
+
+---------------------
+Begin Evaluation   32
+---------------------
+Parameters for evaluation 32:
+                     -1.0000000000e-02 Swmin
+                      1.8369634426e+00 nw
+                      6.2852117704e+00 no
+                      1.0000000000e+00 krw
+                      9.9900000000e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 32:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.7487600000e-01 least_sq_term_1
+                      1.7487500000e-01 least_sq_term_2
+                      1.7487700000e-01 least_sq_term_3
+                      1.7487500000e-01 least_sq_term_4
+                      1.7487500000e-01 least_sq_term_5
+                      1.7487500000e-01 least_sq_term_6
+                      1.7487500000e-01 least_sq_term_7
+                      1.7487900000e-01 least_sq_term_8
+                      1.7487500000e-01 least_sq_term_9
+                      1.7487500000e-01 least_sq_term_10
+                      1.7487600000e-01 least_sq_term_11
+                      1.7487500000e-01 least_sq_term_12
+                      1.7487500000e-01 least_sq_term_13
+                      1.7487400000e-01 least_sq_term_14
+                      1.7487700000e-01 least_sq_term_15
+                      1.7487400000e-01 least_sq_term_16
+                      1.7488300000e-01 least_sq_term_17
+                      1.7487600000e-01 least_sq_term_18
+                      1.7487500000e-01 least_sq_term_19
+                      1.7487600000e-01 least_sq_term_20
+
+
+>>>>> Total response returned to iterator:
+
+Active set vector = { 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 } Deriv vars vector = { 1 2 3 4 5 }
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_1 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.3000000000e-02 ] least_sq_term_2 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_3 gradient
+ [  9.0000000000e-01  8.1112120442e-02 -7.7960778077e-03 -4.3000000000e-02 
+    4.4000000000e-02 ] least_sq_term_4 gradient
+ [  9.0000000000e-01  8.1112120442e-02 -7.7960778077e-03 -4.3000000000e-02 
+    4.4000000000e-02 ] least_sq_term_5 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_6 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.3000000000e-02 ] least_sq_term_7 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_8 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_9 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_10 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.3000000000e-02 ] least_sq_term_11 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_12 gradient
+ [  9.0000000000e-01  8.1112120442e-02 -7.7960778077e-03 -4.3000000000e-02 
+    4.4000000000e-02 ] least_sq_term_13 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_14 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.3000000000e-02 ] least_sq_term_15 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.3000000000e-02 
+    4.4000000000e-02 ] least_sq_term_16 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.3000000000e-02 ] least_sq_term_17 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.3000000000e-02 ] least_sq_term_18 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.4000000000e-02 ] least_sq_term_19 gradient
+ [  8.0000000000e-01  8.1656497089e-02 -7.6369741790e-03 -4.4000000000e-02 
+    4.3000000000e-02 ] least_sq_term_20 gradient
+
+
+
+---------------------
+Begin Evaluation   33
+---------------------
+Parameters for evaluation 33:
+                     -1.0000000000e-02 Swmin
+                      1.7157389379e+00 nw
+                      3.0382932923e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 33:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9321200000e-01 least_sq_term_1
+                      1.9321100000e-01 least_sq_term_2
+                      1.9321400000e-01 least_sq_term_3
+                      1.9321100000e-01 least_sq_term_4
+                      1.9321100000e-01 least_sq_term_5
+                      1.9321200000e-01 least_sq_term_6
+                      1.9321100000e-01 least_sq_term_7
+                      1.9321700000e-01 least_sq_term_8
+                      1.9321300000e-01 least_sq_term_9
+                      1.9321300000e-01 least_sq_term_10
+                      1.9321300000e-01 least_sq_term_11
+                      1.9321200000e-01 least_sq_term_12
+                      1.9321100000e-01 least_sq_term_13
+                      1.9320900000e-01 least_sq_term_14
+                      1.9321100000e-01 least_sq_term_15
+                      1.9320800000e-01 least_sq_term_16
+                      1.9322000000e-01 least_sq_term_17
+                      1.9321300000e-01 least_sq_term_18
+                      1.9321200000e-01 least_sq_term_19
+                      1.9321200000e-01 least_sq_term_20
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> map at X performed previously and results retrieved
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   34
+---------------------
+Parameters for evaluation 34:
+                     -1.0010000000e-02 Swmin
+                      1.7157389379e+00 nw
+                      3.0382932923e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 34:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9320400000e-01 least_sq_term_1
+                      1.9320300000e-01 least_sq_term_2
+                      1.9320600000e-01 least_sq_term_3
+                      1.9320300000e-01 least_sq_term_4
+                      1.9320300000e-01 least_sq_term_5
+                      1.9320400000e-01 least_sq_term_6
+                      1.9320300000e-01 least_sq_term_7
+                      1.9320900000e-01 least_sq_term_8
+                      1.9320500000e-01 least_sq_term_9
+                      1.9320500000e-01 least_sq_term_10
+                      1.9320500000e-01 least_sq_term_11
+                      1.9320400000e-01 least_sq_term_12
+                      1.9320300000e-01 least_sq_term_13
+                      1.9320100000e-01 least_sq_term_14
+                      1.9320300000e-01 least_sq_term_15
+                      1.9320000000e-01 least_sq_term_16
+                      1.9321200000e-01 least_sq_term_17
+                      1.9320500000e-01 least_sq_term_18
+                      1.9320400000e-01 least_sq_term_19
+                      1.9320400000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   35
+---------------------
+Parameters for evaluation 35:
+                     -1.0000000000e-02 Swmin
+                      1.7174546768e+00 nw
+                      3.0382932923e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 35:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9339100000e-01 least_sq_term_1
+                      1.9338900000e-01 least_sq_term_2
+                      1.9339200000e-01 least_sq_term_3
+                      1.9339000000e-01 least_sq_term_4
+                      1.9339000000e-01 least_sq_term_5
+                      1.9339000000e-01 least_sq_term_6
+                      1.9338900000e-01 least_sq_term_7
+                      1.9339600000e-01 least_sq_term_8
+                      1.9339100000e-01 least_sq_term_9
+                      1.9339100000e-01 least_sq_term_10
+                      1.9339100000e-01 least_sq_term_11
+                      1.9339000000e-01 least_sq_term_12
+                      1.9338900000e-01 least_sq_term_13
+                      1.9338700000e-01 least_sq_term_14
+                      1.9338900000e-01 least_sq_term_15
+                      1.9338700000e-01 least_sq_term_16
+                      1.9339900000e-01 least_sq_term_17
+                      1.9339100000e-01 least_sq_term_18
+                      1.9339100000e-01 least_sq_term_19
+                      1.9339000000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[3] + h:
+
+---------------------
+Begin Evaluation   36
+---------------------
+Parameters for evaluation 36:
+                     -1.0000000000e-02 Swmin
+                      1.7157389379e+00 nw
+                      3.0413315856e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 36:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9318000000e-01 least_sq_term_1
+                      1.9317800000e-01 least_sq_term_2
+                      1.9318200000e-01 least_sq_term_3
+                      1.9317900000e-01 least_sq_term_4
+                      1.9317900000e-01 least_sq_term_5
+                      1.9317900000e-01 least_sq_term_6
+                      1.9317900000e-01 least_sq_term_7
+                      1.9318500000e-01 least_sq_term_8
+                      1.9318000000e-01 least_sq_term_9
+                      1.9318000000e-01 least_sq_term_10
+                      1.9318000000e-01 least_sq_term_11
+                      1.9317900000e-01 least_sq_term_12
+                      1.9317800000e-01 least_sq_term_13
+                      1.9317700000e-01 least_sq_term_14
+                      1.9317900000e-01 least_sq_term_15
+                      1.9317600000e-01 least_sq_term_16
+                      1.9318800000e-01 least_sq_term_17
+                      1.9318000000e-01 least_sq_term_18
+                      1.9318000000e-01 least_sq_term_19
+                      1.9318000000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[4] + h:
+
+---------------------
+Begin Evaluation   37
+---------------------
+Parameters for evaluation 37:
+                     -1.0000000000e-02 Swmin
+                      1.7157389379e+00 nw
+                      3.0382932923e+00 no
+                      9.9900000000e-01 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 37:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9326900000e-01 least_sq_term_1
+                      1.9326800000e-01 least_sq_term_2
+                      1.9327100000e-01 least_sq_term_3
+                      1.9326900000e-01 least_sq_term_4
+                      1.9326900000e-01 least_sq_term_5
+                      1.9326900000e-01 least_sq_term_6
+                      1.9326900000e-01 least_sq_term_7
+                      1.9327500000e-01 least_sq_term_8
+                      1.9327000000e-01 least_sq_term_9
+                      1.9327000000e-01 least_sq_term_10
+                      1.9327000000e-01 least_sq_term_11
+                      1.9326900000e-01 least_sq_term_12
+                      1.9326800000e-01 least_sq_term_13
+                      1.9326600000e-01 least_sq_term_14
+                      1.9326800000e-01 least_sq_term_15
+                      1.9326600000e-01 least_sq_term_16
+                      1.9327800000e-01 least_sq_term_17
+                      1.9327000000e-01 least_sq_term_18
+                      1.9327000000e-01 least_sq_term_19
+                      1.9327000000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[5] + h:
+
+---------------------
+Begin Evaluation   38
+---------------------
+Parameters for evaluation 38:
+                     -1.0000000000e-02 Swmin
+                      1.7157389379e+00 nw
+                      3.0382932923e+00 no
+                      1.0000000000e+00 krw
+                      9.9900000000e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 38:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9315500000e-01 least_sq_term_1
+                      1.9315300000e-01 least_sq_term_2
+                      1.9315700000e-01 least_sq_term_3
+                      1.9315400000e-01 least_sq_term_4
+                      1.9315400000e-01 least_sq_term_5
+                      1.9315500000e-01 least_sq_term_6
+                      1.9315400000e-01 least_sq_term_7
+                      1.9316000000e-01 least_sq_term_8
+                      1.9315500000e-01 least_sq_term_9
+                      1.9315500000e-01 least_sq_term_10
+                      1.9315500000e-01 least_sq_term_11
+                      1.9315400000e-01 least_sq_term_12
+                      1.9315300000e-01 least_sq_term_13
+                      1.9315200000e-01 least_sq_term_14
+                      1.9315400000e-01 least_sq_term_15
+                      1.9315100000e-01 least_sq_term_16
+                      1.9316300000e-01 least_sq_term_17
+                      1.9315500000e-01 least_sq_term_18
+                      1.9315500000e-01 least_sq_term_19
+                      1.9315500000e-01 least_sq_term_20
+
+
+>>>>> Total response returned to iterator:
+
+Active set vector = { 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 } Deriv vars vector = { 1 2 3 4 5 }
+ [  8.0000000000e-01  1.0432822619e-01 -1.0532228762e-02 -5.7000000000e-02 
+    5.7000000000e-02 ] least_sq_term_1 gradient
+ [  8.0000000000e-01  1.0374538694e-01 -1.0861360911e-02 -5.7000000000e-02 
+    5.8000000000e-02 ] least_sq_term_2 gradient
+ [  8.0000000000e-01  1.0374538694e-01 -1.0532228762e-02 -5.7000000000e-02 
+    5.7000000000e-02 ] least_sq_term_3 gradient
+ [  8.0000000000e-01  1.0432822619e-01 -1.0532228762e-02 -5.8000000000e-02 
+    5.7000000000e-02 ] least_sq_term_4 gradient
+ [  8.0000000000e-01  1.0432822619e-01 -1.0532228762e-02 -5.8000000000e-02 
+    5.7000000000e-02 ] least_sq_term_5 gradient
+ [  8.0000000000e-01  1.0374538694e-01 -1.0861360911e-02 -5.7000000000e-02 
+    5.7000000000e-02 ] least_sq_term_6 gradient
+ [  8.0000000000e-01  1.0374538694e-01 -1.0532228762e-02 -5.8000000000e-02 
+    5.7000000000e-02 ] least_sq_term_7 gradient
+ [  8.0000000000e-01  1.0432822619e-01 -1.0532228762e-02 -5.8000000000e-02 
+    5.7000000000e-02 ] least_sq_term_8 gradient
+ [  8.0000000000e-01  1.0374538694e-01 -1.0861360911e-02 -5.7000000000e-02 
+    5.8000000000e-02 ] least_sq_term_9 gradient
+ [  8.0000000000e-01  1.0374538694e-01 -1.0861360911e-02 -5.7000000000e-02 
+    5.8000000000e-02 ] least_sq_term_10 gradient
+ [  8.0000000000e-01  1.0374538694e-01 -1.0861360911e-02 -5.7000000000e-02 
+    5.8000000000e-02 ] least_sq_term_11 gradient
+ [  8.0000000000e-01  1.0374538694e-01 -1.0861360911e-02 -5.7000000000e-02 
+    5.8000000000e-02 ] least_sq_term_12 gradient
+ [  8.0000000000e-01  1.0374538694e-01 -1.0861360911e-02 -5.7000000000e-02 
+    5.8000000000e-02 ] least_sq_term_13 gradient
+ [  8.0000000000e-01  1.0374538694e-01 -1.0532228762e-02 -5.7000000000e-02 
+    5.7000000000e-02 ] least_sq_term_14 gradient
+ [  8.0000000000e-01  1.0374538694e-01 -1.0532228762e-02 -5.7000000000e-02 
+    5.7000000000e-02 ] least_sq_term_15 gradient
+ [  8.0000000000e-01  1.0432822619e-01 -1.0532228762e-02 -5.8000000000e-02 
+    5.7000000000e-02 ] least_sq_term_16 gradient
+ [  8.0000000000e-01  1.0432822619e-01 -1.0532228762e-02 -5.8000000000e-02 
+    5.7000000000e-02 ] least_sq_term_17 gradient
+ [  8.0000000000e-01  1.0374538694e-01 -1.0861360911e-02 -5.7000000000e-02 
+    5.8000000000e-02 ] least_sq_term_18 gradient
+ [  8.0000000000e-01  1.0432822619e-01 -1.0532228762e-02 -5.8000000000e-02 
+    5.7000000000e-02 ] least_sq_term_19 gradient
+ [  8.0000000000e-01  1.0374538694e-01 -1.0532228762e-02 -5.8000000000e-02 
+    5.7000000000e-02 ] least_sq_term_20 gradient
+
+
+
+---------------------
+Begin Evaluation   39
+---------------------
+Parameters for evaluation 39:
+                     -1.0000000000e-02 Swmin
+                      1.7224983744e+00 nw
+                      3.3876730760e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 39:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9024000000e-01 least_sq_term_1
+                      1.9023900000e-01 least_sq_term_2
+                      1.9024200000e-01 least_sq_term_3
+                      1.9023900000e-01 least_sq_term_4
+                      1.9023900000e-01 least_sq_term_5
+                      1.9024000000e-01 least_sq_term_6
+                      1.9023900000e-01 least_sq_term_7
+                      1.9024500000e-01 least_sq_term_8
+                      1.9024000000e-01 least_sq_term_9
+                      1.9024000000e-01 least_sq_term_10
+                      1.9024000000e-01 least_sq_term_11
+                      1.9024000000e-01 least_sq_term_12
+                      1.9023900000e-01 least_sq_term_13
+                      1.9023700000e-01 least_sq_term_14
+                      1.9024000000e-01 least_sq_term_15
+                      1.9023700000e-01 least_sq_term_16
+                      1.9024900000e-01 least_sq_term_17
+                      1.9024000000e-01 least_sq_term_18
+                      1.9024000000e-01 least_sq_term_19
+                      1.9024000000e-01 least_sq_term_20
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> map at X performed previously and results retrieved
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   40
+---------------------
+Parameters for evaluation 40:
+                     -1.0010000000e-02 Swmin
+                      1.7224983744e+00 nw
+                      3.3876730760e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 40:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9023200000e-01 least_sq_term_1
+                      1.9023000000e-01 least_sq_term_2
+                      1.9023400000e-01 least_sq_term_3
+                      1.9023100000e-01 least_sq_term_4
+                      1.9023100000e-01 least_sq_term_5
+                      1.9023100000e-01 least_sq_term_6
+                      1.9023100000e-01 least_sq_term_7
+                      1.9023700000e-01 least_sq_term_8
+                      1.9023200000e-01 least_sq_term_9
+                      1.9023200000e-01 least_sq_term_10
+                      1.9023200000e-01 least_sq_term_11
+                      1.9023100000e-01 least_sq_term_12
+                      1.9023000000e-01 least_sq_term_13
+                      1.9022900000e-01 least_sq_term_14
+                      1.9023100000e-01 least_sq_term_15
+                      1.9022800000e-01 least_sq_term_16
+                      1.9024000000e-01 least_sq_term_17
+                      1.9023200000e-01 least_sq_term_18
+                      1.9023200000e-01 least_sq_term_19
+                      1.9023200000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   41
+---------------------
+Parameters for evaluation 41:
+                     -1.0000000000e-02 Swmin
+                      1.7242208728e+00 nw
+                      3.3876730760e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 41:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9041400000e-01 least_sq_term_1
+                      1.9041200000e-01 least_sq_term_2
+                      1.9041600000e-01 least_sq_term_3
+                      1.9041300000e-01 least_sq_term_4
+                      1.9041300000e-01 least_sq_term_5
+                      1.9041300000e-01 least_sq_term_6
+                      1.9041300000e-01 least_sq_term_7
+                      1.9041800000e-01 least_sq_term_8
+                      1.9041400000e-01 least_sq_term_9
+                      1.9041400000e-01 least_sq_term_10
+                      1.9041400000e-01 least_sq_term_11
+                      1.9041300000e-01 least_sq_term_12
+                      1.9041200000e-01 least_sq_term_13
+                      1.9041100000e-01 least_sq_term_14
+                      1.9041300000e-01 least_sq_term_15
+                      1.9041000000e-01 least_sq_term_16
+                      1.9042200000e-01 least_sq_term_17
+                      1.9041400000e-01 least_sq_term_18
+                      1.9041400000e-01 least_sq_term_19
+                      1.9041400000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[3] + h:
+
+---------------------
+Begin Evaluation   42
+---------------------
+Parameters for evaluation 42:
+                     -1.0000000000e-02 Swmin
+                      1.7224983744e+00 nw
+                      3.3910607490e+00 no
+                      1.0000000000e+00 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 42:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9020600000e-01 least_sq_term_1
+                      1.9020400000e-01 least_sq_term_2
+                      1.9020700000e-01 least_sq_term_3
+                      1.9020500000e-01 least_sq_term_4
+                      1.9020500000e-01 least_sq_term_5
+                      1.9020500000e-01 least_sq_term_6
+                      1.9020500000e-01 least_sq_term_7
+                      1.9021000000e-01 least_sq_term_8
+                      1.9020600000e-01 least_sq_term_9
+                      1.9020600000e-01 least_sq_term_10
+                      1.9020600000e-01 least_sq_term_11
+                      1.9020500000e-01 least_sq_term_12
+                      1.9020400000e-01 least_sq_term_13
+                      1.9020300000e-01 least_sq_term_14
+                      1.9020400000e-01 least_sq_term_15
+                      1.9020200000e-01 least_sq_term_16
+                      1.9021300000e-01 least_sq_term_17
+                      1.9020600000e-01 least_sq_term_18
+                      1.9020600000e-01 least_sq_term_19
+                      1.9020600000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[4] + h:
+
+---------------------
+Begin Evaluation   43
+---------------------
+Parameters for evaluation 43:
+                     -1.0000000000e-02 Swmin
+                      1.7224983744e+00 nw
+                      3.3876730760e+00 no
+                      9.9900000000e-01 krw
+                      1.0000000000e+00 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 43:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9029500000e-01 least_sq_term_1
+                      1.9029300000e-01 least_sq_term_2
+                      1.9029700000e-01 least_sq_term_3
+                      1.9029400000e-01 least_sq_term_4
+                      1.9029400000e-01 least_sq_term_5
+                      1.9029500000e-01 least_sq_term_6
+                      1.9029400000e-01 least_sq_term_7
+                      1.9030000000e-01 least_sq_term_8
+                      1.9029500000e-01 least_sq_term_9
+                      1.9029500000e-01 least_sq_term_10
+                      1.9029500000e-01 least_sq_term_11
+                      1.9029400000e-01 least_sq_term_12
+                      1.9029400000e-01 least_sq_term_13
+                      1.9029200000e-01 least_sq_term_14
+                      1.9029400000e-01 least_sq_term_15
+                      1.9029100000e-01 least_sq_term_16
+                      1.9030300000e-01 least_sq_term_17
+                      1.9029500000e-01 least_sq_term_18
+                      1.9029500000e-01 least_sq_term_19
+                      1.9029500000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[5] + h:
+
+---------------------
+Begin Evaluation   44
+---------------------
+Parameters for evaluation 44:
+                     -1.0000000000e-02 Swmin
+                      1.7224983744e+00 nw
+                      3.3876730760e+00 no
+                      1.0000000000e+00 krw
+                      9.9900000000e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 44:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9018500000e-01 least_sq_term_1
+                      1.9018300000e-01 least_sq_term_2
+                      1.9018700000e-01 least_sq_term_3
+                      1.9018400000e-01 least_sq_term_4
+                      1.9018400000e-01 least_sq_term_5
+                      1.9018400000e-01 least_sq_term_6
+                      1.9018400000e-01 least_sq_term_7
+                      1.9019000000e-01 least_sq_term_8
+                      1.9018500000e-01 least_sq_term_9
+                      1.9018500000e-01 least_sq_term_10
+                      1.9018500000e-01 least_sq_term_11
+                      1.9018400000e-01 least_sq_term_12
+                      1.9018300000e-01 least_sq_term_13
+                      1.9018200000e-01 least_sq_term_14
+                      1.9018400000e-01 least_sq_term_15
+                      1.9018100000e-01 least_sq_term_16
+                      1.9019300000e-01 least_sq_term_17
+                      1.9018500000e-01 least_sq_term_18
+                      1.9018500000e-01 least_sq_term_19
+                      1.9018500000e-01 least_sq_term_20
+
+
+>>>>> Total response returned to iterator:
+
+Active set vector = { 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 } Deriv vars vector = { 1 2 3 4 5 }
+ [  8.0000000000e-01  1.0101606050e-01 -1.0036387585e-02 -5.5000000000e-02 
+    5.5000000000e-02 ] least_sq_term_1 gradient
+ [  9.0000000000e-01  1.0043550843e-01 -1.0331575455e-02 -5.4000000000e-02 
+    5.6000000000e-02 ] least_sq_term_2 gradient
+ [  8.0000000000e-01  1.0101606050e-01 -1.0331575455e-02 -5.5000000000e-02 
+    5.5000000000e-02 ] least_sq_term_3 gradient
+ [  8.0000000000e-01  1.0101606050e-01 -1.0036387585e-02 -5.5000000000e-02 
+    5.5000000000e-02 ] least_sq_term_4 gradient
+ [  8.0000000000e-01  1.0101606050e-01 -1.0036387585e-02 -5.5000000000e-02 
+    5.5000000000e-02 ] least_sq_term_5 gradient
+ [  9.0000000000e-01  1.0043550843e-01 -1.0331575455e-02 -5.5000000000e-02 
+    5.6000000000e-02 ] least_sq_term_6 gradient
+ [  8.0000000000e-01  1.0101606050e-01 -1.0036387585e-02 -5.5000000000e-02 
+    5.5000000000e-02 ] least_sq_term_7 gradient
+ [  8.0000000000e-01  1.0043550843e-01 -1.0331575455e-02 -5.5000000000e-02 
+    5.5000000000e-02 ] least_sq_term_8 gradient
+ [  8.0000000000e-01  1.0101606050e-01 -1.0036387585e-02 -5.5000000000e-02 
+    5.5000000000e-02 ] least_sq_term_9 gradient
+ [  8.0000000000e-01  1.0101606050e-01 -1.0036387585e-02 -5.5000000000e-02 
+    5.5000000000e-02 ] least_sq_term_10 gradient
+ [  8.0000000000e-01  1.0101606050e-01 -1.0036387585e-02 -5.5000000000e-02 
+    5.5000000000e-02 ] least_sq_term_11 gradient
+ [  9.0000000000e-01  1.0043550843e-01 -1.0331575455e-02 -5.4000000000e-02 
+    5.6000000000e-02 ] least_sq_term_12 gradient
+ [  9.0000000000e-01  1.0043550843e-01 -1.0331575455e-02 -5.5000000000e-02 
+    5.6000000000e-02 ] least_sq_term_13 gradient
+ [  8.0000000000e-01  1.0101606050e-01 -1.0036387585e-02 -5.5000000000e-02 
+    5.5000000000e-02 ] least_sq_term_14 gradient
+ [  9.0000000000e-01  1.0043550843e-01 -1.0626763325e-02 -5.4000000000e-02 
+    5.6000000000e-02 ] least_sq_term_15 gradient
+ [  9.0000000000e-01  1.0043550843e-01 -1.0331575455e-02 -5.4000000000e-02 
+    5.6000000000e-02 ] least_sq_term_16 gradient
+ [  9.0000000000e-01  1.0043550843e-01 -1.0626763325e-02 -5.4000000000e-02 
+    5.6000000000e-02 ] least_sq_term_17 gradient
+ [  8.0000000000e-01  1.0101606050e-01 -1.0036387585e-02 -5.5000000000e-02 
+    5.5000000000e-02 ] least_sq_term_18 gradient
+ [  8.0000000000e-01  1.0101606050e-01 -1.0036387585e-02 -5.5000000000e-02 
+    5.5000000000e-02 ] least_sq_term_19 gradient
+ [  8.0000000000e-01  1.0101606050e-01 -1.0036387585e-02 -5.5000000000e-02 
+    5.5000000000e-02 ] least_sq_term_20 gradient
+
+
+
+---------------------
+Begin Evaluation   45
+---------------------
+Parameters for evaluation 45:
+                     -1.0000000000e-02 Swmin
+                      1.8749533334e+00 nw
+                      7.0000000000e+00 no
+                      9.2609615818e-02 krw
+                      8.9354774260e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 45:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.7794500000e-01 least_sq_term_1
+                      2.7794400000e-01 least_sq_term_2
+                      2.7794500000e-01 least_sq_term_3
+                      2.7794400000e-01 least_sq_term_4
+                      2.7794400000e-01 least_sq_term_5
+                      2.7794400000e-01 least_sq_term_6
+                      2.7794400000e-01 least_sq_term_7
+                      2.7794600000e-01 least_sq_term_8
+                      2.7794400000e-01 least_sq_term_9
+                      2.7794400000e-01 least_sq_term_10
+                      2.7794400000e-01 least_sq_term_11
+                      2.7794400000e-01 least_sq_term_12
+                      2.7794400000e-01 least_sq_term_13
+                      2.7794400000e-01 least_sq_term_14
+                      2.7794500000e-01 least_sq_term_15
+                      2.7794300000e-01 least_sq_term_16
+                      2.7794800000e-01 least_sq_term_17
+                      2.7794400000e-01 least_sq_term_18
+                      2.7794400000e-01 least_sq_term_19
+                      2.7794400000e-01 least_sq_term_20
+
+
+
+---------------------
+Begin Evaluation   46
+---------------------
+Parameters for evaluation 46:
+                     -1.0000000000e-02 Swmin
+                      1.7164258497e+00 nw
+                      3.8782317679e+00 no
+                      8.8087987710e-01 krw
+                      9.8502048536e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 46:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9075200000e-01 least_sq_term_1
+                      1.9075000000e-01 least_sq_term_2
+                      1.9075300000e-01 least_sq_term_3
+                      1.9075100000e-01 least_sq_term_4
+                      1.9075100000e-01 least_sq_term_5
+                      1.9075100000e-01 least_sq_term_6
+                      1.9075100000e-01 least_sq_term_7
+                      1.9075600000e-01 least_sq_term_8
+                      1.9075200000e-01 least_sq_term_9
+                      1.9075200000e-01 least_sq_term_10
+                      1.9075200000e-01 least_sq_term_11
+                      1.9075100000e-01 least_sq_term_12
+                      1.9075000000e-01 least_sq_term_13
+                      1.9074900000e-01 least_sq_term_14
+                      1.9075100000e-01 least_sq_term_15
+                      1.9074900000e-01 least_sq_term_16
+                      1.9075900000e-01 least_sq_term_17
+                      1.9075200000e-01 least_sq_term_18
+                      1.9075100000e-01 least_sq_term_19
+                      1.9075200000e-01 least_sq_term_20
+
+
+
+---------------------
+Begin Evaluation   47
+---------------------
+Parameters for evaluation 47:
+                     -1.0000000000e-02 Swmin
+                      1.7196492950e+00 nw
+                      3.6244348576e+00 no
+                      9.4206747411e-01 krw
+                      9.9288007463e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 47:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9042400000e-01 least_sq_term_1
+                      1.9042200000e-01 least_sq_term_2
+                      1.9042600000e-01 least_sq_term_3
+                      1.9042300000e-01 least_sq_term_4
+                      1.9042300000e-01 least_sq_term_5
+                      1.9042300000e-01 least_sq_term_6
+                      1.9042300000e-01 least_sq_term_7
+                      1.9042800000e-01 least_sq_term_8
+                      1.9042400000e-01 least_sq_term_9
+                      1.9042400000e-01 least_sq_term_10
+                      1.9042400000e-01 least_sq_term_11
+                      1.9042300000e-01 least_sq_term_12
+                      1.9042200000e-01 least_sq_term_13
+                      1.9042100000e-01 least_sq_term_14
+                      1.9042300000e-01 least_sq_term_15
+                      1.9042000000e-01 least_sq_term_16
+                      1.9043100000e-01 least_sq_term_17
+                      1.9042400000e-01 least_sq_term_18
+                      1.9042400000e-01 least_sq_term_19
+                      1.9042400000e-01 least_sq_term_20
+
+
+
+---------------------
+Begin Evaluation   48
+---------------------
+Parameters for evaluation 48:
+                     -1.0000000000e-02 Swmin
+                      1.7211486406e+00 nw
+                      3.5044816179e+00 no
+                      9.7097809929e-01 krw
+                      9.9659365588e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 48:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9034400000e-01 least_sq_term_1
+                      1.9034300000e-01 least_sq_term_2
+                      1.9034600000e-01 least_sq_term_3
+                      1.9034300000e-01 least_sq_term_4
+                      1.9034300000e-01 least_sq_term_5
+                      1.9034400000e-01 least_sq_term_6
+                      1.9034300000e-01 least_sq_term_7
+                      1.9034900000e-01 least_sq_term_8
+                      1.9034400000e-01 least_sq_term_9
+                      1.9034400000e-01 least_sq_term_10
+                      1.9034400000e-01 least_sq_term_11
+                      1.9034400000e-01 least_sq_term_12
+                      1.9034300000e-01 least_sq_term_13
+                      1.9034200000e-01 least_sq_term_14
+                      1.9034300000e-01 least_sq_term_15
+                      1.9034100000e-01 least_sq_term_16
+                      1.9035100000e-01 least_sq_term_17
+                      1.9034500000e-01 least_sq_term_18
+                      1.9034400000e-01 least_sq_term_19
+                      1.9034400000e-01 least_sq_term_20
+
+
+
+---------------------
+Begin Evaluation   49
+---------------------
+Parameters for evaluation 49:
+                     -1.0000000000e-02 Swmin
+                      1.7218804412e+00 nw
+                      3.4451408975e+00 no
+                      9.8531673069e-01 krw
+                      9.9842124740e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 49:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9031700000e-01 least_sq_term_1
+                      1.9031600000e-01 least_sq_term_2
+                      1.9031900000e-01 least_sq_term_3
+                      1.9031700000e-01 least_sq_term_4
+                      1.9031700000e-01 least_sq_term_5
+                      1.9031700000e-01 least_sq_term_6
+                      1.9031700000e-01 least_sq_term_7
+                      1.9032200000e-01 least_sq_term_8
+                      1.9031800000e-01 least_sq_term_9
+                      1.9031800000e-01 least_sq_term_10
+                      1.9031800000e-01 least_sq_term_11
+                      1.9031800000e-01 least_sq_term_12
+                      1.9031700000e-01 least_sq_term_13
+                      1.9031500000e-01 least_sq_term_14
+                      1.9031600000e-01 least_sq_term_15
+                      1.9031400000e-01 least_sq_term_16
+                      1.9032400000e-01 least_sq_term_17
+                      1.9031900000e-01 least_sq_term_18
+                      1.9031800000e-01 least_sq_term_19
+                      1.9031800000e-01 least_sq_term_20
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> map at X performed previously and results retrieved
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   50
+---------------------
+Parameters for evaluation 50:
+                     -1.0010000000e-02 Swmin
+                      1.7218804412e+00 nw
+                      3.4451408975e+00 no
+                      9.8531673069e-01 krw
+                      9.9842124740e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 50:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9031000000e-01 least_sq_term_1
+                      1.9030800000e-01 least_sq_term_2
+                      1.9031200000e-01 least_sq_term_3
+                      1.9030900000e-01 least_sq_term_4
+                      1.9030900000e-01 least_sq_term_5
+                      1.9031000000e-01 least_sq_term_6
+                      1.9030900000e-01 least_sq_term_7
+                      1.9031500000e-01 least_sq_term_8
+                      1.9031100000e-01 least_sq_term_9
+                      1.9031100000e-01 least_sq_term_10
+                      1.9031100000e-01 least_sq_term_11
+                      1.9031000000e-01 least_sq_term_12
+                      1.9030900000e-01 least_sq_term_13
+                      1.9030700000e-01 least_sq_term_14
+                      1.9030800000e-01 least_sq_term_15
+                      1.9030600000e-01 least_sq_term_16
+                      1.9031700000e-01 least_sq_term_17
+                      1.9031100000e-01 least_sq_term_18
+                      1.9031000000e-01 least_sq_term_19
+                      1.9031000000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   51
+---------------------
+Parameters for evaluation 51:
+                     -1.0000000000e-02 Swmin
+                      1.7236023216e+00 nw
+                      3.4451408975e+00 no
+                      9.8531673069e-01 krw
+                      9.9842124740e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 51:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9049200000e-01 least_sq_term_1
+                      1.9049000000e-01 least_sq_term_2
+                      1.9049400000e-01 least_sq_term_3
+                      1.9049100000e-01 least_sq_term_4
+                      1.9049100000e-01 least_sq_term_5
+                      1.9049100000e-01 least_sq_term_6
+                      1.9049100000e-01 least_sq_term_7
+                      1.9049700000e-01 least_sq_term_8
+                      1.9049200000e-01 least_sq_term_9
+                      1.9049200000e-01 least_sq_term_10
+                      1.9049200000e-01 least_sq_term_11
+                      1.9049100000e-01 least_sq_term_12
+                      1.9049100000e-01 least_sq_term_13
+                      1.9048900000e-01 least_sq_term_14
+                      1.9049100000e-01 least_sq_term_15
+                      1.9048900000e-01 least_sq_term_16
+                      1.9050000000e-01 least_sq_term_17
+                      1.9049200000e-01 least_sq_term_18
+                      1.9049200000e-01 least_sq_term_19
+                      1.9049200000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[3] + h:
+
+---------------------
+Begin Evaluation   52
+---------------------
+Parameters for evaluation 52:
+                     -1.0000000000e-02 Swmin
+                      1.7218804412e+00 nw
+                      3.4485860384e+00 no
+                      9.8531673069e-01 krw
+                      9.9842124740e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 52:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9028300000e-01 least_sq_term_1
+                      1.9028200000e-01 least_sq_term_2
+                      1.9028500000e-01 least_sq_term_3
+                      1.9028300000e-01 least_sq_term_4
+                      1.9028300000e-01 least_sq_term_5
+                      1.9028300000e-01 least_sq_term_6
+                      1.9028200000e-01 least_sq_term_7
+                      1.9028800000e-01 least_sq_term_8
+                      1.9028400000e-01 least_sq_term_9
+                      1.9028400000e-01 least_sq_term_10
+                      1.9028400000e-01 least_sq_term_11
+                      1.9028300000e-01 least_sq_term_12
+                      1.9028200000e-01 least_sq_term_13
+                      1.9028100000e-01 least_sq_term_14
+                      1.9028200000e-01 least_sq_term_15
+                      1.9028000000e-01 least_sq_term_16
+                      1.9029100000e-01 least_sq_term_17
+                      1.9028400000e-01 least_sq_term_18
+                      1.9028300000e-01 least_sq_term_19
+                      1.9028300000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[4] + h:
+
+---------------------
+Begin Evaluation   53
+---------------------
+Parameters for evaluation 53:
+                     -1.0000000000e-02 Swmin
+                      1.7218804412e+00 nw
+                      3.4451408975e+00 no
+                      9.8630204742e-01 krw
+                      9.9842124740e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 53:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9026300000e-01 least_sq_term_1
+                      1.9026100000e-01 least_sq_term_2
+                      1.9026500000e-01 least_sq_term_3
+                      1.9026200000e-01 least_sq_term_4
+                      1.9026200000e-01 least_sq_term_5
+                      1.9026300000e-01 least_sq_term_6
+                      1.9026200000e-01 least_sq_term_7
+                      1.9026700000e-01 least_sq_term_8
+                      1.9026400000e-01 least_sq_term_9
+                      1.9026300000e-01 least_sq_term_10
+                      1.9026300000e-01 least_sq_term_11
+                      1.9026300000e-01 least_sq_term_12
+                      1.9026200000e-01 least_sq_term_13
+                      1.9026000000e-01 least_sq_term_14
+                      1.9026100000e-01 least_sq_term_15
+                      1.9025900000e-01 least_sq_term_16
+                      1.9027000000e-01 least_sq_term_17
+                      1.9026400000e-01 least_sq_term_18
+                      1.9026300000e-01 least_sq_term_19
+                      1.9026300000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[5] + h:
+
+---------------------
+Begin Evaluation   54
+---------------------
+Parameters for evaluation 54:
+                     -1.0000000000e-02 Swmin
+                      1.7218804412e+00 nw
+                      3.4451408975e+00 no
+                      9.8531673069e-01 krw
+                      9.9941966865e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 54:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9037400000e-01 least_sq_term_1
+                      1.9037200000e-01 least_sq_term_2
+                      1.9037500000e-01 least_sq_term_3
+                      1.9037300000e-01 least_sq_term_4
+                      1.9037300000e-01 least_sq_term_5
+                      1.9037300000e-01 least_sq_term_6
+                      1.9037300000e-01 least_sq_term_7
+                      1.9037800000e-01 least_sq_term_8
+                      1.9037400000e-01 least_sq_term_9
+                      1.9037400000e-01 least_sq_term_10
+                      1.9037400000e-01 least_sq_term_11
+                      1.9037300000e-01 least_sq_term_12
+                      1.9037200000e-01 least_sq_term_13
+                      1.9037100000e-01 least_sq_term_14
+                      1.9037300000e-01 least_sq_term_15
+                      1.9037000000e-01 least_sq_term_16
+                      1.9038100000e-01 least_sq_term_17
+                      1.9037400000e-01 least_sq_term_18
+                      1.9037400000e-01 least_sq_term_19
+                      1.9037400000e-01 least_sq_term_20
+
+
+>>>>> Total response returned to iterator:
+
+Active set vector = { 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 } Deriv vars vector = { 1 2 3 4 5 }
+ [  7.0000000000e-01  1.0163307267e-01 -9.8689722747e-03 -5.4804712351e-02 
+    5.7090131193e-02 ] least_sq_term_1 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_2 gradient
+ [  7.0000000000e-01  1.0163307267e-01 -9.8689722747e-03 -5.4804712351e-02 
+    5.6088549944e-02 ] least_sq_term_3 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_4 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_5 gradient
+ [  7.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.4804712351e-02 
+    5.6088549944e-02 ] least_sq_term_6 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -1.0159236165e-02 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_7 gradient
+ [  7.0000000000e-01  1.0163307267e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_8 gradient
+ [  7.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.4804712351e-02 
+    5.6088549944e-02 ] least_sq_term_9 gradient
+ [  7.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_10 gradient
+ [  7.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_11 gradient
+ [  8.0000000000e-01  1.0047155184e-01 -1.0159236165e-02 -5.5819614432e-02 
+    5.5086968695e-02 ] least_sq_term_12 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -1.0159236165e-02 -5.5819614432e-02 
+    5.5086968695e-02 ] least_sq_term_13 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_14 gradient
+ [  8.0000000000e-01  1.0163307267e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.7090131193e-02 ] least_sq_term_15 gradient
+ [  8.0000000000e-01  1.0163307267e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_16 gradient
+ [  7.0000000000e-01  1.0221383308e-01 -9.5787083842e-03 -5.4804712351e-02 
+    5.7090131193e-02 ] least_sq_term_17 gradient
+ [  8.0000000000e-01  1.0047155184e-01 -1.0159236165e-02 -5.5819614432e-02 
+    5.5086968695e-02 ] least_sq_term_18 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -1.0159236165e-02 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_19 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -1.0159236165e-02 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_20 gradient
+
+
+
+---------------------
+Begin Evaluation   55
+---------------------
+Parameters for evaluation 55:
+                     -1.0000000000e-02 Swmin
+                      1.7208297665e+00 nw
+                      3.3910038051e+00 no
+                      9.8586344680e-01 krw
+                      9.9152009574e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 55:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9035300000e-01 least_sq_term_1
+                      1.9035200000e-01 least_sq_term_2
+                      1.9035500000e-01 least_sq_term_3
+                      1.9035300000e-01 least_sq_term_4
+                      1.9035300000e-01 least_sq_term_5
+                      1.9035300000e-01 least_sq_term_6
+                      1.9035300000e-01 least_sq_term_7
+                      1.9035800000e-01 least_sq_term_8
+                      1.9035400000e-01 least_sq_term_9
+                      1.9035400000e-01 least_sq_term_10
+                      1.9035400000e-01 least_sq_term_11
+                      1.9035300000e-01 least_sq_term_12
+                      1.9035200000e-01 least_sq_term_13
+                      1.9035100000e-01 least_sq_term_14
+                      1.9035200000e-01 least_sq_term_15
+                      1.9035000000e-01 least_sq_term_16
+                      1.9036000000e-01 least_sq_term_17
+                      1.9035400000e-01 least_sq_term_18
+                      1.9035400000e-01 least_sq_term_19
+                      1.9035400000e-01 least_sq_term_20
+
+
+
+---------------------
+Begin Evaluation   56
+---------------------
+Parameters for evaluation 56:
+                     -1.0000000000e-02 Swmin
+                      1.7204914319e+00 nw
+                      3.4120344184e+00 no
+                      9.8135201795e-01 krw
+                      9.8958231821e-01 kro
+
+blocking fork: simulator_script params.in results.out
+
+Active response data for evaluation 56:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9024900000e-01 least_sq_term_1
+                      1.9024700000e-01 least_sq_term_2
+                      1.9025100000e-01 least_sq_term_3
+                      1.9024800000e-01 least_sq_term_4
+                      1.9024800000e-01 least_sq_term_5
+                      1.9024800000e-01 least_sq_term_6
+                      1.9024800000e-01 least_sq_term_7
+                      1.9025400000e-01 least_sq_term_8
+                      1.9024900000e-01 least_sq_term_9
+                      1.9024900000e-01 least_sq_term_10
+                      1.9024900000e-01 least_sq_term_11
+                      1.9024800000e-01 least_sq_term_12
+                      1.9024800000e-01 least_sq_term_13
+                      1.9024600000e-01 least_sq_term_14
+                      1.9024800000e-01 least_sq_term_15
+                      1.9024500000e-01 least_sq_term_16
+                      1.9025700000e-01 least_sq_term_17
+                      1.9024900000e-01 least_sq_term_18
+                      1.9024900000e-01 least_sq_term_19
+                      1.9024900000e-01 least_sq_term_20
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> map at X performed previously and results retrieved
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   57
+---------------------
+Parameters for evaluation 57:
+                     -1.0010000000e-02 Swmin
+                      1.7218804412e+00 nw
+                      3.4451408975e+00 no
+                      9.8531673069e-01 krw
+                      9.9842124740e-01 kro
+
+Duplication detected: analysis_drivers not invoked.
+
+Active response data retrieved from database:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9031000000e-01 least_sq_term_1
+                      1.9030800000e-01 least_sq_term_2
+                      1.9031200000e-01 least_sq_term_3
+                      1.9030900000e-01 least_sq_term_4
+                      1.9030900000e-01 least_sq_term_5
+                      1.9031000000e-01 least_sq_term_6
+                      1.9030900000e-01 least_sq_term_7
+                      1.9031500000e-01 least_sq_term_8
+                      1.9031100000e-01 least_sq_term_9
+                      1.9031100000e-01 least_sq_term_10
+                      1.9031100000e-01 least_sq_term_11
+                      1.9031000000e-01 least_sq_term_12
+                      1.9030900000e-01 least_sq_term_13
+                      1.9030700000e-01 least_sq_term_14
+                      1.9030800000e-01 least_sq_term_15
+                      1.9030600000e-01 least_sq_term_16
+                      1.9031700000e-01 least_sq_term_17
+                      1.9031100000e-01 least_sq_term_18
+                      1.9031000000e-01 least_sq_term_19
+                      1.9031000000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   58
+---------------------
+Parameters for evaluation 58:
+                     -1.0000000000e-02 Swmin
+                      1.7236023216e+00 nw
+                      3.4451408975e+00 no
+                      9.8531673069e-01 krw
+                      9.9842124740e-01 kro
+
+Duplication detected: analysis_drivers not invoked.
+
+Active response data retrieved from database:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9049200000e-01 least_sq_term_1
+                      1.9049000000e-01 least_sq_term_2
+                      1.9049400000e-01 least_sq_term_3
+                      1.9049100000e-01 least_sq_term_4
+                      1.9049100000e-01 least_sq_term_5
+                      1.9049100000e-01 least_sq_term_6
+                      1.9049100000e-01 least_sq_term_7
+                      1.9049700000e-01 least_sq_term_8
+                      1.9049200000e-01 least_sq_term_9
+                      1.9049200000e-01 least_sq_term_10
+                      1.9049200000e-01 least_sq_term_11
+                      1.9049100000e-01 least_sq_term_12
+                      1.9049100000e-01 least_sq_term_13
+                      1.9048900000e-01 least_sq_term_14
+                      1.9049100000e-01 least_sq_term_15
+                      1.9048900000e-01 least_sq_term_16
+                      1.9050000000e-01 least_sq_term_17
+                      1.9049200000e-01 least_sq_term_18
+                      1.9049200000e-01 least_sq_term_19
+                      1.9049200000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[3] + h:
+
+---------------------
+Begin Evaluation   59
+---------------------
+Parameters for evaluation 59:
+                     -1.0000000000e-02 Swmin
+                      1.7218804412e+00 nw
+                      3.4485860384e+00 no
+                      9.8531673069e-01 krw
+                      9.9842124740e-01 kro
+
+Duplication detected: analysis_drivers not invoked.
+
+Active response data retrieved from database:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9028300000e-01 least_sq_term_1
+                      1.9028200000e-01 least_sq_term_2
+                      1.9028500000e-01 least_sq_term_3
+                      1.9028300000e-01 least_sq_term_4
+                      1.9028300000e-01 least_sq_term_5
+                      1.9028300000e-01 least_sq_term_6
+                      1.9028200000e-01 least_sq_term_7
+                      1.9028800000e-01 least_sq_term_8
+                      1.9028400000e-01 least_sq_term_9
+                      1.9028400000e-01 least_sq_term_10
+                      1.9028400000e-01 least_sq_term_11
+                      1.9028300000e-01 least_sq_term_12
+                      1.9028200000e-01 least_sq_term_13
+                      1.9028100000e-01 least_sq_term_14
+                      1.9028200000e-01 least_sq_term_15
+                      1.9028000000e-01 least_sq_term_16
+                      1.9029100000e-01 least_sq_term_17
+                      1.9028400000e-01 least_sq_term_18
+                      1.9028300000e-01 least_sq_term_19
+                      1.9028300000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[4] + h:
+
+---------------------
+Begin Evaluation   60
+---------------------
+Parameters for evaluation 60:
+                     -1.0000000000e-02 Swmin
+                      1.7218804412e+00 nw
+                      3.4451408975e+00 no
+                      9.8630204742e-01 krw
+                      9.9842124740e-01 kro
+
+Duplication detected: analysis_drivers not invoked.
+
+Active response data retrieved from database:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9026300000e-01 least_sq_term_1
+                      1.9026100000e-01 least_sq_term_2
+                      1.9026500000e-01 least_sq_term_3
+                      1.9026200000e-01 least_sq_term_4
+                      1.9026200000e-01 least_sq_term_5
+                      1.9026300000e-01 least_sq_term_6
+                      1.9026200000e-01 least_sq_term_7
+                      1.9026700000e-01 least_sq_term_8
+                      1.9026400000e-01 least_sq_term_9
+                      1.9026300000e-01 least_sq_term_10
+                      1.9026300000e-01 least_sq_term_11
+                      1.9026300000e-01 least_sq_term_12
+                      1.9026200000e-01 least_sq_term_13
+                      1.9026000000e-01 least_sq_term_14
+                      1.9026100000e-01 least_sq_term_15
+                      1.9025900000e-01 least_sq_term_16
+                      1.9027000000e-01 least_sq_term_17
+                      1.9026400000e-01 least_sq_term_18
+                      1.9026300000e-01 least_sq_term_19
+                      1.9026300000e-01 least_sq_term_20
+
+
+>>>>> Dakota finite difference gradient evaluation for x[5] + h:
+
+---------------------
+Begin Evaluation   61
+---------------------
+Parameters for evaluation 61:
+                     -1.0000000000e-02 Swmin
+                      1.7218804412e+00 nw
+                      3.4451408975e+00 no
+                      9.8531673069e-01 krw
+                      9.9941966865e-01 kro
+
+Duplication detected: analysis_drivers not invoked.
+
+Active response data retrieved from database:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9037400000e-01 least_sq_term_1
+                      1.9037200000e-01 least_sq_term_2
+                      1.9037500000e-01 least_sq_term_3
+                      1.9037300000e-01 least_sq_term_4
+                      1.9037300000e-01 least_sq_term_5
+                      1.9037300000e-01 least_sq_term_6
+                      1.9037300000e-01 least_sq_term_7
+                      1.9037800000e-01 least_sq_term_8
+                      1.9037400000e-01 least_sq_term_9
+                      1.9037400000e-01 least_sq_term_10
+                      1.9037400000e-01 least_sq_term_11
+                      1.9037300000e-01 least_sq_term_12
+                      1.9037200000e-01 least_sq_term_13
+                      1.9037100000e-01 least_sq_term_14
+                      1.9037300000e-01 least_sq_term_15
+                      1.9037000000e-01 least_sq_term_16
+                      1.9038100000e-01 least_sq_term_17
+                      1.9037400000e-01 least_sq_term_18
+                      1.9037400000e-01 least_sq_term_19
+                      1.9037400000e-01 least_sq_term_20
+
+
+>>>>> Total response returned to iterator:
+
+Active set vector = { 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 } Deriv vars vector = { 1 2 3 4 5 }
+ [  7.0000000000e-01  1.0163307267e-01 -9.8689722747e-03 -5.4804712351e-02 
+    5.7090131193e-02 ] least_sq_term_1 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_2 gradient
+ [  7.0000000000e-01  1.0163307267e-01 -9.8689722747e-03 -5.4804712351e-02 
+    5.6088549944e-02 ] least_sq_term_3 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_4 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_5 gradient
+ [  7.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.4804712351e-02 
+    5.6088549944e-02 ] least_sq_term_6 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -1.0159236165e-02 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_7 gradient
+ [  7.0000000000e-01  1.0163307267e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_8 gradient
+ [  7.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.4804712351e-02 
+    5.6088549944e-02 ] least_sq_term_9 gradient
+ [  7.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_10 gradient
+ [  7.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_11 gradient
+ [  8.0000000000e-01  1.0047155184e-01 -1.0159236165e-02 -5.5819614432e-02 
+    5.5086968695e-02 ] least_sq_term_12 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -1.0159236165e-02 -5.5819614432e-02 
+    5.5086968695e-02 ] least_sq_term_13 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_14 gradient
+ [  8.0000000000e-01  1.0163307267e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.7090131193e-02 ] least_sq_term_15 gradient
+ [  8.0000000000e-01  1.0163307267e-01 -9.8689722747e-03 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_16 gradient
+ [  7.0000000000e-01  1.0221383308e-01 -9.5787083842e-03 -5.4804712351e-02 
+    5.7090131193e-02 ] least_sq_term_17 gradient
+ [  8.0000000000e-01  1.0047155184e-01 -1.0159236165e-02 -5.5819614432e-02 
+    5.5086968695e-02 ] least_sq_term_18 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -1.0159236165e-02 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_19 gradient
+ [  8.0000000000e-01  1.0105231225e-01 -1.0159236165e-02 -5.5819614432e-02 
+    5.6088549944e-02 ] least_sq_term_20 gradient
+
+
+<<<<< Function evaluation summary: 61 total (56 new, 5 duplicate)
+<<<<< Best parameters          =
+                     -1.0000000000e-02 Swmin
+                      1.7218804412e+00 nw
+                      3.4451408975e+00 no
+                      9.8531673069e-01 krw
+                      9.9842124740e-01 kro
+<<<<< Best model responses =
+                      1.9031700000e-01
+                      1.9031600000e-01
+                      1.9031900000e-01
+                      1.9031700000e-01
+                      1.9031700000e-01
+                      1.9031700000e-01
+                      1.9031700000e-01
+                      1.9032200000e-01
+                      1.9031800000e-01
+                      1.9031800000e-01
+                      1.9031800000e-01
+                      1.9031800000e-01
+                      1.9031700000e-01
+                      1.9031500000e-01
+                      1.9031600000e-01
+                      1.9031400000e-01
+                      1.9032400000e-01
+                      1.9031900000e-01
+                      1.9031800000e-01
+                      1.9031800000e-01
+<<<<< Best residual terms =
+                      1.2627000000e-02
+                      1.6470500000e-01
+                     -2.7501000000e-02
+                     -2.4179300000e-01
+                     -1.9923300000e-01
+                     -1.9856300000e-01
+                     -8.0030000000e-03
+                      1.6725500000e-01
+                      1.8727920000e-01
+                      5.0258000000e-02
+                      1.8516750000e-01
+                      1.3551900000e-01
+                     -3.1136300000e-01
+                      1.8545060000e-01
+                      9.3660000000e-03
+                      1.0431800000e-01
+                      6.2844000000e-02
+                     -1.6717100000e-01
+                      1.9027418900e-01
+                     -2.9936200000e-01
+<<<<< Best residual norm =  7.6416270358e-01; 0.5 * norm^2 =  2.9197231877e-01
+<<<<< Best data captured at function evaluation 49
+
+Confidence Interval for Swmin is [ -2.8443199118e+00,  2.8243199118e+00 ]
+Confidence Interval for nw is [ -2.4369605464e+02,  2.4713981552e+02 ]
+Confidence Interval for no is [ -7.8606020408e+02,  7.9295048587e+02 ]
+Confidence Interval for krw is [ -2.7370388301e+02,  2.7567451647e+02 ]
+Confidence Interval for kro is [ -2.9080468371e+02,  2.9280152620e+02 ]
+
+<<<<< Iterator nl2sol completed.
+<<<<< Environment execution completed.
+DAKOTA execution time in seconds:
+  Total CPU        =   0.349621 [parent =      0.348, child =   0.001621]
+  Total wall clock =    1562.75

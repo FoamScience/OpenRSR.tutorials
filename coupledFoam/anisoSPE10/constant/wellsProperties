@@ -1,0 +1,80 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      wellsProperties;
+}
+
+wellModel Peaceman;
+
+wells 
+(
+    PROD0
+    {
+        controlMode         BHP;
+        operationMode       production;
+        orientation         anisoVertical;
+        flowRateData
+        {
+            fileName        "constant/prod.rate";
+            outOfBounds     warn;
+        }
+        skin 0;
+        radius              0.3;
+        datumDepth          0;
+        BHP                 0.655e6;
+        perforations
+        (
+            // This is not suitable for parallel runs yet
+            // Use coordinates instead of cell labels
+            //labelToCell
+            //{
+            //    value  (99 199 299 399 499 599 699 799 899 999 1099 
+            //    1199 1299 1399 1499 1599 1699 1799 1899 1999);
+            //}
+            cylinderToCell
+            {
+                p1 (758.19 3.81 0);
+                p2 (758.19 3.81 15);
+                radius 3;
+            }
+        );
+    }
+    INJ0
+    {
+        controlMode         liquidRate;
+        operationMode       injection;
+        orientation         isoVertical;
+        radius              0.3;
+        flowRateData
+        {
+            fileName        "constant/inj.rate";
+            outOfBounds     warn;
+        }
+        perforations
+        (
+            cylinderToCell
+            {
+                p1 (3.81 3.81 0);
+                p2 (3.81 3.81 15);
+                radius 3;
+            }
+        );
+
+        allowSwitchingModes false;
+        implicitWJpInNeighbors true;
+        skin 0;
+        datumDepth          0;
+    }
+);
+
+// ************************************************************************* //

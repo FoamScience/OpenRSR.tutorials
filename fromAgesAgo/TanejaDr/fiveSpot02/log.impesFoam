@@ -1,0 +1,1988 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : impesFoam
+Date   : Feb 27 2019
+Time   : 18:03:57
+Host   : "elwardi"
+PID    : 18769
+Case   : /home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/TanejaDr/fiveSpot02
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Using #calcEntry at line 27 in file "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/TanejaDr/fiveSpot02/system/controlDict"
+Using #codeStream with "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/impesFoam/TanejaDr/fiveSpot02/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libcodeStream_033dbd752947219024abb850bca21c37bded607c.so"
+Create mesh for time = 0
+
+
+Reading g
+Reading field p
+
+Reading transportProperties
+
+Selecting relativePermeability model: BrooksCorey
+
+Reading field K
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Selecting Capillary Pressure model:  none
+
+Selecting well model : PeacemanWellModel
+
+Reading Wells
+Updating Started
+Wells Data: 16
+PROD0 : production , (45.5 45.5 0.5) , PROD0_flowRate [0 3 -1 0 0 0 0] 0.001 , 1(292) , 320
+INJE0 : injection , (-45.5 -45.5 0.5) , INJE0_flowRate [0 3 -1 0 0 0 0] 0.001 , 1(198) , 320
+
+Starting time loop
+
+Coats Number mean: 0 max: 0
+deltaT = 0.00012
+Time = 0.00012
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.1601
+DICPCG:  Solving for p, Initial residual = 1, Final residual = 8.37658e-13, No Iterations 110
+time step continuity errors : sum local = 2.4e-11, global = 1.59594e-27, cumulative = 1.59594e-27
+ExecutionTime = 0.06 s  ClockTime = 0 s
+
+Coats Number mean: 4.06789e-18 max: 5.56109e-17
+deltaT = 0.000144
+Time = 0.000264
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.1601
+DICPCG:  Solving for p, Initial residual = 0.0462498, Final residual = 9.02436e-13, No Iterations 100
+time step continuity errors : sum local = 2.88e-11, global = 1.72441e-26, cumulative = 1.884e-26
+ExecutionTime = 0.07 s  ClockTime = 0 s
+
+Coats Number mean: 4.88343e-18 max: 6.68299e-17
+deltaT = 0.0001728
+Time = 0.0004368
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.1601
+DICPCG:  Solving for p, Initial residual = 0.0012053, Final residual = 7.79668e-13, No Iterations 93
+time step continuity errors : sum local = 3.456e-11, global = -1.90772e-26, cumulative = -2.37235e-28
+ExecutionTime = 0.08 s  ClockTime = 0 s
+
+Coats Number mean: 5.86023e-18 max: 8.03356e-17
+deltaT = 0.00020736
+Time = 0.00064416
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.1601
+DICPCG:  Solving for p, Initial residual = 3.59723e-05, Final residual = 9.98073e-13, No Iterations 80
+time step continuity errors : sum local = 4.1472e-11, global = -2.25983e-26, cumulative = -2.28356e-26
+ExecutionTime = 0.09 s  ClockTime = 0 s
+
+Coats Number mean: 7.03235e-18 max: 9.66039e-17
+deltaT = 0.000248832
+Time = 0.000892992
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.1601
+DICPCG:  Solving for p, Initial residual = 1.21919e-06, Final residual = 6.74895e-13, No Iterations 72
+time step continuity errors : sum local = 4.97664e-11, global = -9.62169e-27, cumulative = -3.24573e-26
+ExecutionTime = 0.09 s  ClockTime = 0 s
+
+Coats Number mean: 8.43894e-18 max: 1.16215e-16
+deltaT = 0.000298598
+Time = 0.00119159
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160101
+DICPCG:  Solving for p, Initial residual = 3.53277e-07, Final residual = 9.19562e-13, No Iterations 54
+time step continuity errors : sum local = 5.97197e-11, global = -1.59226e-26, cumulative = -4.83798e-26
+ExecutionTime = 0.1 s  ClockTime = 0 s
+
+Coats Number mean: 1.01269e-17 max: 1.39876e-16
+deltaT = 0.000358318
+Time = 0.00154991
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160101
+DICPCG:  Solving for p, Initial residual = 3.89313e-07, Final residual = 8.52038e-13, No Iterations 53
+time step continuity errors : sum local = 7.16636e-11, global = -2.02758e-26, cumulative = -6.86556e-26
+ExecutionTime = 0.11 s  ClockTime = 0 s
+
+Coats Number mean: 1.21525e-17 max: 1.68455e-16
+deltaT = 0.000429982
+Time = 0.00197989
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160101
+DICPCG:  Solving for p, Initial residual = 4.66354e-07, Final residual = 9.37132e-13, No Iterations 53
+time step continuity errors : sum local = 8.59963e-11, global = -1.12628e-26, cumulative = -7.99184e-26
+ExecutionTime = 0.12 s  ClockTime = 0 s
+
+Coats Number mean: 1.45834e-17 max: 2.03017e-16
+deltaT = 0.000515978
+Time = 0.00249587
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160101
+DICPCG:  Solving for p, Initial residual = 5.59602e-07, Final residual = 8.82201e-13, No Iterations 54
+time step continuity errors : sum local = 1.03196e-10, global = -4.43984e-26, cumulative = -1.24317e-25
+ExecutionTime = 0.13 s  ClockTime = 0 s
+
+Coats Number mean: 1.75005e-17 max: 2.44877e-16
+deltaT = 0.000619174
+Time = 0.00311504
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160102
+DICPCG:  Solving for p, Initial residual = 6.71522e-07, Final residual = 7.92156e-13, No Iterations 55
+time step continuity errors : sum local = 1.23835e-10, global = 6.16055e-27, cumulative = -1.18156e-25
+ExecutionTime = 0.13 s  ClockTime = 0 s
+
+Coats Number mean: 2.10014e-17 max: 2.95668e-16
+deltaT = 0.000743008
+Time = 0.00385805
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160102
+DICPCG:  Solving for p, Initial residual = 8.05826e-07, Final residual = 9.78442e-13, No Iterations 55
+time step continuity errors : sum local = 1.48602e-10, global = 3.29529e-26, cumulative = -8.52032e-26
+ExecutionTime = 0.14 s  ClockTime = 0 s
+
+Coats Number mean: 2.52027e-17 max: 3.57424e-16
+deltaT = 0.00089161
+Time = 0.00474966
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160102
+DICPCG:  Solving for p, Initial residual = 9.66992e-07, Final residual = 9.06414e-13, No Iterations 64
+time step continuity errors : sum local = 1.78322e-10, global = -3.25888e-26, cumulative = -1.17792e-25
+ExecutionTime = 0.15 s  ClockTime = 0 s
+
+Coats Number mean: 3.02448e-17 max: 4.327e-16
+deltaT = 0.00106993
+Time = 0.00581959
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160103
+DICPCG:  Solving for p, Initial residual = 1.16039e-06, Final residual = 6.73311e-13, No Iterations 65
+time step continuity errors : sum local = 2.13986e-10, global = -7.89964e-26, cumulative = -1.96788e-25
+ExecutionTime = 0.15 s  ClockTime = 0 s
+
+Coats Number mean: 3.62959e-17 max: 5.24727e-16
+deltaT = 0.00128392
+Time = 0.00710351
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160104
+DICPCG:  Solving for p, Initial residual = 1.39247e-06, Final residual = 8.32107e-13, No Iterations 65
+time step continuity errors : sum local = 2.56784e-10, global = -7.31291e-26, cumulative = -2.69917e-25
+ExecutionTime = 0.16 s  ClockTime = 0 s
+
+Coats Number mean: 4.35583e-17 max: 6.37619e-16
+deltaT = 0.0015407
+Time = 0.00864421
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160104
+DICPCG:  Solving for p, Initial residual = 1.67096e-06, Final residual = 9.13749e-13, No Iterations 65
+time step continuity errors : sum local = 3.0814e-10, global = 2.54052e-26, cumulative = -2.44512e-25
+ExecutionTime = 0.17 s  ClockTime = 0 s
+
+Coats Number mean: 5.22745e-17 max: 7.76665e-16
+deltaT = 0.00184884
+Time = 0.0104931
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160105
+DICPCG:  Solving for p, Initial residual = 2.00516e-06, Final residual = 7.54075e-13, No Iterations 66
+time step continuity errors : sum local = 3.69769e-10, global = 6.09811e-26, cumulative = -1.83531e-25
+ExecutionTime = 0.18 s  ClockTime = 0 s
+
+Coats Number mean: 6.27361e-17 max: 9.48726e-16
+deltaT = 0.00221861
+Time = 0.0127117
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160106
+DICPCG:  Solving for p, Initial residual = 2.40619e-06, Final residual = 8.8739e-13, No Iterations 66
+time step continuity errors : sum local = 4.43722e-10, global = 3.47e-26, cumulative = -1.48831e-25
+ExecutionTime = 0.19 s  ClockTime = 0 s
+
+Coats Number mean: 7.52931e-17 max: 1.16279e-15
+deltaT = 0.00266233
+Time = 0.015374
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160108
+DICPCG:  Solving for p, Initial residual = 2.88744e-06, Final residual = 6.79277e-13, No Iterations 67
+time step continuity errors : sum local = 5.32467e-10, global = -1.71439e-25, cumulative = -3.2027e-25
+ExecutionTime = 0.19 s  ClockTime = 0 s
+
+Coats Number mean: 9.03659e-17 max: 1.43079e-15
+deltaT = 0.0031948
+Time = 0.0185688
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160109
+DICPCG:  Solving for p, Initial residual = 3.46493e-06, Final residual = 7.57815e-13, No Iterations 67
+time step continuity errors : sum local = 6.3896e-10, global = 2.09472e-25, cumulative = -1.10798e-25
+ExecutionTime = 0.2 s  ClockTime = 0 s
+
+Coats Number mean: 1.0846e-16 max: 1.76868e-15
+deltaT = 0.00383376
+Time = 0.0224026
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160111
+DICPCG:  Solving for p, Initial residual = 4.15793e-06, Final residual = 9.71555e-13, No Iterations 67
+time step continuity errors : sum local = 7.66752e-10, global = -1.00368e-25, cumulative = -2.11166e-25
+ExecutionTime = 0.21 s  ClockTime = 0 s
+
+Coats Number mean: 1.30182e-16 max: 2.19812e-15
+deltaT = 0.00460051
+Time = 0.0270031
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160114
+DICPCG:  Solving for p, Initial residual = 4.98953e-06, Final residual = 8.67058e-13, No Iterations 68
+time step continuity errors : sum local = 9.20102e-10, global = 2.18881e-25, cumulative = 7.71478e-27
+ExecutionTime = 0.22 s  ClockTime = 0 s
+
+Coats Number mean: 1.56263e-16 max: 2.74886e-15
+deltaT = 0.00552061
+Time = 0.0325237
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160116
+DICPCG:  Solving for p, Initial residual = 5.98745e-06, Final residual = 7.56983e-13, No Iterations 69
+time step continuity errors : sum local = 1.10412e-09, global = -2.01977e-25, cumulative = -1.94262e-25
+ExecutionTime = 0.23 s  ClockTime = 0 s
+
+Coats Number mean: 1.87581e-16 max: 3.46229e-15
+deltaT = 0.00662474
+Time = 0.0391484
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.16012
+DICPCG:  Solving for p, Initial residual = 7.18497e-06, Final residual = 9.08222e-13, No Iterations 69
+time step continuity errors : sum local = 1.32495e-09, global = -4.69324e-25, cumulative = -6.63586e-25
+ExecutionTime = 0.23 s  ClockTime = 0 s
+
+Coats Number mean: 2.25194e-16 max: 4.39668e-15
+deltaT = 0.00794968
+Time = 0.0470981
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160124
+DICPCG:  Solving for p, Initial residual = 8.622e-06, Final residual = 9.77262e-13, No Iterations 70
+time step continuity errors : sum local = 1.58994e-09, global = -4.65007e-26, cumulative = -7.10087e-25
+ExecutionTime = 0.24 s  ClockTime = 0 s
+
+Coats Number mean: 2.70376e-16 max: 5.63526e-15
+deltaT = 0.00953962
+Time = 0.0566377
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160129
+DICPCG:  Solving for p, Initial residual = 1.03465e-05, Final residual = 8.53967e-13, No Iterations 72
+time step continuity errors : sum local = 1.90792e-09, global = 9.93197e-26, cumulative = -6.10767e-25
+ExecutionTime = 0.25 s  ClockTime = 0 s
+
+Coats Number mean: 3.24666e-16 max: 7.29837e-15
+deltaT = 0.0114475
+Time = 0.0680853
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160134
+DICPCG:  Solving for p, Initial residual = 1.24158e-05, Final residual = 8.80231e-13, No Iterations 73
+time step continuity errors : sum local = 2.28951e-09, global = 1.11482e-25, cumulative = -4.99285e-25
+ExecutionTime = 0.26 s  ClockTime = 0 s
+
+Coats Number mean: 3.89921e-16 max: 9.56238e-15
+deltaT = 0.013737
+Time = 0.0818223
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160141
+DICPCG:  Solving for p, Initial residual = 1.48991e-05, Final residual = 7.72292e-13, No Iterations 74
+time step continuity errors : sum local = 2.74741e-09, global = 6.27379e-25, cumulative = 1.28094e-25
+ExecutionTime = 0.27 s  ClockTime = 0 s
+
+Coats Number mean: 4.6839e-16 max: 1.26891e-14
+deltaT = 0.0164845
+Time = 0.0983068
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.16015
+DICPCG:  Solving for p, Initial residual = 1.78791e-05, Final residual = 9.25792e-13, No Iterations 74
+time step continuity errors : sum local = 3.29689e-09, global = 1.17819e-24, cumulative = 1.30628e-24
+ExecutionTime = 0.28 s  ClockTime = 0 s
+
+Coats Number mean: 5.62807e-16 max: 1.70723e-14
+deltaT = 0.0197813
+Time = 0.118088
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.16016
+DICPCG:  Solving for p, Initial residual = 2.14552e-05, Final residual = 9.29071e-13, No Iterations 75
+time step continuity errors : sum local = 3.95627e-09, global = -3.5162e-25, cumulative = 9.54664e-25
+ExecutionTime = 0.29 s  ClockTime = 0 s
+
+Coats Number mean: 6.76498e-16 max: 2.33113e-14
+deltaT = 0.0237376
+Time = 0.141826
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160171
+DICPCG:  Solving for p, Initial residual = 2.57466e-05, Final residual = 7.9671e-13, No Iterations 76
+time step continuity errors : sum local = 4.74752e-09, global = 6.93253e-25, cumulative = 1.64792e-24
+ExecutionTime = 0.29 s  ClockTime = 0 s
+
+Coats Number mean: 8.1354e-16 max: 3.23302e-14
+deltaT = 0.0284851
+Time = 0.170311
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160186
+DICPCG:  Solving for p, Initial residual = 3.08964e-05, Final residual = 9.50835e-13, No Iterations 76
+time step continuity errors : sum local = 5.69703e-09, global = -1.70429e-24, cumulative = -5.63728e-26
+ExecutionTime = 0.3 s  ClockTime = 0 s
+
+Coats Number mean: 9.78957e-16 max: 4.55695e-14
+deltaT = 0.0341822
+Time = 0.204493
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160203
+DICPCG:  Solving for p, Initial residual = 3.70764e-05, Final residual = 8.01484e-13, No Iterations 77
+time step continuity errors : sum local = 6.83643e-09, global = 3.42689e-24, cumulative = 3.37052e-24
+ExecutionTime = 0.31 s  ClockTime = 0 s
+
+Coats Number mean: 1.179e-15 max: 6.53006e-14
+deltaT = 0.0410186
+Time = 0.245512
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160224
+DICPCG:  Solving for p, Initial residual = 4.44928e-05, Final residual = 9.62916e-13, No Iterations 77
+time step continuity errors : sum local = 8.20371e-09, global = -2.22124e-24, cumulative = 1.14928e-24
+ExecutionTime = 0.32 s  ClockTime = 0 s
+
+Coats Number mean: 1.42151e-15 max: 9.51428e-14
+deltaT = 0.0492223
+Time = 0.294734
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160249
+DICPCG:  Solving for p, Initial residual = 5.33928e-05, Final residual = 5.92787e-13, No Iterations 78
+time step continuity errors : sum local = 9.84445e-09, global = -1.3415e-24, cumulative = -1.92223e-25
+ExecutionTime = 0.33 s  ClockTime = 0 s
+
+Coats Number mean: 1.71651e-15 max: 1.40919e-13
+deltaT = 0.0590667
+Time = 0.353801
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160278
+DICPCG:  Solving for p, Initial residual = 6.40736e-05, Final residual = 7.04861e-13, No Iterations 78
+time step continuity errors : sum local = 1.18133e-08, global = -2.8402e-24, cumulative = -3.03242e-24
+ExecutionTime = 0.33 s  ClockTime = 0 s
+
+Coats Number mean: 2.077e-15 max: 2.12081e-13
+deltaT = 0.07088
+Time = 0.424681
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160314
+DICPCG:  Solving for p, Initial residual = 7.68915e-05, Final residual = 8.48462e-13, No Iterations 78
+time step continuity errors : sum local = 1.4176e-08, global = 3.53548e-24, cumulative = 5.03063e-25
+ExecutionTime = 0.35 s  ClockTime = 0 s
+
+Coats Number mean: 2.52024e-15 max: 3.24103e-13
+deltaT = 0.085056
+Time = 0.509737
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160357
+DICPCG:  Solving for p, Initial residual = 9.22744e-05, Final residual = 9.88423e-13, No Iterations 78
+time step continuity errors : sum local = 1.70112e-08, global = -1.08312e-24, cumulative = -5.80058e-25
+ExecutionTime = 0.35 s  ClockTime = 0 s
+
+Coats Number mean: 3.06972e-15 max: 5.02496e-13
+deltaT = 0.102067
+Time = 0.611804
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160408
+DICPCG:  Solving for p, Initial residual = 0.000110736, Final residual = 7.58251e-13, No Iterations 79
+time step continuity errors : sum local = 2.04134e-08, global = -8.60174e-24, cumulative = -9.18179e-24
+ExecutionTime = 0.36 s  ClockTime = 0 s
+
+Coats Number mean: 3.75831e-15 max: 7.89613e-13
+deltaT = 0.122481
+Time = 0.734284
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.16047
+DICPCG:  Solving for p, Initial residual = 0.000132892, Final residual = 9.02752e-13, No Iterations 79
+time step continuity errors : sum local = 2.44961e-08, global = 4.81212e-24, cumulative = -4.36967e-24
+ExecutionTime = 0.37 s  ClockTime = 0 s
+
+Coats Number mean: 4.63343e-15 max: 1.25617e-12
+deltaT = 0.146977
+Time = 0.881261
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160544
+DICPCG:  Solving for p, Initial residual = 0.000159485, Final residual = 6.90165e-13, No Iterations 80
+time step continuity errors : sum local = 2.93953e-08, global = -1.61764e-23, cumulative = -2.05461e-23
+ExecutionTime = 0.38 s  ClockTime = 0 s
+
+Coats Number mean: 5.7655e-15 max: 2.02089e-12
+deltaT = 0.176372
+Time = 1.05763
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160633
+DICPCG:  Solving for p, Initial residual = 0.000191401, Final residual = 8.32681e-13, No Iterations 80
+time step continuity errors : sum local = 3.52743e-08, global = 3.65593e-24, cumulative = -1.68901e-23
+ExecutionTime = 0.39 s  ClockTime = 0 s
+
+Coats Number mean: 7.26215e-15 max: 3.28394e-12
+deltaT = 0.211645
+Time = 1.26928
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.16074
+DICPCG:  Solving for p, Initial residual = 0.000229709, Final residual = 9.92904e-13, No Iterations 80
+time step continuity errors : sum local = 4.23291e-08, global = 5.05587e-24, cumulative = -1.18343e-23
+ExecutionTime = 0.4 s  ClockTime = 0 s
+
+Coats Number mean: 9.29199e-15 max: 5.3843e-12
+deltaT = 0.253974
+Time = 1.52325
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.160868
+DICPCG:  Solving for p, Initial residual = 0.000275692, Final residual = 8.87842e-13, No Iterations 81
+time step continuity errors : sum local = 5.07948e-08, global = 2.50782e-24, cumulative = -9.32644e-24
+ExecutionTime = 0.41 s  ClockTime = 0 s
+
+Coats Number mean: 1.21251e-14 max: 8.89798e-12
+deltaT = 0.304768
+Time = 1.82802
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.161022
+DICPCG:  Solving for p, Initial residual = 0.000330888, Final residual = 7.33416e-13, No Iterations 82
+time step continuity errors : sum local = 6.09537e-08, global = -2.48578e-23, cumulative = -3.41842e-23
+ExecutionTime = 0.42 s  ClockTime = 0 s
+
+Coats Number mean: 1.62018e-14 max: 1.48068e-11
+deltaT = 0.36572
+Time = 2.19374
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.161206
+DICPCG:  Solving for p, Initial residual = 0.00039715, Final residual = 8.93393e-13, No Iterations 82
+time step continuity errors : sum local = 7.31441e-08, global = -1.14336e-23, cumulative = -4.56178e-23
+ExecutionTime = 0.43 s  ClockTime = 0 s
+
+Coats Number mean: 2.22505e-14 max: 2.4789e-11
+deltaT = 0.438864
+Time = 2.6326
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.161427
+DICPCG:  Solving for p, Initial residual = 0.000476702, Final residual = 5.77323e-13, No Iterations 83
+time step continuity errors : sum local = 8.77728e-08, global = 8.83674e-24, cumulative = -3.67811e-23
+ExecutionTime = 0.43 s  ClockTime = 0 s
+
+Coats Number mean: 3.14901e-14 max: 4.17206e-11
+deltaT = 0.526633
+Time = 3.15924
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.161693
+DICPCG:  Solving for p, Initial residual = 0.000572215, Final residual = 7.01752e-13, No Iterations 83
+time step continuity errors : sum local = 1.05327e-07, global = 8.98705e-24, cumulative = -2.7794e-23
+ExecutionTime = 0.44 s  ClockTime = 0 s
+
+Coats Number mean: 4.59784e-14 max: 7.05407e-11
+deltaT = 0.631958
+Time = 3.7912
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.162011
+DICPCG:  Solving for p, Initial residual = 0.000686911, Final residual = 8.35399e-13, No Iterations 83
+time step continuity errors : sum local = 1.26392e-07, global = -5.4625e-24, cumulative = -3.32565e-23
+ExecutionTime = 0.45 s  ClockTime = 0 s
+
+Coats Number mean: 6.92149e-14 max: 1.19751e-10
+deltaT = 0.758347
+Time = 4.54954
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.162394
+DICPCG:  Solving for p, Initial residual = 0.000824658, Final residual = 9.93501e-13, No Iterations 83
+time step continuity errors : sum local = 1.51669e-07, global = -5.38351e-24, cumulative = -3.864e-23
+ExecutionTime = 0.46 s  ClockTime = 0 s
+
+Coats Number mean: 1.07182e-13 max: 2.04011e-10
+deltaT = 0.91001
+Time = 5.45955
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.162852
+DICPCG:  Solving for p, Initial residual = 0.000990112, Final residual = 9.15766e-13, No Iterations 84
+time step continuity errors : sum local = 1.82002e-07, global = 5.71603e-23, cumulative = 1.85203e-23
+ExecutionTime = 0.47 s  ClockTime = 0 s
+
+Coats Number mean: 1.70153e-13 max: 3.48652e-10
+deltaT = 1.092
+Time = 6.55155
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.163403
+DICPCG:  Solving for p, Initial residual = 0.00118888, Final residual = 8.46271e-13, No Iterations 85
+time step continuity errors : sum local = 2.184e-07, global = -1.33411e-22, cumulative = -1.14891e-22
+ExecutionTime = 0.48 s  ClockTime = 0 s
+
+Coats Number mean: 2.75839e-13 max: 5.97521e-10
+deltaT = 1.31038
+Time = 7.86193
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.164063
+DICPCG:  Solving for p, Initial residual = 0.00142774, Final residual = 9.74341e-13, No Iterations 86
+time step continuity errors : sum local = 2.62076e-07, global = -1.15224e-23, cumulative = -1.26413e-22
+ExecutionTime = 0.49 s  ClockTime = 0 s
+
+Coats Number mean: 4.54871e-13 max: 1.02669e-09
+deltaT = 1.57245
+Time = 9.43439
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.164856
+DICPCG:  Solving for p, Initial residual = 0.00171487, Final residual = 8.64604e-13, No Iterations 88
+time step continuity errors : sum local = 3.14491e-07, global = 6.87165e-23, cumulative = -5.76965e-23
+ExecutionTime = 0.49 s  ClockTime = 0 s
+
+Coats Number mean: 7.604e-13 max: 1.76841e-09
+deltaT = 1.88692
+Time = 11.3213
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.165807
+DICPCG:  Solving for p, Initial residual = 0.00206011, Final residual = 6.97729e-13, No Iterations 89
+time step continuity errors : sum local = 3.77383e-07, global = -1.53647e-24, cumulative = -5.9233e-23
+ExecutionTime = 0.5 s  ClockTime = 0 s
+
+Coats Number mean: 1.28488e-12 max: 3.0531e-09
+deltaT = 2.26427
+Time = 13.5856
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.166949
+DICPCG:  Solving for p, Initial residual = 0.00247523, Final residual = 8.44572e-13, No Iterations 89
+time step continuity errors : sum local = 4.52854e-07, global = -1.51552e-23, cumulative = -7.43882e-23
+ExecutionTime = 0.51 s  ClockTime = 0 s
+
+Coats Number mean: 2.18973e-12 max: 5.28339e-09
+deltaT = 2.71707
+Time = 16.3026
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.168319
+DICPCG:  Solving for p, Initial residual = 0.00297444, Final residual = 6.09734e-13, No Iterations 90
+time step continuity errors : sum local = 5.43413e-07, global = -1.45149e-22, cumulative = -2.19537e-22
+ExecutionTime = 0.52 s  ClockTime = 0 s
+
+Coats Number mean: 3.75756e-12 max: 9.16478e-09
+deltaT = 3.26038
+Time = 19.563
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.169962
+DICPCG:  Solving for p, Initial residual = 0.0035753, Final residual = 7.37023e-13, No Iterations 90
+time step continuity errors : sum local = 6.52075e-07, global = 8.04183e-23, cumulative = -1.39119e-22
+ExecutionTime = 0.53 s  ClockTime = 0 s
+
+Coats Number mean: 6.48511e-12 max: 1.59378e-08
+deltaT = 3.91233
+Time = 23.4754
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.171935
+DICPCG:  Solving for p, Initial residual = 0.00429904, Final residual = 8.81817e-13, No Iterations 90
+time step continuity errors : sum local = 7.82467e-07, global = -6.53705e-23, cumulative = -2.04489e-22
+ExecutionTime = 0.54 s  ClockTime = 0 s
+
+Coats Number mean: 1.12494e-11 max: 2.77935e-08
+deltaT = 4.69463
+Time = 28.17
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.174301
+DICPCG:  Solving for p, Initial residual = 0.00517139, Final residual = 6.17867e-13, No Iterations 91
+time step continuity errors : sum local = 9.38926e-07, global = -2.03146e-22, cumulative = -4.07635e-22
+ExecutionTime = 0.55 s  ClockTime = 0 s
+
+Coats Number mean: 1.96058e-11 max: 4.86186e-08
+deltaT = 5.63344
+Time = 33.8034
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.177141
+DICPCG:  Solving for p, Initial residual = 0.00622395, Final residual = 7.48713e-13, No Iterations 91
+time step continuity errors : sum local = 1.12669e-06, global = -7.28933e-23, cumulative = -4.80528e-22
+ExecutionTime = 0.56 s  ClockTime = 0 s
+
+Coats Number mean: 3.43307e-11 max: 8.53517e-08
+deltaT = 6.76003
+Time = 40.5635
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.180549
+DICPCG:  Solving for p, Initial residual = 0.00749533, Final residual = 8.95051e-13, No Iterations 91
+time step continuity errors : sum local = 1.35201e-06, global = -8.61728e-24, cumulative = -4.89146e-22
+ExecutionTime = 0.57 s  ClockTime = 0 s
+
+Coats Number mean: 6.04122e-11 max: 1.5046e-07
+deltaT = 8.11191
+Time = 48.6754
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.184639
+DICPCG:  Solving for p, Initial residual = 0.00903298, Final residual = 6.4707e-13, No Iterations 92
+time step continuity errors : sum local = 1.62238e-06, global = 3.22736e-22, cumulative = -1.6641e-22
+ExecutionTime = 0.58 s  ClockTime = 0 s
+
+Coats Number mean: 1.06886e-10 max: 2.66531e-07
+deltaT = 9.73411
+Time = 58.4095
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.189546
+DICPCG:  Solving for p, Initial residual = 0.0108956, Final residual = 7.82276e-13, No Iterations 92
+time step continuity errors : sum local = 1.94682e-06, global = 3.78207e-22, cumulative = 2.11797e-22
+ExecutionTime = 0.59 s  ClockTime = 0 s
+
+Coats Number mean: 1.90283e-10 max: 4.74886e-07
+deltaT = 11.6804
+Time = 70.0899
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.195435
+DICPCG:  Solving for p, Initial residual = 0.013156, Final residual = 9.41343e-13, No Iterations 92
+time step continuity errors : sum local = 2.33608e-06, global = 7.48909e-22, cumulative = 9.60706e-22
+ExecutionTime = 0.6 s  ClockTime = 0 s
+
+Coats Number mean: 3.41196e-10 max: 8.52006e-07
+deltaT = 14.0146
+Time = 84.1045
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.2025
+DICPCG:  Solving for p, Initial residual = 0.0159046, Final residual = 7.06201e-13, No Iterations 93
+time step continuity errors : sum local = 2.80292e-06, global = -8.88638e-22, cumulative = 7.20682e-23
+ExecutionTime = 0.61 s  ClockTime = 0 s
+
+Coats Number mean: 6.17016e-10 max: 1.54136e-06
+deltaT = 16.8159
+Time = 100.92
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.210977
+DICPCG:  Solving for p, Initial residual = 0.0192582, Final residual = 8.39733e-13, No Iterations 93
+time step continuity errors : sum local = 3.36318e-06, global = -5.27192e-23, cumulative = 1.9349e-23
+ExecutionTime = 0.61 s  ClockTime = 0 s
+
+Coats Number mean: 1.12751e-09 max: 2.81736e-06
+deltaT = 20.1775
+Time = 121.098
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.221149
+DICPCG:  Solving for p, Initial residual = 0.0233643, Final residual = 7.24967e-13, No Iterations 94
+time step continuity errors : sum local = 4.0355e-06, global = -9.22157e-22, cumulative = -9.02808e-22
+ExecutionTime = 0.62 s  ClockTime = 0 s
+
+Coats Number mean: 2.0868e-09 max: 5.2153e-06
+deltaT = 24.2084
+Time = 145.306
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.233354
+DICPCG:  Solving for p, Initial residual = 0.0284092, Final residual = 8.82841e-13, No Iterations 94
+time step continuity errors : sum local = 4.84169e-06, global = 6.2099e-22, cumulative = -2.81818e-22
+ExecutionTime = 0.63 s  ClockTime = 0 s
+
+Coats Number mean: 3.92282e-09 max: 9.80501e-06
+deltaT = 29.042
+Time = 174.348
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.247994
+DICPCG:  Solving for p, Initial residual = 0.0346396, Final residual = 7.3458e-13, No Iterations 95
+time step continuity errors : sum local = 5.8084e-06, global = 2.74599e-21, cumulative = 2.46418e-21
+ExecutionTime = 0.64 s  ClockTime = 0 s
+
+Coats Number mean: 7.51887e-09 max: 1.87947e-05
+deltaT = 34.8386
+Time = 209.187
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.265557
+DICPCG:  Solving for p, Initial residual = 0.0423836, Final residual = 8.89587e-13, No Iterations 95
+time step continuity errors : sum local = 6.96773e-06, global = -6.167e-22, cumulative = 1.84748e-21
+ExecutionTime = 0.66 s  ClockTime = 0 s
+
+Coats Number mean: 1.47698e-08 max: 3.69216e-05
+deltaT = 41.7996
+Time = 250.987
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.286629
+DICPCG:  Solving for p, Initial residual = 0.0520945, Final residual = 7.50311e-13, No Iterations 96
+time step continuity errors : sum local = 8.35992e-06, global = 4.33713e-21, cumulative = 6.18461e-21
+ExecutionTime = 0.67 s  ClockTime = 0 s
+
+Coats Number mean: 2.99492e-08 max: 7.48696e-05
+deltaT = 50.1449
+Time = 301.131
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.311905
+DICPCG:  Solving for p, Initial residual = 0.0643708, Final residual = 9.16167e-13, No Iterations 96
+time step continuity errors : sum local = 1.0029e-05, global = 8.26882e-23, cumulative = 6.2673e-21
+ExecutionTime = 0.68 s  ClockTime = 0 s
+
+Coats Number mean: 6.32586e-08 max: 0.000158142
+deltaT = 60.1669
+Time = 361.298
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.34223
+DICPCG:  Solving for p, Initial residual = 0.0800912, Final residual = 7.13907e-13, No Iterations 97
+time step continuity errors : sum local = 1.20334e-05, global = -1.6194e-21, cumulative = 4.64789e-21
+ExecutionTime = 0.68 s  ClockTime = 0 s
+
+Coats Number mean: 1.41103e-07 max: 0.000352754
+deltaT = 72.1801
+Time = 433.479
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.3786
+DICPCG:  Solving for p, Initial residual = 0.100475, Final residual = 8.91753e-13, No Iterations 97
+time step continuity errors : sum local = 1.4436e-05, global = 3.35209e-22, cumulative = 4.9831e-21
+ExecutionTime = 0.69 s  ClockTime = 0 s
+
+Coats Number mean: 3.38793e-07 max: 0.000846976
+deltaT = 86.5725
+Time = 520.051
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.422196
+DICPCG:  Solving for p, Initial residual = 0.127323, Final residual = 7.06503e-13, No Iterations 98
+time step continuity errors : sum local = 1.73145e-05, global = 6.8285e-21, cumulative = 1.18116e-20
+ExecutionTime = 0.7 s  ClockTime = 0 s
+
+Coats Number mean: 9.01988e-07 max: 0.00225496
+deltaT = 103.845
+Time = 623.896
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.474408
+DICPCG:  Solving for p, Initial residual = 0.163284, Final residual = 8.85377e-13, No Iterations 98
+time step continuity errors : sum local = 2.0769e-05, global = -1.03796e-20, cumulative = 1.43201e-21
+ExecutionTime = 0.71 s  ClockTime = 0 s
+
+Coats Number mean: 2.79504e-06 max: 0.00698759
+deltaT = 124.494
+Time = 748.39
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.536719
+DICPCG:  Solving for p, Initial residual = 0.211573, Final residual = 7.60922e-13, No Iterations 99
+time step continuity errors : sum local = 2.48987e-05, global = -2.57071e-21, cumulative = -1.1387e-21
+ExecutionTime = 0.72 s  ClockTime = 0 s
+
+Coats Number mean: 1.08969e-05 max: 0.0272421
+deltaT = 149.219
+Time = 897.609
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.610219
+DICPCG:  Solving for p, Initial residual = 0.272796, Final residual = 9.13437e-13, No Iterations 99
+time step continuity errors : sum local = 2.98438e-05, global = -9.90127e-21, cumulative = -1.104e-20
+ExecutionTime = 0.73 s  ClockTime = 0 s
+
+Coats Number mean: 5.90597e-05 max: 0.147649
+deltaT = 178.875
+Time = 1076.48
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.691677
+DICPCG:  Solving for p, Initial residual = 0.319811, Final residual = 7.49632e-13, No Iterations 101
+time step continuity errors : sum local = 3.57751e-05, global = -1.74477e-20, cumulative = -2.84877e-20
+ExecutionTime = 0.74 s  ClockTime = 0 s
+
+Coats Number mean: 0.000300413 max: 0.751032
+deltaT = 178.501
+Time = 1254.99
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.737871
+DICPCG:  Solving for p, Initial residual = 0.233501, Final residual = 8.71654e-13, No Iterations 102
+time step continuity errors : sum local = 3.57002e-05, global = 2.09083e-20, cumulative = -7.57944e-21
+ExecutionTime = 0.76 s  ClockTime = 0 s
+
+Coats Number mean: 0.000223666 max: 0.55916
+deltaT = 202.245
+Time = 1457.23
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.751554
+DICPCG:  Solving for p, Initial residual = 0.0799984, Final residual = 9.63724e-13, No Iterations 100
+time step continuity errors : sum local = 4.04489e-05, global = -4.0113e-22, cumulative = -7.98057e-21
+ExecutionTime = 0.77 s  ClockTime = 0 s
+
+Coats Number mean: 0.000163967 max: 0.409881
+deltaT = 238.603
+Time = 1695.83
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.759266
+DICPCG:  Solving for p, Initial residual = 0.0352308, Final residual = 7.6163e-13, No Iterations 97
+time step continuity errors : sum local = 4.77207e-05, global = -1.17308e-20, cumulative = -1.97114e-20
+ExecutionTime = 0.78 s  ClockTime = 0 s
+
+Coats Number mean: 0.00013734 max: 0.343185
+deltaT = 286.163
+Time = 1982
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.764704
+DICPCG:  Solving for p, Initial residual = 0.044956, Final residual = 9.26162e-13, No Iterations 97
+time step continuity errors : sum local = 5.72325e-05, global = -1.17501e-20, cumulative = -3.14614e-20
+ExecutionTime = 0.79 s  ClockTime = 0 s
+
+Coats Number mean: 0.000122836 max: 0.306483
+deltaT = 343.163
+Time = 2325.16
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.768891
+DICPCG:  Solving for p, Initial residual = 0.0564419, Final residual = 8.59264e-13, No Iterations 98
+time step continuity errors : sum local = 6.86325e-05, global = -2.75392e-20, cumulative = -5.90006e-20
+ExecutionTime = 0.8 s  ClockTime = 0 s
+
+Coats Number mean: 0.000113712 max: 0.282215
+deltaT = 410.121
+Time = 2735.28
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.772274
+DICPCG:  Solving for p, Initial residual = 0.0703969, Final residual = 8.30017e-13, No Iterations 99
+time step continuity errors : sum local = 8.20242e-05, global = 1.43951e-20, cumulative = -4.46056e-20
+ExecutionTime = 0.81 s  ClockTime = 1 s
+
+Coats Number mean: 0.000108747 max: 0.264668
+deltaT = 489.267
+Time = 3224.55
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.775098
+DICPCG:  Solving for p, Initial residual = 0.124228, Final residual = 6.90135e-13, No Iterations 101
+time step continuity errors : sum local = 9.78535e-05, global = 8.08339e-21, cumulative = -3.65222e-20
+ExecutionTime = 0.82 s  ClockTime = 1 s
+
+Coats Number mean: 0.000112172 max: 0.251697
+deltaT = 585.743
+Time = 3810.29
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.777522
+DICPCG:  Solving for p, Initial residual = 0.168504, Final residual = 8.38671e-13, No Iterations 101
+time step continuity errors : sum local = 0.000117149, global = -5.39116e-20, cumulative = -9.04338e-20
+ExecutionTime = 0.83 s  ClockTime = 1 s
+
+Coats Number mean: 0.000156766 max: 0.242779
+deltaT = 699.913
+Time = 4510.2
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.779632
+DICPCG:  Solving for p, Initial residual = 0.225276, Final residual = 8.09537e-13, No Iterations 101
+time step continuity errors : sum local = 0.000139983, global = 9.67611e-21, cumulative = -8.07577e-20
+ExecutionTime = 0.84 s  ClockTime = 1 s
+
+Coats Number mean: 0.00056757 max: 0.52244
+deltaT = 795.047
+Time = 5305.25
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.781399
+DICPCG:  Solving for p, Initial residual = 0.255403, Final residual = 8.73154e-13, No Iterations 99
+time step continuity errors : sum local = 0.000159009, global = -5.37295e-20, cumulative = -1.34487e-19
+ExecutionTime = 0.85 s  ClockTime = 1 s
+
+Coats Number mean: 0.00193429 max: 1.72426
+deltaT = 345.084
+Time = 5650.33
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.781979
+DICPCG:  Solving for p, Initial residual = 0.173049, Final residual = 8.68343e-13, No Iterations 101
+time step continuity errors : sum local = 6.90168e-05, global = 2.74873e-20, cumulative = -1.07e-19
+ExecutionTime = 0.85 s  ClockTime = 1 s
+
+Coats Number mean: 0.000965585 max: 0.652659
+deltaT = 384.522
+Time = 6034.86
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.782566
+DICPCG:  Solving for p, Initial residual = 0.071444, Final residual = 8.64376e-13, No Iterations 101
+time step continuity errors : sum local = 7.69044e-05, global = -1.43426e-20, cumulative = -1.21342e-19
+ExecutionTime = 0.86 s  ClockTime = 1 s
+
+Coats Number mean: 0.00117069 max: 0.803991
+deltaT = 357.178
+Time = 6392.03
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.783058
+DICPCG:  Solving for p, Initial residual = 0.0550797, Final residual = 7.70207e-13, No Iterations 101
+time step continuity errors : sum local = 7.14357e-05, global = -3.36032e-20, cumulative = -1.54946e-19
+ExecutionTime = 0.87 s  ClockTime = 1 s
+
+Coats Number mean: 0.000994349 max: 0.714317
+deltaT = 373.869
+Time = 6765.9
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.783529
+DICPCG:  Solving for p, Initial residual = 0.0356307, Final residual = 7.76578e-13, No Iterations 100
+time step continuity errors : sum local = 7.47738e-05, global = -4.25767e-21, cumulative = -1.59203e-19
+ExecutionTime = 0.88 s  ClockTime = 1 s
+
+Coats Number mean: 0.000890307 max: 0.634225
+deltaT = 416.932
+Time = 7182.84
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.784011
+DICPCG:  Solving for p, Initial residual = 0.0427471, Final residual = 7.90043e-13, No Iterations 100
+time step continuity errors : sum local = 8.33865e-05, global = 5.45832e-21, cumulative = -1.53745e-19
+ExecutionTime = 0.89 s  ClockTime = 1 s
+
+Coats Number mean: 0.000833948 max: 0.580548
+deltaT = 468.741
+Time = 7651.58
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.784506
+DICPCG:  Solving for p, Initial residual = 0.0525997, Final residual = 9.53198e-13, No Iterations 100
+time step continuity errors : sum local = 9.37481e-05, global = -2.17411e-20, cumulative = -1.75486e-19
+ExecutionTime = 0.9 s  ClockTime = 1 s
+
+Coats Number mean: 0.000788308 max: 0.534575
+deltaT = 532.084
+Time = 8183.66
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.785016
+DICPCG:  Solving for p, Initial residual = 0.0657437, Final residual = 7.99424e-13, No Iterations 101
+time step continuity errors : sum local = 0.000106417, global = -1.81201e-20, cumulative = -1.93606e-19
+ExecutionTime = 0.91 s  ClockTime = 1 s
+
+Coats Number mean: 0.000757465 max: 0.499976
+deltaT = 611.065
+Time = 8794.72
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.785544
+DICPCG:  Solving for p, Initial residual = 0.0835881, Final residual = 9.67494e-13, No Iterations 101
+time step continuity errors : sum local = 0.000122213, global = -6.03117e-20, cumulative = -2.53918e-19
+ExecutionTime = 0.92 s  ClockTime = 1 s
+
+Coats Number mean: 0.000744503 max: 0.47626
+deltaT = 705.503
+Time = 9500.23
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.786091
+DICPCG:  Solving for p, Initial residual = 0.106201, Final residual = 9.84384e-13, No Iterations 103
+time step continuity errors : sum local = 0.000141101, global = -7.40223e-21, cumulative = -2.6132e-19
+ExecutionTime = 0.93 s  ClockTime = 1 s
+
+Coats Number mean: 0.000758233 max: 0.459275
+deltaT = 818.083
+Time = 10318.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.786654
+DICPCG:  Solving for p, Initial residual = 0.132597, Final residual = 4.9104e-13, No Iterations 105
+time step continuity errors : sum local = 0.000163617, global = -5.85088e-21, cumulative = -2.67171e-19
+ExecutionTime = 0.94 s  ClockTime = 1 s
+
+Coats Number mean: 0.000876367 max: 0.448359
+deltaT = 951.021
+Time = 11269.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.787231
+DICPCG:  Solving for p, Initial residual = 0.155421, Final residual = 5.53692e-13, No Iterations 106
+time step continuity errors : sum local = 0.000190204, global = 2.17086e-21, cumulative = -2.65e-19
+ExecutionTime = 0.95 s  ClockTime = 1 s
+
+Coats Number mean: 0.00143296 max: 0.967389
+deltaT = 736.575
+Time = 12005.9
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.787621
+DICPCG:  Solving for p, Initial residual = 0.145218, Final residual = 6.32723e-13, No Iterations 107
+time step continuity errors : sum local = 0.000147315, global = -3.25336e-20, cumulative = -2.97534e-19
+ExecutionTime = 0.96 s  ClockTime = 1 s
+
+Coats Number mean: 0.00149979 max: 0.855946
+deltaT = 641.328
+Time = 12647.2
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.78793
+DICPCG:  Solving for p, Initial residual = 0.123323, Final residual = 9.30781e-13, No Iterations 107
+time step continuity errors : sum local = 0.000128266, global = -5.91183e-20, cumulative = -3.56652e-19
+ExecutionTime = 0.97 s  ClockTime = 1 s
+
+Coats Number mean: 0.00147629 max: 0.807048
+deltaT = 594.78
+Time = 13242
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.788196
+DICPCG:  Solving for p, Initial residual = 0.098595, Final residual = 9.01879e-13, No Iterations 108
+time step continuity errors : sum local = 0.000118956, global = -1.45748e-20, cumulative = -3.71227e-19
+ExecutionTime = 0.98 s  ClockTime = 1 s
+
+Coats Number mean: 0.00147788 max: 0.726915
+deltaT = 609.65
+Time = 13851.7
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.78845
+DICPCG:  Solving for p, Initial residual = 0.0861711, Final residual = 9.25884e-13, No Iterations 109
+time step continuity errors : sum local = 0.00012193, global = 6.03483e-20, cumulative = -3.10879e-19
+ExecutionTime = 0.99 s  ClockTime = 1 s
+
+Coats Number mean: 0.0016896 max: 0.682253
+deltaT = 665.581
+Time = 14517.2
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.78871
+DICPCG:  Solving for p, Initial residual = 0.0708059, Final residual = 7.32722e-13, No Iterations 109
+time step continuity errors : sum local = 0.000133116, global = -2.19914e-20, cumulative = -3.3287e-19
+ExecutionTime = 1 s  ClockTime = 1 s
+
+Coats Number mean: 0.00195256 max: 0.788476
+deltaT = 630.55
+Time = 15147.8
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.788939
+DICPCG:  Solving for p, Initial residual = 0.0661809, Final residual = 9.38061e-13, No Iterations 106
+time step continuity errors : sum local = 0.00012611, global = -1.0565e-20, cumulative = -3.43435e-19
+ExecutionTime = 1.01 s  ClockTime = 1 s
+
+Coats Number mean: 0.00179804 max: 0.831527
+deltaT = 565.494
+Time = 15713.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.789132
+DICPCG:  Solving for p, Initial residual = 0.0639817, Final residual = 8.46594e-13, No Iterations 105
+time step continuity errors : sum local = 0.000113099, global = -1.04737e-21, cumulative = -3.44482e-19
+ExecutionTime = 1.02 s  ClockTime = 1 s
+
+Coats Number mean: 0.00154388 max: 0.754097
+deltaT = 561.006
+Time = 16274.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.789314
+DICPCG:  Solving for p, Initial residual = 0.0688632, Final residual = 5.92615e-13, No Iterations 106
+time step continuity errors : sum local = 0.000112201, global = 1.3003e-20, cumulative = -3.31479e-19
+ExecutionTime = 1.03 s  ClockTime = 1 s
+
+Coats Number mean: 0.001489 max: 0.739149
+deltaT = 565.53
+Time = 16839.8
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.789488
+DICPCG:  Solving for p, Initial residual = 0.0796686, Final residual = 9.57101e-13, No Iterations 104
+time step continuity errors : sum local = 0.000113106, global = -3.91649e-20, cumulative = -3.70644e-19
+ExecutionTime = 1.04 s  ClockTime = 1 s
+
+Coats Number mean: 0.00151098 max: 0.732118
+deltaT = 574.877
+Time = 17414.7
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.789656
+DICPCG:  Solving for p, Initial residual = 0.0854591, Final residual = 9.94617e-13, No Iterations 104
+time step continuity errors : sum local = 0.000114975, global = -2.67037e-20, cumulative = -3.97348e-19
+ExecutionTime = 1.05 s  ClockTime = 1 s
+
+Coats Number mean: 0.00161449 max: 0.729126
+deltaT = 589.618
+Time = 18004.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.78982
+DICPCG:  Solving for p, Initial residual = 0.0913315, Final residual = 9.18519e-13, No Iterations 105
+time step continuity errors : sum local = 0.000117924, global = 9.8795e-22, cumulative = -3.9636e-19
+ExecutionTime = 1.07 s  ClockTime = 1 s
+
+Coats Number mean: 0.00177362 max: 0.726186
+deltaT = 605.271
+Time = 18609.6
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.789981
+DICPCG:  Solving for p, Initial residual = 0.0975152, Final residual = 7.70357e-13, No Iterations 106
+time step continuity errors : sum local = 0.000121054, global = 1.73781e-20, cumulative = -3.78982e-19
+ExecutionTime = 1.07 s  ClockTime = 1 s
+
+Coats Number mean: 0.00193101 max: 0.708489
+deltaT = 639.532
+Time = 19249.1
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.790143
+DICPCG:  Solving for p, Initial residual = 0.100013, Final residual = 8.39209e-13, No Iterations 107
+time step continuity errors : sum local = 0.000127906, global = 1.26261e-20, cumulative = -3.66356e-19
+ExecutionTime = 1.08 s  ClockTime = 1 s
+
+Coats Number mean: 0.00217574 max: 0.691627
+deltaT = 692.277
+Time = 19941.4
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.790309
+DICPCG:  Solving for p, Initial residual = 0.0996158, Final residual = 9.46972e-13, No Iterations 106
+time step continuity errors : sum local = 0.000138455, global = 8.8176e-20, cumulative = -2.7818e-19
+ExecutionTime = 1.09 s  ClockTime = 1 s
+
+Coats Number mean: 0.00240619 max: 0.837504
+deltaT = 615.357
+Time = 20556.8
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.79045
+DICPCG:  Solving for p, Initial residual = 0.0885753, Final residual = 5.09972e-13, No Iterations 106
+time step continuity errors : sum local = 0.000123071, global = 2.59481e-20, cumulative = -2.52232e-19
+ExecutionTime = 1.1 s  ClockTime = 1 s
+
+Coats Number mean: 0.00207378 max: 0.770894
+deltaT = 598.575
+Time = 21155.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.790581
+DICPCG:  Solving for p, Initial residual = 0.0926989, Final residual = 7.67497e-13, No Iterations 105
+time step continuity errors : sum local = 0.000119715, global = 1.78482e-20, cumulative = -2.34384e-19
+ExecutionTime = 1.11 s  ClockTime = 1 s
+
+Coats Number mean: 0.00198092 max: 0.735506
+deltaT = 609.763
+Time = 21765.1
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.790708
+DICPCG:  Solving for p, Initial residual = 0.0975012, Final residual = 8.48898e-13, No Iterations 105
+time step continuity errors : sum local = 0.000121953, global = -3.93425e-20, cumulative = -2.73726e-19
+ExecutionTime = 1.12 s  ClockTime = 1 s
+
+Coats Number mean: 0.00209462 max: 0.738347
+deltaT = 615.571
+Time = 22380.7
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.790832
+DICPCG:  Solving for p, Initial residual = 0.0932396, Final residual = 7.20388e-13, No Iterations 105
+time step continuity errors : sum local = 0.000123114, global = -3.03139e-20, cumulative = -3.0404e-19
+ExecutionTime = 1.13 s  ClockTime = 1 s
+
+Coats Number mean: 0.00231722 max: 0.745603
+deltaT = 615.571
+Time = 22996.2
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.790951
+DICPCG:  Solving for p, Initial residual = 0.083256, Final residual = 6.89666e-13, No Iterations 104
+time step continuity errors : sum local = 0.000123114, global = 1.45836e-20, cumulative = -2.89456e-19
+ExecutionTime = 1.14 s  ClockTime = 1 s
+
+Coats Number mean: 0.00241028 max: 0.756364
+deltaT = 609.652
+Time = 23605.9
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.791064
+DICPCG:  Solving for p, Initial residual = 0.0882848, Final residual = 8.77572e-13, No Iterations 103
+time step continuity errors : sum local = 0.00012193, global = -7.99302e-21, cumulative = -2.97449e-19
+ExecutionTime = 1.15 s  ClockTime = 1 s
+
+Coats Number mean: 0.00235392 max: 0.73054
+deltaT = 621.724
+Time = 24227.6
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.791175
+DICPCG:  Solving for p, Initial residual = 0.10821, Final residual = 8.4455e-13, No Iterations 103
+time step continuity errors : sum local = 0.000124345, global = 8.0977e-21, cumulative = -2.89352e-19
+ExecutionTime = 1.17 s  ClockTime = 1 s
+
+Coats Number mean: 0.0024061 max: 0.738549
+deltaT = 628.004
+Time = 24855.6
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.791283
+DICPCG:  Solving for p, Initial residual = 0.111078, Final residual = 6.83187e-13, No Iterations 104
+time step continuity errors : sum local = 0.000125601, global = -1.93451e-20, cumulative = -3.08697e-19
+ExecutionTime = 1.17 s  ClockTime = 1 s
+
+Coats Number mean: 0.00252558 max: 0.740132
+deltaT = 634.478
+Time = 25490.1
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.791388
+DICPCG:  Solving for p, Initial residual = 0.105248, Final residual = 6.86521e-13, No Iterations 105
+time step continuity errors : sum local = 0.000126896, global = 1.43888e-20, cumulative = -2.94308e-19
+ExecutionTime = 1.18 s  ClockTime = 1 s
+
+Coats Number mean: 0.00263123 max: 0.734383
+deltaT = 641.157
+Time = 26131.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.79149
+DICPCG:  Solving for p, Initial residual = 0.0975277, Final residual = 8.0198e-13, No Iterations 104
+time step continuity errors : sum local = 0.000128231, global = 9.88941e-21, cumulative = -2.84419e-19
+ExecutionTime = 1.19 s  ClockTime = 1 s
+
+Coats Number mean: 0.00268019 max: 0.710883
+deltaT = 669.653
+Time = 26800.9
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.791593
+DICPCG:  Solving for p, Initial residual = 0.0931786, Final residual = 7.33648e-13, No Iterations 105
+time step continuity errors : sum local = 0.000133931, global = 1.82781e-20, cumulative = -2.66141e-19
+ExecutionTime = 1.21 s  ClockTime = 1 s
+
+Coats Number mean: 0.0028738 max: 0.6906
+deltaT = 726.818
+Time = 27527.7
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.791701
+DICPCG:  Solving for p, Initial residual = 0.0763602, Final residual = 6.12581e-13, No Iterations 105
+time step continuity errors : sum local = 0.000145364, global = -4.98877e-20, cumulative = -3.16028e-19
+ExecutionTime = 1.22 s  ClockTime = 1 s
+
+Coats Number mean: 0.00313395 max: 0.843622
+deltaT = 639.916
+Time = 28167.6
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.791792
+DICPCG:  Solving for p, Initial residual = 0.0561721, Final residual = 6.91808e-13, No Iterations 103
+time step continuity errors : sum local = 0.000127983, global = 3.13765e-20, cumulative = -2.84652e-19
+ExecutionTime = 1.23 s  ClockTime = 1 s
+
+Coats Number mean: 0.00266073 max: 0.751572
+deltaT = 632.96
+Time = 28800.6
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.791879
+DICPCG:  Solving for p, Initial residual = 0.0607915, Final residual = 8.96934e-13, No Iterations 101
+time step continuity errors : sum local = 0.000126592, global = -1.11193e-20, cumulative = -2.95771e-19
+ExecutionTime = 1.24 s  ClockTime = 1 s
+
+Coats Number mean: 0.00253049 max: 0.713006
+deltaT = 662.062
+Time = 29462.7
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.791968
+DICPCG:  Solving for p, Initial residual = 0.0700935, Final residual = 7.34697e-13, No Iterations 101
+time step continuity errors : sum local = 0.000132412, global = -1.2139e-20, cumulative = -3.0791e-19
+ExecutionTime = 1.25 s  ClockTime = 1 s
+
+Coats Number mean: 0.00256047 max: 0.713005
+deltaT = 694.358
+Time = 30157
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.792057
+DICPCG:  Solving for p, Initial residual = 0.0806122, Final residual = 7.92991e-13, No Iterations 101
+time step continuity errors : sum local = 0.000138872, global = -3.4477e-20, cumulative = -3.42387e-19
+ExecutionTime = 1.26 s  ClockTime = 1 s
+
+Coats Number mean: 0.00263063 max: 0.722302
+deltaT = 711.936
+Time = 30869
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.792146
+DICPCG:  Solving for p, Initial residual = 0.090759, Final residual = 8.83616e-13, No Iterations 101
+time step continuity errors : sum local = 0.000142387, global = -2.26605e-20, cumulative = -3.65047e-19
+ExecutionTime = 1.27 s  ClockTime = 1 s
+
+Coats Number mean: 0.00270021 max: 0.724769
+deltaT = 730.672
+Time = 31599.6
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.792234
+DICPCG:  Solving for p, Initial residual = 0.101557, Final residual = 7.39951e-13, No Iterations 102
+time step continuity errors : sum local = 0.000146134, global = 2.85639e-20, cumulative = -3.36484e-19
+ExecutionTime = 1.28 s  ClockTime = 1 s
+
+Coats Number mean: 0.00286793 max: 0.736638
+deltaT = 740.546
+Time = 32340.2
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.79232
+DICPCG:  Solving for p, Initial residual = 0.110997, Final residual = 6.82454e-13, No Iterations 102
+time step continuity errors : sum local = 0.000148109, global = 2.09109e-20, cumulative = -3.15573e-19
+ExecutionTime = 1.29 s  ClockTime = 1 s
+
+Coats Number mean: 0.00309723 max: 0.747119
+deltaT = 740.546
+Time = 33080.7
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.792404
+DICPCG:  Solving for p, Initial residual = 0.117934, Final residual = 5.89832e-13, No Iterations 103
+time step continuity errors : sum local = 0.000148109, global = 3.94471e-20, cumulative = -2.76126e-19
+ExecutionTime = 1.3 s  ClockTime = 1 s
+
+Coats Number mean: 0.0033118 max: 0.754032
+deltaT = 730.401
+Time = 33811.1
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.792483
+DICPCG:  Solving for p, Initial residual = 0.119389, Final residual = 8.87657e-13, No Iterations 102
+time step continuity errors : sum local = 0.00014608, global = -5.60513e-20, cumulative = -3.32177e-19
+ExecutionTime = 1.31 s  ClockTime = 1 s
+
+Coats Number mean: 0.00351479 max: 0.75507
+deltaT = 720.396
+Time = 34531.5
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.792559
+DICPCG:  Solving for p, Initial residual = 0.116455, Final residual = 9.32479e-13, No Iterations 102
+time step continuity errors : sum local = 0.000144079, global = -5.50208e-20, cumulative = -3.87198e-19
+ExecutionTime = 1.32 s  ClockTime = 1 s
+
+Coats Number mean: 0.00367161 max: 0.752047
+deltaT = 710.527
+Time = 35242
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.792632
+DICPCG:  Solving for p, Initial residual = 0.111488, Final residual = 8.83988e-13, No Iterations 102
+time step continuity errors : sum local = 0.000142105, global = -5.97311e-20, cumulative = -4.46929e-19
+ExecutionTime = 1.33 s  ClockTime = 1 s
+
+Coats Number mean: 0.00363135 max: 0.734244
+deltaT = 720.535
+Time = 35962.6
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.792704
+DICPCG:  Solving for p, Initial residual = 0.111409, Final residual = 9.45245e-13, No Iterations 102
+time step continuity errors : sum local = 0.000144107, global = -9.18245e-21, cumulative = -4.56111e-19
+ExecutionTime = 1.33 s  ClockTime = 1 s
+
+Coats Number mean: 0.0036425 max: 0.720087
+deltaT = 741.727
+Time = 36704.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.792775
+DICPCG:  Solving for p, Initial residual = 0.111881, Final residual = 6.37158e-13, No Iterations 103
+time step continuity errors : sum local = 0.000148345, global = 2.85614e-20, cumulative = -4.2755e-19
+ExecutionTime = 1.35 s  ClockTime = 1 s
+
+Coats Number mean: 0.00386394 max: 0.701771
+deltaT = 788.821
+Time = 37493.1
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.792849
+DICPCG:  Solving for p, Initial residual = 0.102542, Final residual = 5.37025e-13, No Iterations 103
+time step continuity errors : sum local = 0.000157764, global = -3.4835e-20, cumulative = -4.62385e-19
+ExecutionTime = 1.36 s  ClockTime = 1 s
+
+Coats Number mean: 0.0044375 max: 0.705502
+deltaT = 828.93
+Time = 38322.1
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.792924
+DICPCG:  Solving for p, Initial residual = 0.0813506, Final residual = 7.92083e-13, No Iterations 102
+time step continuity errors : sum local = 0.000165786, global = 7.81403e-20, cumulative = -3.84244e-19
+ExecutionTime = 1.37 s  ClockTime = 1 s
+
+Coats Number mean: 0.00480411 max: 0.886541
+deltaT = 696.782
+Time = 39018.8
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.792985
+DICPCG:  Solving for p, Initial residual = 0.0668912, Final residual = 9.57684e-13, No Iterations 100
+time step continuity errors : sum local = 0.000139356, global = 5.49406e-20, cumulative = -3.29304e-19
+ExecutionTime = 1.38 s  ClockTime = 1 s
+
+Coats Number mean: 0.00389453 max: 0.701327
+deltaT = 740.331
+Time = 39759.2
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793049
+DICPCG:  Solving for p, Initial residual = 0.0679544, Final residual = 8.89008e-13, No Iterations 99
+time step continuity errors : sum local = 0.000148066, global = -3.79478e-20, cumulative = -3.67252e-19
+ExecutionTime = 1.39 s  ClockTime = 1 s
+
+Coats Number mean: 0.00393163 max: 0.701658
+deltaT = 790.523
+Time = 40549.7
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793114
+DICPCG:  Solving for p, Initial residual = 0.0787139, Final residual = 8.62177e-13, No Iterations 98
+time step continuity errors : sum local = 0.000158105, global = -7.97214e-21, cumulative = -3.75224e-19
+ExecutionTime = 1.4 s  ClockTime = 1 s
+
+Coats Number mean: 0.00399183 max: 0.714638
+deltaT = 818.756
+Time = 41368.4
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793181
+DICPCG:  Solving for p, Initial residual = 0.08919, Final residual = 8.42629e-13, No Iterations 98
+time step continuity errors : sum local = 0.000163751, global = 3.16088e-20, cumulative = -3.43615e-19
+ExecutionTime = 1.41 s  ClockTime = 1 s
+
+Coats Number mean: 0.0039581 max: 0.714892
+deltaT = 849.652
+Time = 42218.1
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793247
+DICPCG:  Solving for p, Initial residual = 0.100367, Final residual = 9.55027e-13, No Iterations 98
+time step continuity errors : sum local = 0.00016993, global = 4.7377e-20, cumulative = -2.96238e-19
+ExecutionTime = 1.42 s  ClockTime = 1 s
+
+Coats Number mean: 0.00395522 max: 0.721883
+deltaT = 866.312
+Time = 43084.4
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793313
+DICPCG:  Solving for p, Initial residual = 0.111123, Final residual = 7.79423e-13, No Iterations 99
+time step continuity errors : sum local = 0.000173262, global = 6.27323e-20, cumulative = -2.33506e-19
+ExecutionTime = 1.43 s  ClockTime = 1 s
+
+Coats Number mean: 0.00391321 max: 0.719429
+deltaT = 902.408
+Time = 43986.8
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.79338
+DICPCG:  Solving for p, Initial residual = 0.123842, Final residual = 6.09901e-13, No Iterations 100
+time step continuity errors : sum local = 0.000180482, global = -5.6907e-20, cumulative = -2.90413e-19
+ExecutionTime = 1.43 s  ClockTime = 1 s
+
+Coats Number mean: 0.00401198 max: 0.734859
+deltaT = 902.408
+Time = 44889.2
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793445
+DICPCG:  Solving for p, Initial residual = 0.132616, Final residual = 8.5665e-13, No Iterations 100
+time step continuity errors : sum local = 0.000180482, global = -3.11573e-20, cumulative = -3.2157e-19
+ExecutionTime = 1.45 s  ClockTime = 1 s
+
+Coats Number mean: 0.00408906 max: 0.72319
+deltaT = 922.462
+Time = 45811.7
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793509
+DICPCG:  Solving for p, Initial residual = 0.13915, Final residual = 6.17934e-13, No Iterations 101
+time step continuity errors : sum local = 0.000184492, global = 1.04736e-20, cumulative = -3.11096e-19
+ExecutionTime = 1.45 s  ClockTime = 1 s
+
+Coats Number mean: 0.0045378 max: 0.736166
+deltaT = 922.462
+Time = 46734.1
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793572
+DICPCG:  Solving for p, Initial residual = 0.133778, Final residual = 7.42899e-13, No Iterations 101
+time step continuity errors : sum local = 0.000184492, global = -3.56989e-20, cumulative = -3.46795e-19
+ExecutionTime = 1.46 s  ClockTime = 1 s
+
+Coats Number mean: 0.00505554 max: 0.830783
+deltaT = 826.372
+Time = 47560.5
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793626
+DICPCG:  Solving for p, Initial residual = 0.113192, Final residual = 6.98387e-13, No Iterations 101
+time step continuity errors : sum local = 0.000165274, global = -4.26443e-20, cumulative = -3.89439e-19
+ExecutionTime = 1.47 s  ClockTime = 1 s
+
+Coats Number mean: 0.00483555 max: 0.731841
+deltaT = 844.337
+Time = 48404.9
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.79368
+DICPCG:  Solving for p, Initial residual = 0.109979, Final residual = 8.73841e-13, No Iterations 101
+time step continuity errors : sum local = 0.000168867, global = 1.02926e-19, cumulative = -2.86514e-19
+ExecutionTime = 1.49 s  ClockTime = 1 s
+
+Coats Number mean: 0.00503768 max: 0.758165
+deltaT = 825.981
+Time = 49230.8
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793731
+DICPCG:  Solving for p, Initial residual = 0.10068, Final residual = 8.58798e-13, No Iterations 101
+time step continuity errors : sum local = 0.000165196, global = -5.46554e-20, cumulative = -3.41169e-19
+ExecutionTime = 1.49 s  ClockTime = 1 s
+
+Coats Number mean: 0.00491117 max: 0.728552
+deltaT = 844.754
+Time = 50075.6
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793783
+DICPCG:  Solving for p, Initial residual = 0.0917449, Final residual = 6.98864e-13, No Iterations 101
+time step continuity errors : sum local = 0.000168951, global = -8.68891e-20, cumulative = -4.28058e-19
+ExecutionTime = 1.5 s  ClockTime = 1 s
+
+Coats Number mean: 0.00495139 max: 0.702377
+deltaT = 885.961
+Time = 50961.6
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793835
+DICPCG:  Solving for p, Initial residual = 0.0933691, Final residual = 8.26002e-13, No Iterations 100
+time step continuity errors : sum local = 0.000177192, global = -4.88648e-21, cumulative = -4.32945e-19
+ExecutionTime = 1.51 s  ClockTime = 1 s
+
+Coats Number mean: 0.00516206 max: 0.764103
+deltaT = 864.352
+Time = 51825.9
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793885
+DICPCG:  Solving for p, Initial residual = 0.0894172, Final residual = 8.22883e-13, No Iterations 100
+time step continuity errors : sum local = 0.00017287, global = 2.0625e-20, cumulative = -4.1232e-19
+ExecutionTime = 1.52 s  ClockTime = 1 s
+
+Coats Number mean: 0.00506848 max: 0.7481
+deltaT = 864.352
+Time = 52690.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793934
+DICPCG:  Solving for p, Initial residual = 0.0852608, Final residual = 5.54979e-13, No Iterations 100
+time step continuity errors : sum local = 0.00017287, global = -5.07929e-20, cumulative = -4.63113e-19
+ExecutionTime = 1.53 s  ClockTime = 1 s
+
+Coats Number mean: 0.00489267 max: 0.806913
+deltaT = 802.613
+Time = 53492.9
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.793978
+DICPCG:  Solving for p, Initial residual = 0.0812457, Final residual = 6.0595e-13, No Iterations 99
+time step continuity errors : sum local = 0.000160523, global = 4.97239e-20, cumulative = -4.13389e-19
+ExecutionTime = 1.54 s  ClockTime = 1 s
+
+Coats Number mean: 0.00430948 max: 0.669627
+deltaT = 889.382
+Time = 54382.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794026
+DICPCG:  Solving for p, Initial residual = 0.0936954, Final residual = 9.95457e-13, No Iterations 98
+time step continuity errors : sum local = 0.000177876, global = -7.16548e-21, cumulative = -4.20554e-19
+ExecutionTime = 1.55 s  ClockTime = 1 s
+
+Coats Number mean: 0.00451619 max: 0.634582
+deltaT = 970.235
+Time = 55352.5
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794077
+DICPCG:  Solving for p, Initial residual = 0.110293, Final residual = 6.70392e-13, No Iterations 99
+time step continuity errors : sum local = 0.000194047, global = 1.22351e-19, cumulative = -2.98203e-19
+ExecutionTime = 1.56 s  ClockTime = 1 s
+
+Coats Number mean: 0.0047079 max: 0.649239
+deltaT = 1070.6
+Time = 56423.1
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794132
+DICPCG:  Solving for p, Initial residual = 0.127613, Final residual = 8.73149e-13, No Iterations 99
+time step continuity errors : sum local = 0.000214121, global = -5.34252e-21, cumulative = -3.03546e-19
+ExecutionTime = 1.57 s  ClockTime = 1 s
+
+Coats Number mean: 0.00508973 max: 0.683087
+deltaT = 1152.96
+Time = 57576
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.79419
+DICPCG:  Solving for p, Initial residual = 0.139383, Final residual = 6.08372e-13, No Iterations 100
+time step continuity errors : sum local = 0.000230592, global = -5.36538e-20, cumulative = -3.57199e-19
+ExecutionTime = 1.58 s  ClockTime = 1 s
+
+Coats Number mean: 0.00544278 max: 0.943153
+deltaT = 900.748
+Time = 58476.8
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794233
+DICPCG:  Solving for p, Initial residual = 0.118743, Final residual = 5.91605e-13, No Iterations 100
+time step continuity errors : sum local = 0.00018015, global = -1.02259e-19, cumulative = -4.59459e-19
+ExecutionTime = 1.59 s  ClockTime = 1 s
+
+Coats Number mean: 0.0042931 max: 0.716838
+deltaT = 930.773
+Time = 59407.6
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794277
+DICPCG:  Solving for p, Initial residual = 0.118997, Final residual = 7.78745e-13, No Iterations 100
+time step continuity errors : sum local = 0.000186155, global = 1.34106e-20, cumulative = -4.46048e-19
+ExecutionTime = 1.6 s  ClockTime = 1 s
+
+Coats Number mean: 0.00461232 max: 0.681568
+deltaT = 999.72
+Time = 60407.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794323
+DICPCG:  Solving for p, Initial residual = 0.114629, Final residual = 8.15104e-13, No Iterations 100
+time step continuity errors : sum local = 0.000199944, global = -9.88313e-20, cumulative = -5.4488e-19
+ExecutionTime = 1.61 s  ClockTime = 1 s
+
+Coats Number mean: 0.00509183 max: 0.844009
+deltaT = 866.424
+Time = 61273.7
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794362
+DICPCG:  Solving for p, Initial residual = 0.104962, Final residual = 7.63407e-13, No Iterations 100
+time step continuity errors : sum local = 0.000173285, global = 8.28468e-20, cumulative = -4.62033e-19
+ExecutionTime = 1.62 s  ClockTime = 1 s
+
+Coats Number mean: 0.00454755 max: 0.67325
+deltaT = 930.603
+Time = 62204.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794403
+DICPCG:  Solving for p, Initial residual = 0.11065, Final residual = 9.60748e-13, No Iterations 100
+time step continuity errors : sum local = 0.000186121, global = -2.77745e-21, cumulative = -4.6481e-19
+ExecutionTime = 1.63 s  ClockTime = 1 s
+
+Coats Number mean: 0.00515976 max: 0.665446
+deltaT = 1008.15
+Time = 63212.5
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794447
+DICPCG:  Solving for p, Initial residual = 0.112581, Final residual = 6.61612e-13, No Iterations 101
+time step continuity errors : sum local = 0.000201631, global = 3.66477e-20, cumulative = -4.28162e-19
+ExecutionTime = 1.64 s  ClockTime = 1 s
+
+Coats Number mean: 0.00587778 max: 0.806583
+deltaT = 927.501
+Time = 64140
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794486
+DICPCG:  Solving for p, Initial residual = 0.0978444, Final residual = 7.78825e-13, No Iterations 100
+time step continuity errors : sum local = 0.0001855, global = -2.6526e-20, cumulative = -4.54689e-19
+ExecutionTime = 1.65 s  ClockTime = 1 s
+
+Coats Number mean: 0.00539162 max: 0.807484
+deltaT = 856.155
+Time = 64996.1
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794521
+DICPCG:  Solving for p, Initial residual = 0.0898988, Final residual = 5.73792e-13, No Iterations 100
+time step continuity errors : sum local = 0.000171231, global = 1.01308e-19, cumulative = -3.5338e-19
+ExecutionTime = 1.66 s  ClockTime = 1 s
+
+Coats Number mean: 0.00484085 max: 0.682672
+deltaT = 930.603
+Time = 65926.7
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794559
+DICPCG:  Solving for p, Initial residual = 0.101865, Final residual = 5.8245e-13, No Iterations 100
+time step continuity errors : sum local = 0.000186121, global = -2.79441e-20, cumulative = -3.81324e-19
+ExecutionTime = 1.67 s  ClockTime = 1 s
+
+Coats Number mean: 0.00514086 max: 0.650072
+deltaT = 1023.66
+Time = 66950.4
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.7946
+DICPCG:  Solving for p, Initial residual = 0.11203, Final residual = 7.22833e-13, No Iterations 100
+time step continuity errors : sum local = 0.000204733, global = 4.77385e-20, cumulative = -3.33586e-19
+ExecutionTime = 1.68 s  ClockTime = 1 s
+
+Coats Number mean: 0.00567558 max: 0.70825
+deltaT = 1080.53
+Time = 68030.9
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794641
+DICPCG:  Solving for p, Initial residual = 0.115067, Final residual = 6.92019e-13, No Iterations 100
+time step continuity errors : sum local = 0.000216107, global = 5.01825e-20, cumulative = -2.83403e-19
+ExecutionTime = 1.69 s  ClockTime = 1 s
+
+Coats Number mean: 0.00591672 max: 0.902755
+deltaT = 874.718
+Time = 68905.6
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794675
+DICPCG:  Solving for p, Initial residual = 0.100182, Final residual = 9.67806e-13, No Iterations 99
+time step continuity errors : sum local = 0.000174944, global = -4.80819e-20, cumulative = -3.31485e-19
+ExecutionTime = 1.7 s  ClockTime = 1 s
+
+Coats Number mean: 0.0047369 max: 0.673562
+deltaT = 971.909
+Time = 69877.6
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794711
+DICPCG:  Solving for p, Initial residual = 0.106003, Final residual = 6.14352e-13, No Iterations 100
+time step continuity errors : sum local = 0.000194382, global = 4.12824e-20, cumulative = -2.90203e-19
+ExecutionTime = 1.71 s  ClockTime = 1 s
+
+Coats Number mean: 0.00527596 max: 0.702284
+deltaT = 1032.65
+Time = 70910.2
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794748
+DICPCG:  Solving for p, Initial residual = 0.104425, Final residual = 8.097e-13, No Iterations 99
+time step continuity errors : sum local = 0.000206531, global = -8.43943e-20, cumulative = -3.74597e-19
+ExecutionTime = 1.72 s  ClockTime = 1 s
+
+Coats Number mean: 0.0054472 max: 0.841621
+deltaT = 911.164
+Time = 71821.4
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794781
+DICPCG:  Solving for p, Initial residual = 0.0943817, Final residual = 9.68418e-13, No Iterations 98
+time step continuity errors : sum local = 0.000182233, global = -6.23353e-20, cumulative = -4.36932e-19
+ExecutionTime = 1.73 s  ClockTime = 1 s
+
+Coats Number mean: 0.00461661 max: 0.671905
+deltaT = 971.909
+Time = 72793.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794815
+DICPCG:  Solving for p, Initial residual = 0.104992, Final residual = 6.616e-13, No Iterations 99
+time step continuity errors : sum local = 0.000194382, global = -4.6396e-20, cumulative = -4.83328e-19
+ExecutionTime = 1.74 s  ClockTime = 1 s
+
+Coats Number mean: 0.00479246 max: 0.62802
+deltaT = 1046.67
+Time = 73840
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794851
+DICPCG:  Solving for p, Initial residual = 0.11434, Final residual = 9.39484e-13, No Iterations 99
+time step continuity errors : sum local = 0.000209334, global = 1.54544e-20, cumulative = -4.67874e-19
+ExecutionTime = 1.75 s  ClockTime = 1 s
+
+Coats Number mean: 0.00520694 max: 0.600806
+deltaT = 1141.82
+Time = 74981.8
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794889
+DICPCG:  Solving for p, Initial residual = 0.116019, Final residual = 6.58488e-13, No Iterations 100
+time step continuity errors : sum local = 0.000228365, global = -7.04941e-20, cumulative = -5.38368e-19
+ExecutionTime = 1.76 s  ClockTime = 1 s
+
+Coats Number mean: 0.00577022 max: 0.875483
+deltaT = 951.519
+Time = 75933.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.79492
+DICPCG:  Solving for p, Initial residual = 0.100531, Final residual = 7.47858e-13, No Iterations 99
+time step continuity errors : sum local = 0.000190304, global = -8.43679e-20, cumulative = -6.22736e-19
+ExecutionTime = 1.77 s  ClockTime = 1 s
+
+Coats Number mean: 0.00477749 max: 0.705865
+deltaT = 951.519
+Time = 76884.8
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794951
+DICPCG:  Solving for p, Initial residual = 0.104188, Final residual = 6.30997e-13, No Iterations 100
+time step continuity errors : sum local = 0.000190304, global = 1.11168e-21, cumulative = -6.21624e-19
+ExecutionTime = 1.78 s  ClockTime = 1 s
+
+Coats Number mean: 0.00484024 max: 0.628851
+deltaT = 1057.24
+Time = 77942.1
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.794984
+DICPCG:  Solving for p, Initial residual = 0.115951, Final residual = 8.87812e-13, No Iterations 100
+time step continuity errors : sum local = 0.000211449, global = 2.84883e-20, cumulative = -5.93136e-19
+ExecutionTime = 1.79 s  ClockTime = 1 s
+
+Coats Number mean: 0.00565471 max: 0.620584
+deltaT = 1057.24
+Time = 78999.3
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.795017
+DICPCG:  Solving for p, Initial residual = 0.115555, Final residual = 6.86875e-13, No Iterations 101
+time step continuity errors : sum local = 0.000211449, global = -3.01245e-20, cumulative = -6.23261e-19
+ExecutionTime = 1.8 s  ClockTime = 1 s
+
+Coats Number mean: 0.00599097 max: 0.742432
+deltaT = 1057.24
+Time = 80056.5
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.795049
+DICPCG:  Solving for p, Initial residual = 0.111936, Final residual = 8.64232e-13, No Iterations 100
+time step continuity errors : sum local = 0.000211449, global = -9.46041e-20, cumulative = -7.17865e-19
+ExecutionTime = 1.81 s  ClockTime = 2 s
+
+Coats Number mean: 0.00615458 max: 0.789975
+deltaT = 906.208
+Time = 80962.7
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.795076
+DICPCG:  Solving for p, Initial residual = 0.0999595, Final residual = 8.99152e-13, No Iterations 99
+time step continuity errors : sum local = 0.000181242, global = -7.64592e-20, cumulative = -7.94324e-19
+ExecutionTime = 1.82 s  ClockTime = 2 s
+
+Coats Number mean: 0.00523364 max: 0.711959
+deltaT = 906.208
+Time = 81869
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.795103
+DICPCG:  Solving for p, Initial residual = 0.104209, Final residual = 7.52312e-13, No Iterations 99
+time step continuity errors : sum local = 0.000181242, global = -2.25299e-20, cumulative = -8.16854e-19
+ExecutionTime = 1.83 s  ClockTime = 2 s
+
+Coats Number mean: 0.00519014 max: 0.655991
+deltaT = 906.208
+Time = 82775.2
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.795129
+DICPCG:  Solving for p, Initial residual = 0.105962, Final residual = 6.14555e-13, No Iterations 100
+time step continuity errors : sum local = 0.000181242, global = 5.14127e-20, cumulative = -7.65441e-19
+ExecutionTime = 1.84 s  ClockTime = 2 s
+
+Coats Number mean: 0.00524357 max: 0.637354
+deltaT = 906.208
+Time = 83681.4
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.795154
+DICPCG:  Solving for p, Initial residual = 0.100993, Final residual = 8.2649e-13, No Iterations 100
+time step continuity errors : sum local = 0.000181242, global = -1.0022e-20, cumulative = -7.75463e-19
+ExecutionTime = 1.85 s  ClockTime = 2 s
+
+Coats Number mean: 0.00542792 max: 0.692993
+deltaT = 906.208
+Time = 84587.6
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.79518
+DICPCG:  Solving for p, Initial residual = 0.0903983, Final residual = 7.94716e-13, No Iterations 100
+time step continuity errors : sum local = 0.000181242, global = -6.71005e-20, cumulative = -8.42564e-19
+ExecutionTime = 1.85 s  ClockTime = 2 s
+
+Coats Number mean: 0.00558848 max: 0.692758
+deltaT = 906.208
+Time = 85493.8
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.795205
+DICPCG:  Solving for p, Initial residual = 0.0769976, Final residual = 9.35211e-13, No Iterations 99
+time step continuity errors : sum local = 0.000181242, global = 8.08933e-20, cumulative = -7.6167e-19
+ExecutionTime = 1.87 s  ClockTime = 2 s
+
+Coats Number mean: 0.00549023 max: 0.712084
+deltaT = 906.208
+Time = 86400
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.795229
+DICPCG:  Solving for p, Initial residual = 0.0747555, Final residual = 6.60113e-13, No Iterations 99
+time step continuity errors : sum local = 0.000181242, global = -8.03532e-20, cumulative = -8.42023e-19
+ExecutionTime = 1.91 s  ClockTime = 2 s
+
+Coats Number mean: 0.00523793 max: 0.663626
+deltaT = 1004.65
+Time = 87404.7
+
+diagonal:  Solving for water.alpha, Initial residual = 0, Final residual = 0, No Iterations 0
+Saturation w  Min = 0.1601 Max = 0.795256

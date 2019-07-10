@@ -1,0 +1,68 @@
+FoamFile
+{
+  version     2.0;
+  format      ascii;
+  class       dictionary;
+  location    "constant";
+  object      transportProperties;
+}
+
+phases (water oil);
+
+oil
+{
+    rhoSc   rhoSc [1 -3 0 0 0 0 0] 700.0;
+    wettingStatus   nonWetting;
+    FVFModel        tabulated;
+    FVFData
+    {
+        fileName    "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/coupledFoam/SPE10-Parameter-Variation/preparedSPE10/constant/PVT/iFVF";
+        outOfBounds repeat;
+    }
+}
+	
+water
+{
+    rhoSc   rhoSc [1 -3 0 0 0 0 0] 1.0;
+    FVFModel        tabulated;
+    FVFData
+    {
+        fileName    "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/coupledFoam/SPE10-Parameter-Variation/preparedSPE10/constant/PVT/iFVF";
+        outOfBounds repeat;
+    }
+}
+
+//// relative permeability model ////
+
+relativePermeabilityModel   BrooksCorey;
+
+krData{
+    fileName    "/home/elwardi/MasterThesis/reservoir-simulator/tutorials/coupledFoam/SPE10-Parameter-Variation/preparedSPE10/constant/kr.dat";
+    outOfBounds warn;
+}
+
+capillaryPressureModel      "none";
+
+BrooksCoreyCoeffs
+{
+    n              5;
+    water.alphaMin 0.1;
+    oil.alphaMin   0.25;
+    water.krMax    1.0;
+    oil.krMax      1.0;
+
+    water.pcSmin   0.0;
+    water.pcSmax   0.75;
+    pc0            0.0; // 10psi
+    pc.alpha       0.238;
+}
+
+wellKrModel<INJ0> -0.1 0.1 2 2 1 1;
+
+bubblePointModel            constantPb;
+constantPbCoeffs
+{
+    Pb                      -1e10;
+}
+
+// ************************************************************************* //
