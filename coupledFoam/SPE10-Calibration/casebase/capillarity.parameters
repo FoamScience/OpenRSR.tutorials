@@ -1,8 +1,0 @@
-pc 0.068947573e6;
-
-pcModel
-{
-    description "Pc model to use";
-    default BrooksCorey;
-    options ("none" tabulated BrooksCorey);
-}

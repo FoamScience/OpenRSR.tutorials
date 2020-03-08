@@ -1,31 +1,16 @@
-# Tutorial cases For OpenRSR
+# Tutorial cases For OpenRSR solvers
 
-These tutorials are documented in this repo's wiki pages.
-Mainly, they verify the integrity of developed solvers:
+These tutorials are here to verify the integrity of developed solvers:
 
  - `BL-Case.*`: Some 1D Buckley-Leverett scenarios to verify 
-   basic functionality of `pSwImpesFoam` and `pSwCoupledFoam` solvers.
- - `SPE10` related cases to compare results obtained with `pSwCoupledFoam`
+   basic functionality of isotropic IMPES and coupled solvers.
+ - `SPE10`-related cases to compare results obtained with coupled solvers
    against original SPE10 publication and a reference MUFITS simulation (
-   available as an example at its webpage).
+   available as an example at the software's webpage).
  - `A reduced realistic reservoir` to test the anisotropic version of the 
-   coupled solver.
+   coupled solver [coming soon].
 
-
-## Known Problems & workarounds
-
-Parallel running of cases is not yet comfortable:
-
-- OpenFOAM creates a local mesh per processor and solves equations there. Calculations
-  in regions with no wells are usually much faster,but BCs are applying blocking MPI calls
-  everywhere. 
-- Setting Reference Pressure cell in global `system/fvSolution` should be avoided as the
-  local cell ID will change.
-- Well cell set in `constant/wellProperties` shouldn't use `labelToCell` topoSets
-  because those are relying on global cell labeling for now. It's better to use
-  something like `cylinderToCell`.
-- Cells of a single well should belong to the same processor, especially if conversion 
-  of rate-imposed to BHP-operated wells is allowed.
-
-In general, avoid parallelizing the cases until a concrete solution to these issues is
-solved.
+> The ``dev`` branch of this repo is kept always in sync with the dev branch
+> of [OpenRSR](https://github.com/FoamScience/OpenRSR) repo. Which means, changes (in case files) needed to be able
+> to run the tutorials with the latest library/solvers (from the dev branch)
+> will only be applied here on the dev branch.
