@@ -1,0 +1,75 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      wellsProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+wellModel Peaceman;
+
+wells 
+(
+    PROD0
+    {
+        controlMode         BHP;
+        operationMode       production;
+        orientation         isoVertical;
+        skin 0;
+        radius              0.3;
+        datumDepth          0;
+        BHP                 90;
+        flowRateData
+        {
+            fileName            "prod.rate";
+            outOfBounds         warn;
+        }
+
+        perforations
+        (
+            labelToCell
+            {
+                value  (0);
+            }
+        );
+    }
+    INJ0
+    {
+        controlMode         liquidRate;
+        operationMode       injection;
+        orientation         isoVertical;
+        datumDepth          0;
+        BHP                 100;
+        radius              0.3;
+        flowRateData
+        {
+            fileName            "inj.rate";
+            outOfBounds         warn;
+        }
+
+        perforations
+        (
+            //cylinderToCell
+            //{
+            //    p1    (5 99 5);
+            //    p2    (5 100 5);
+            //    radius 0.3;
+            //}
+            labelToCell
+            {
+                value  (99);
+            }
+        );
+    }
+);
+
+// ************************************************************************* //

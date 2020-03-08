@@ -1,0 +1,1242 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.0                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  | For copyright notice see file Copyright         |
+\*---------------------------------------------------------------------------*/
+Build    : 4.0
+Exec     : pSwCoupledFoam
+Date     : Oct 03 2019
+Time     : 11:09:08
+Host     : Elwardi-PC
+PID      : 20406
+CtrlDict : "/home/elwardi/GitRepos/OpenRSR.tutorials/coupledFoam/SPE10-Calibration/casebase/system/controlDict"
+--> FOAM Warning : 
+    From function debug::updateCentralDictVars
+(
+    const globalControlDictSwitchSet,
+    const string& keyValues,
+    const bool verbose
+)
+    in file lnInclude/debug.C at line 427
+    Usage of non-existent DebugSwitches name: vertical.  Cannot be changed.
+
+Valid entries for this application are: 
+735
+(
+AAMG
+AMG
+AMGInterface
+AMGInterfaceField
+BICCG
+BiCGStab
+BlockAMG
+BlockAMGCycle
+BlockAMGInterfaceField
+BlockAMGLevel
+BlockCoeffNorm
+BlockLduInterfaceField<diagTensor>
+BlockLduInterfaceField<scalar>
+BlockLduInterfaceField<sphericalTensor>
+BlockLduInterfaceField<symmTensor4thOrder>
+BlockLduInterfaceField<symmTensor>
+BlockLduInterfaceField<tensor>
+BlockLduInterfaceField<vector2>
+BlockLduInterfaceField<vector3>
+BlockLduInterfaceField<vector4>
+BlockLduInterfaceField<vector6>
+BlockLduInterfaceField<vector8>
+BlockLduInterfaceField<vector>
+BlockLduPrecon
+BlockLduSmoother
+BlockLduSolver
+BlockMatrixCoarsening
+BrooksCorey
+CG
+CallbackRegistry
+CentredFitData<biLinearFitPolynomial>
+CentredFitData<linearFitPolynomial>
+CentredFitData<quadraticFitPolynomial>
+CentredFitData<quadraticLinearFitPolynomial>
+Cholesky
+Cloud<indexedParticle>
+Cloud<passiveParticle>
+CoEuler
+CrankNicolson
+DIC
+DICGaussSeidel
+DILU
+DILUGaussSeidel
+Diagonal
+Euler
+EulerRotation
+FDIC
+FVFModel
+FaceCellWave
+GAMG
+GAMGAgglomeration
+GGIBlockLduInterfaceField<scalar>
+GGIBlockLduInterfaceField<sphericalTensor>
+GGIBlockLduInterfaceField<symmTensor>
+GGIBlockLduInterfaceField<tensor>
+GGIBlockLduInterfaceField<vector2>
+GGIBlockLduInterfaceField<vector3>
+GGIBlockLduInterfaceField<vector4>
+GGIBlockLduInterfaceField<vector6>
+GGIBlockLduInterfaceField<vector8>
+GGIBlockLduInterfaceField<vector>
+GGIInterpolation
+GMRES
+Gamma
+Gamma01
+Gamma01DC
+GammaDC
+GammaV
+GammaVDC
+Gauss
+GaussSeidel
+HashTable
+ICCG
+IFstream
+ILU
+ILUCp
+IMQB
+IOMap<dictionary>
+IOPtrList<MRFZone>
+IOPtrList<coordinateSystem>
+IOPtrList<porousZone>
+IOPtrList<scalarTimeActivatedExplicitSource>
+IOPtrList<vectorTimeActivatedExplicitSource>
+IOobject
+List<bool>
+List<complex>
+List<complexVector>
+List<diagTensor2>
+List<diagTensor3>
+List<diagTensor4>
+List<diagTensor6>
+List<diagTensor8>
+List<diagTensor>
+List<edge>
+List<label>
+List<scalar>
+List<sphericalTensor2>
+List<sphericalTensor3>
+List<sphericalTensor4>
+List<sphericalTensor6>
+List<sphericalTensor8>
+List<sphericalTensor>
+List<symmTensor4thOrder>
+List<symmTensor>
+List<tensor2>
+List<tensor3>
+List<tensor4>
+List<tensor6>
+List<tensor8>
+List<tensor>
+List<vector2>
+List<vector3>
+List<vector4>
+List<vector6>
+List<vector8>
+List<vector>
+List<word>
+MRFZone
+MUSCL
+MUSCL01
+MUSCLV
+MeshWave
+Minmod
+MinmodV
+MixingPlaneBlockLduInterfaceField<scalar>
+MixingPlaneBlockLduInterfaceField<sphericalTensor>
+MixingPlaneBlockLduInterfaceField<symmTensor>
+MixingPlaneBlockLduInterfaceField<tensor>
+MixingPlaneBlockLduInterfaceField<vector2>
+MixingPlaneBlockLduInterfaceField<vector3>
+MixingPlaneBlockLduInterfaceField<vector4>
+MixingPlaneBlockLduInterfaceField<vector6>
+MixingPlaneBlockLduInterfaceField<vector8>
+MixingPlaneBlockLduInterfaceField<vector>
+MixingPlaneInterpolation
+OFstream
+OSPRE
+OSPREV
+OverlapGGIBlockLduInterfaceField<scalar>
+OverlapGGIBlockLduInterfaceField<sphericalTensor>
+OverlapGGIBlockLduInterfaceField<symmTensor>
+OverlapGGIBlockLduInterfaceField<tensor>
+OverlapGGIBlockLduInterfaceField<vector2>
+OverlapGGIBlockLduInterfaceField<vector3>
+OverlapGGIBlockLduInterfaceField<vector4>
+OverlapGGIBlockLduInterfaceField<vector6>
+OverlapGGIBlockLduInterfaceField<vector8>
+OverlapGGIBlockLduInterfaceField<vector>
+PBiCG
+PCG
+POSIX
+PackedList
+ParSortableList
+PatchToPatchInterpolation
+Peaceman
+Phi
+PointEdgeWave
+PointPatchField
+PrimitivePatch
+ProcessorBlockLduInterfaceField<scalar>
+ProcessorBlockLduInterfaceField<sphericalTensor>
+ProcessorBlockLduInterfaceField<symmTensor>
+ProcessorBlockLduInterfaceField<tensor>
+ProcessorBlockLduInterfaceField<vector2>
+ProcessorBlockLduInterfaceField<vector3>
+ProcessorBlockLduInterfaceField<vector4>
+ProcessorBlockLduInterfaceField<vector6>
+ProcessorBlockLduInterfaceField<vector8>
+ProcessorBlockLduInterfaceField<vector>
+Pstream
+QUICK
+QUICKV
+RBFFunction
+SFCD
+SFCDV
+SLTS
+SRFFlowRateInletVelocity
+SRFModel
+SRFSurfaceNormalVelocity
+SRFTotalPressure
+SRFTotalTemperature
+SRFVelocity
+STARCDRotation
+Segregated
+StaticHashTable
+SuperBee
+SuperBee01
+SuperBee01DC
+SuperBeeDC
+SuperBeeV
+SuperBeeVDC
+TPS
+UMIST
+UMISTV
+UpwindFitData<cubicUpwindFitPolynomial>
+UpwindFitData<linearFitPolynomial>
+UpwindFitData<quadraticLinearUpwindFitPolynomial>
+UpwindFitData<quadraticUpwindFitPolynomial>
+W2
+activeBaffleVelocity
+advective
+algebraicPair
+anisoVertical
+axisRotation
+backward
+basePatch
+beGauss
+biLinearFit
+blackOilFlash
+blended
+blockLduMatrix
+booleanSurface
+boundaryToFace
+boundedBackward
+boxToCell
+boxToFace
+boxToPoint
+bubblePointModel
+buoyantPressure
+calculated
+capillaryPressureModel
+cell
+cellClassification
+cellDistFuncs
+cellLimited
+cellList
+cellMDLimited
+cellPoint
+cellPointFace
+cellPointWallModified
+cellPointWeight
+cellSet
+cellToCell
+cellToFace
+cellToPoint
+cellZone
+centredCECCellToFaceStencil
+centredCFCCellToFaceStencil
+centredCFCFaceToCellStencil
+clippedLinear
+cloud
+coarseBlockAMGLevel
+cohesive
+commSchedule
+componentNorm
+compound
+constantPb
+coordinateRotation
+coordinateSystem
+coordinateSystems
+corrected
+coupled
+cubic
+cubicUpwindFit
+cyclic
+cyclicGgi
+cyclicLduInterface
+cyclicLduInterfaceField
+cylinderToCell
+cylindrical
+decompositionMethod
+diagTensorAverageField
+diagTensorField
+diagonal
+dictionary
+dimensionSet
+directMapped
+directMappedPatch
+directMappedPatchBase
+directMappedVelocityFlux
+directMappedWall
+directionMixed
+disallowDefaultFvsPatchField
+disallowGenericFvPatchField
+disallowGenericPolyPatch
+distributedTriSurfaceMesh
+downwind
+edgeIntersections
+edgeList
+edgeSurface
+ellipticCylindrical
+empty
+explicit
+extendedBlockLduMatrix
+extendedCellToFaceStencil
+extendedLduAddressing
+extendedLduMatrix
+extendedLeastSquares
+extendedLeastSquaresVectors
+faceAreaPair
+faceLimited
+faceList
+faceMDLimited
+faceSet
+faceToCell
+faceToFace
+faceToPoint
+faceZone
+faceZoneToCell
+fan
+fieldToCell
+fileName
+filteredLinear
+filteredLinear2
+filteredLinear2V
+filteredLinear3
+filteredLinear3V
+fineBlockAMGLevel
+fixedBlended
+fixedFluxPressure
+fixedGradient
+fixedInternalValue
+fixedMeanValue
+fixedNormalSlip
+fixedPressureCompressibleDensity
+fixedValue
+flowRateInletVelocity
+flux
+fluxCorrectedVelocity
+fourth
+freestream
+freestreamPressure
+functionObject
+fv
+fvDiagTensorMatrix
+fvMesh
+fvPatchField
+fvScalarMatrix
+fvSchemes
+fvSphericalTensorMatrix
+fvSymmTensor4thOrderMatrix
+fvSymmTensorMatrix
+fvTensorMatrix
+fvVectorMatrix
+fvsPatchField
+generic
+genericPatch
+geometricSurfacePatch
+ggi
+ggiLduInterface
+ggiLduInterfaceField
+global
+globalMeshData
+globalPoints
+gnuplot
+harmonic
+hierarchical
+includeEntry
+includeIfPresentEntry
+indexedOctree
+indexedParticle
+inletOutlet
+inletOutletTotalTemperature
+inputModeEntry
+intersectedSurface
+isoVertical
+jplot
+jumpCyclic
+jumpGgi
+jumpMixingPlane
+labelField
+labelList
+labelListList
+labelToCell
+labelToFace
+labelToPoint
+lduInterface
+lduInterfaceField
+lduMatrix
+lduMesh
+leastSquares
+leastSquaresSkewCorrected
+leastSquaresVectors
+leastSquaresVolPointInterpolation
+level
+limitWith
+limited
+limitedCubic
+limitedCubic01
+limitedCubicV
+limitedGamma
+limitedLimitedCubic
+limitedLimitedLinear
+limitedLinear
+limitedLinear01
+limitedLinearV
+limitedMUSCL
+limitedSurfaceInterpolationScheme
+limitedVanLeer
+linear
+linearFit
+linearPureUpwindFit
+linearUpwind
+linearUpwindV
+localBlended
+localMax
+localMin
+magLongDelta
+manual
+maxNorm
+meshObject
+meshSearch
+midPoint
+mixed
+mixingPlane
+mixingPlaneLduInterface
+mixingPlaneLduInterfaceField
+movingRotatingWallVelocity
+movingWallVelocity
+multiThreader
+multivariateSelection
+nbrToCell
+nearestToCell
+nearestToPoint
+none
+normalToFace
+normalizedLogarithmic
+objectRegistry
+octree
+octreeDataBoundBox
+octreeDataEdges
+octreeDataFace
+octreeDataTriSurface
+off
+orientedSurface
+orthogonal
+oscillatingFixedValue
+outletInlet
+outletStabilised
+overlapGGILduInterface
+overlapGGILduInterfaceField
+overlapGgi
+pair
+parabolicCylindrical
+parabolicVelocity
+partialSlip
+passiveParticle
+patch
+patchConstrained
+patchToFace
+patchZones
+pimpleControl
+pisoControl
+pointDiagTensorField
+pointDiagTensorField::DimensionedInternalField
+pointIndexHitList
+pointMesh
+pointPatchInterpolation
+pointScalarField
+pointScalarField::DimensionedInternalField
+pointSet
+pointSphericalTensorField
+pointSphericalTensorField::DimensionedInternalField
+pointSymmTensor4thOrderField
+pointSymmTensor4thOrderField::DimensionedInternalField
+pointSymmTensorField
+pointSymmTensorField::DimensionedInternalField
+pointTensorField
+pointTensorField::DimensionedInternalField
+pointToCell
+pointToFace
+pointToPoint
+pointVectorField
+pointVectorField::DimensionedInternalField
+pointVolInterpolation
+pointZone
+polyBoundaryMesh
+polyMesh
+postfixedSubRegistry
+pressureDirectedInletOutletVelocity
+pressureDirectedInletVelocity
+pressureInletOutletVelocity
+pressureInletUniformVelocity
+pressureInletVelocity
+pressureNormalInletOutletVelocity
+primitiveMesh
+primitiveMeshGeometry
+processor
+processorLduInterface
+processorLduInterfaceField
+pulseFixedValue
+pureUpwindCFCCellToFaceStencil
+quadraticFit
+quadraticLinearFit
+quadraticLinearUpwindFit
+quadraticUpwindFit
+raw
+reconCentral
+regIOobject
+regionCouple
+regionCoupleLduInterface
+regionCoupleLduInterfaceField
+regionCoupling
+regionSplit
+regionToCell
+relativePermeabilityModel
+removeEntry
+reverseLinear
+rotatedBoxToCell
+rotatedBoxToFace
+rotatingPressureInletOutletVelocity
+rotatingTotalPressure
+rotatingWallVelocity
+rpm
+scalarAverageField
+scalarField
+scalarList
+scalarListList
+scalarRange
+searchableBox
+searchableCylinder
+searchablePlane
+searchablePlate
+searchableSphere
+searchableSurface
+searchableSurfaceCollection
+searchableSurfaceWithGaps
+searchableSurfaces
+searchableSurfacesQueries
+setToCell
+setToFace
+setToPoint
+shapeList
+shapeToCell
+simple
+simpleControl
+skewCorrected
+skewCorrectionVectors
+sliced
+slip
+smoothSolver
+solution
+solutionControl
+sphereToCell
+spherical
+sphericalTensorAverageField
+sphericalTensorField
+steadyInertial
+steadyState
+supersonicFreestream
+surfaceDiagTensor2Field
+surfaceDiagTensor2Field::DimensionedInternalField
+surfaceDiagTensor3Field
+surfaceDiagTensor3Field::DimensionedInternalField
+surfaceDiagTensor4Field
+surfaceDiagTensor4Field::DimensionedInternalField
+surfaceDiagTensor6Field
+surfaceDiagTensor6Field::DimensionedInternalField
+surfaceDiagTensor8Field
+surfaceDiagTensor8Field::DimensionedInternalField
+surfaceDiagTensorField
+surfaceDiagTensorField::DimensionedInternalField
+surfaceFeatures
+surfaceInterpolation
+surfaceInterpolationScheme
+surfaceIntersection
+surfaceNormalFixedValue
+surfacePatch
+surfacePatchIOList
+surfaceScalarField
+surfaceScalarField::DimensionedInternalField
+surfaceSphericalTensor2Field
+surfaceSphericalTensor2Field::DimensionedInternalField
+surfaceSphericalTensor3Field
+surfaceSphericalTensor3Field::DimensionedInternalField
+surfaceSphericalTensor4Field
+surfaceSphericalTensor4Field::DimensionedInternalField
+surfaceSphericalTensor6Field
+surfaceSphericalTensor6Field::DimensionedInternalField
+surfaceSphericalTensor8Field
+surfaceSphericalTensor8Field::DimensionedInternalField
+surfaceSphericalTensorField
+surfaceSphericalTensorField::DimensionedInternalField
+surfaceSymmTensor4thOrderField
+surfaceSymmTensor4thOrderField::DimensionedInternalField
+surfaceSymmTensorField
+surfaceSymmTensorField::DimensionedInternalField
+surfaceTensor2Field
+surfaceTensor2Field::DimensionedInternalField
+surfaceTensor3Field
+surfaceTensor3Field::DimensionedInternalField
+surfaceTensor4Field
+surfaceTensor4Field::DimensionedInternalField
+surfaceTensor6Field
+surfaceTensor6Field::DimensionedInternalField
+surfaceTensor8Field
+surfaceTensor8Field::DimensionedInternalField
+surfaceTensorField
+surfaceTensorField::DimensionedInternalField
+surfaceToCell
+surfaceToPoint
+surfaceVector2Field
+surfaceVector2Field::DimensionedInternalField
+surfaceVector3Field
+surfaceVector3Field::DimensionedInternalField
+surfaceVector4Field
+surfaceVector4Field::DimensionedInternalField
+surfaceVector6Field
+surfaceVector6Field::DimensionedInternalField
+surfaceVector8Field
+surfaceVector8Field::DimensionedInternalField
+surfaceVectorField
+surfaceVectorField::DimensionedInternalField
+symmTensor4thOrderAverageField
+symmTensor4thOrderField
+symmTensorAverageField
+symmTensorField
+symmetryPlane
+syringePressure
+tabulated
+tensorAverageField
+tensorField
+time
+timeVaryingFlowRateInletVelocity
+timeVaryingMappedFixedValue
+timeVaryingMappedPressureDirectedInletVelocity
+timeVaryingMappedTotalPressure
+timeVaryingTotalPressure
+timeVaryingUniformFixedValue
+timeVaryingUniformInletOutlet
+timer
+topoSet
+topoSetSource
+toroidal
+totalPressure
+totalTemperature
+transform
+translatingWallVelocity
+treeDataCell
+treeDataEdge
+treeDataFace
+treeDataPoint
+treeDataTriSurface
+treeLeaf
+treeNode
+triSurface
+triSurfaceMesh
+turbulentInlet
+turbulentIntensityKineticEnergyInlet
+twoNorm
+uncorrected
+uniformDensityHydrostaticPressure
+uniformDimensionedDiagTensorField
+uniformDimensionedScalarField
+uniformDimensionedSphericalTensorField
+uniformDimensionedSymmTensor4thOrderField
+uniformDimensionedSymmTensorField
+uniformDimensionedTensorField
+uniformDimensionedVectorField
+uniformFixedValue
+upwind
+upwindCFCCellToFaceStencil
+value
+vanAlbada
+vanAlbadaV
+vanLeer
+vanLeer01
+vanLeer01DC
+vanLeerDC
+vanLeerV
+vanLeerVDC
+vector2DField
+vectorAverageField
+vectorField
+volDiagTensor2Field
+volDiagTensor2Field::DimensionedInternalField
+volDiagTensor3Field
+volDiagTensor3Field::DimensionedInternalField
+volDiagTensor4Field
+volDiagTensor4Field::DimensionedInternalField
+volDiagTensor6Field
+volDiagTensor6Field::DimensionedInternalField
+volDiagTensor8Field
+volDiagTensor8Field::DimensionedInternalField
+volDiagTensorField
+volDiagTensorField::DimensionedInternalField
+volPointInterpolation
+volScalarField
+volScalarField::DimensionedInternalField
+volSphericalTensor2Field
+volSphericalTensor2Field::DimensionedInternalField
+volSphericalTensor3Field
+volSphericalTensor3Field::DimensionedInternalField
+volSphericalTensor4Field
+volSphericalTensor4Field::DimensionedInternalField
+volSphericalTensor6Field
+volSphericalTensor6Field::DimensionedInternalField
+volSphericalTensor8Field
+volSphericalTensor8Field::DimensionedInternalField
+volSphericalTensorField
+volSphericalTensorField::DimensionedInternalField
+volSymmTensor4thOrderField
+volSymmTensor4thOrderField::DimensionedInternalField
+volSymmTensorField
+volSymmTensorField::DimensionedInternalField
+volTensor2Field
+volTensor2Field::DimensionedInternalField
+volTensor3Field
+volTensor3Field::DimensionedInternalField
+volTensor4Field
+volTensor4Field::DimensionedInternalField
+volTensor6Field
+volTensor6Field::DimensionedInternalField
+volTensor8Field
+volTensor8Field::DimensionedInternalField
+volTensorField
+volTensorField::DimensionedInternalField
+volVector2Field
+volVector2Field::DimensionedInternalField
+volVector3Field
+volVector3Field::DimensionedInternalField
+volVector4Field
+volVector4Field::DimensionedInternalField
+volVector6Field
+volVector6Field::DimensionedInternalField
+volVector8Field
+volVector8Field::DimensionedInternalField
+volVectorField
+volVectorField::DimensionedInternalField
+walkPatch
+wall
+waveTransmissive
+waveTransmissiveInlet
+wedge
+weighted
+well
+wellModel
+wordList
+wordListList
+writer
+xmgr
+zeroGradient
+zoneToCell
+zoneToFace
+zoneToPoint
+)
+
+Case     : /home/elwardi/GitRepos/OpenRSR.tutorials/coupledFoam/SPE10-Calibration/casebase
+nProcs   : 1
+SigFpe   : Enabling floating point exception trapping (FOAM_SIGFPE).
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0.000000e+00
+
+
+Reading g
+Reading field p
+
+Reading transportProperties
+
+Selecting bubblePoint model: constantPb
+
+Selecting FVF model : tabulated
+
+Selecting FVF model : tabulated
+
+Selecting relativePermeability model: BrooksCorey
+
+Reading field porosity
+
+Reading field K
+
+
+    From function magLongDelta::makeMagLongDistance()
+    in file interpolation/surfaceInterpolation/schemes/harmonic/magLongDelta.C at line 75
+    Constructing magnitude of long cell distance
+Reading field compressibility
+
+Reading field U
+
+Selecting Capillary Pressure model:  none
+
+Reading/calculating face flux field phi
+
+Selecting wellModel : Peaceman
+
+Reading Wells
+
+Well PROD0 is operating in BHP mode.
+Constructing cells for well: PROD0
+    Adding cells with centre within cylinder, with p1 = (758.19 3.81 0), p2 = (758.19 3.81 15) and radius = 3
+Total Volume for well PROD0:	884.901
+--> FOAM Warning : 
+    From function Foam::well::wordToRateHandling ( const word& rate)
+    in file wells/well/well.C at line 201
+    Bad well rate control specifier liquidRate using 'totalFlowRate'
+
+Well INJ0 is operating in liquidRate mode.
+Constructing cells for well: INJ0
+    Adding cells with centre within cylinder, with p1 = (3.81 3.81 0), p2 = (3.81 3.81 15) and radius = 3
+Total Volume for well INJ0:	884.901
+
+Starting time loop
+
+Time = 1.000000e+02
+
+BiCGStab:  Solving for Swp, Initial residual = (0.444309 0.575523), Final residual = (0.000123303 0.00351542), No Iterations 98
+CNV numbers: water.CNV 2.65092e-11, oil.CNV 7.5579e-10
+time step continuity errors : sum local = 1.83838e-07, global = 1.10079e-23, cumulative = 1.10079e-23
+
+Well INJ0 is switched to BHP mode.
+
+3.00967 6.01934e-06 2.67638 0.0932938 0.207053 0.555164 0.00535661 4.17447 0.0604522 0.00531087 0.209846 0.00384756 0.0368083 0.239179 2.59981 0.208516 5.3707 0.0879667 0.0379814 0.418037 
+-0.00327399 -7.70498e-09 -0.00296928 -0.000118902 -0.00026267 -0.000692123 -6.86762e-06 -0.00423951 -7.73029e-05 -6.86237e-06 -0.000268808 -4.98524e-06 -4.76959e-05 -0.000306696 -0.00293653 -0.000267791 -0.00510409 -0.000113668 -4.92852e-05 -0.00053223 
+Saturation w  Min = 0.21 Max = 0.210044
+Coats Number mean: 0.00023314 max: 0.00178072
+deltaT = 1199.98
+ExecutionTime = 1 s  ClockTime = 1 s
+
+Time = 1.299977e+03
+
+BiCGStab:  Solving for Swp, Initial residual = (1 7.92968e-13), Final residual = (6.32521e-13 1.80325e-11), No Iterations 1
+CNV numbers: water.CNV 0.00317412, oil.CNV 0.00123172
+time step continuity errors : sum local = 0.000139357, global = -2.18813e-21, cumulative = -2.17712e-21
+0.256665 2.53977e-05 3.45608 0.379482 0.752852 1.81902 0.0225588 0.096199 0.244948 0.0223658 0.7762 0.0162409 0.153376 0.842886 2.45731 0.763754 5.98821 0.360876 0.155867 1.43447 
+-1.03529e-06 -1.02445e-10 -1.39406e-05 -1.53069e-06 -3.03673e-06 -7.33725e-06 -9.09938e-08 -3.88032e-07 -9.88031e-07 -9.02153e-08 -3.13091e-06 -6.55101e-08 -6.18663e-07 -3.39989e-06 -9.91189e-06 -3.08071e-06 -2.41543e-05 -1.45564e-06 -6.28712e-07 -5.78612e-06 
+Saturation w  Min = 0.138889 Max = 0.210256
+Coats Number mean: 0.0048504 max: 0.724539
+deltaT = 2535.57
+ExecutionTime = 1.05 s  ClockTime = 1 s
+
+Time = 3.835544e+03
+
+BiCGStab:  Solving for Swp, Initial residual = (5.53333e-11 3.59937e-11), Final residual = (3.41907e-13 7.97933e-12), No Iterations 1
+S: -0.152602 0.215251.  Bounding.
+0.000140427	7.66643e-07
+0.734568	0.394795
+CNV numbers: water.CNV 0.00196042, oil.CNV 0.00209083
+time step continuity errors : sum local = 0.000168526, global = -5.16964e-21, cumulative = -7.34676e-21
+0.000111743 7.67492e-05 1.48592 2.00632 3.25479 0.098694 0.949494 0.0978223 2.19282 0.0715492 0.648699 1.99525 2.08776 1.4514 0.627066 3.02958 
+-4.50776e-10 -3.0961e-10 -5.99426e-06 -8.0936e-06 -1.313e-05 -3.98136e-07 -3.8303e-06 -3.9462e-07 -8.84593e-06 -2.88633e-07 -2.61688e-06 -8.04893e-06 -8.42214e-06 -5.85501e-06 -2.52961e-06 -1.22214e-05 
+Saturation w  Min = 0 Max = 0.215251
+Coats Number mean: 0.00985571 max: 1.01803
+deltaT = 3592.35
+ExecutionTime = 1.09 s  ClockTime = 1 s
+
+Time = 7.427891e+03
+
+BiCGStab:  Solving for Swp, Initial residual = (1.57372e-11 1.68495e-11), Final residual = (1.54173e-13 3.47244e-12), No Iterations 1
+S: -0.274344 0.220644.  Bounding.
+0.000175253	0
+1	0.376861
+CNV numbers: water.CNV 0.00276084, oil.CNV 0.00631344
+time step continuity errors : sum local = 0.000155619, global = 4.80547e-21, cumulative = -2.5413e-21
+0.000255708 2.76198 1.68328 0.93847 0.223637 1.73197 0.221599 2.12129 0.164118 1.38824 1.30487 1.90981 2.84398 1.229 1.47148 
+-1.03171e-09 -1.11438e-05 -6.79156e-06 -3.78647e-06 -9.02314e-07 -6.98803e-06 -8.9409e-07 -8.55882e-06 -6.62172e-07 -5.60118e-06 -5.2648e-06 -7.70555e-06 -1.14747e-05 -4.95869e-06 -5.93704e-06 
+Saturation w  Min = 0 Max = 0.220644
+Coats Number mean: 0.0137946 max: 1.29342
+deltaT = 2841.15
+ExecutionTime = 1.14 s  ClockTime = 1 s
+
+Time = 1.026904e+04
+
+BiCGStab:  Solving for Swp, Initial residual = (6.65633e-12 6.79197e-12), Final residual = (1.44555e-13 2.31051e-12), No Iterations 1
+S: -0.0908975 0.218728.  Bounding.
+0.000220272	0
+1	0.358239
+CNV numbers: water.CNV 0.00187766, oil.CNV 0.00405465
+time step continuity errors : sum local = 0.000107227, global = 5.98304e-22, cumulative = -1.94299e-21
+0.000419688 3.78667 0.994359 0.0956469 0.364032 2.3339 0.360668 1.49688 0.26991 2.15584 0.57177 1.27999 4.09633 1.77013 0.413559 
+-1.69366e-09 -1.52812e-05 -4.01274e-06 -3.85984e-07 -1.46905e-06 -9.41847e-06 -1.45548e-06 -6.04067e-06 -1.08922e-06 -8.69992e-06 -2.30738e-06 -5.1654e-06 -1.65308e-05 -7.14338e-06 -1.66892e-06 
+Saturation w  Min = 0 Max = 0.218009
+Coats Number mean: 0.0106184 max: 0.801052
+deltaT = 3711.43
+ExecutionTime = 1.18 s  ClockTime = 1 s
+
+Time = 1.398047e+04
+
+BiCGStab:  Solving for Swp, Initial residual = (2.24151e-12 3.63034e-12), Final residual = (6.80044e-14 1.65558e-12), No Iterations 1
+S: -0.0671478 0.217004.  Bounding.
+0.000197246	0
+1	0.367244
+CNV numbers: water.CNV 0.00231191, oil.CNV 0.00490928
+time step continuity errors : sum local = 0.000129885, global = 1.25762e-20, cumulative = 1.06332e-20
+0.000615543 4.35726 0.257866 1.63164e-08 0.528197 2.62001 0.523302 0.571193 0.396932 2.94474 0.0745695 0.449156 5.06199 2.18686 0.0126712 
+-2.48462e-09 -1.75879e-05 -1.04087e-06 -6.58604e-14 -2.13205e-06 -1.05756e-05 -2.11229e-06 -2.3056e-06 -1.6022e-06 -1.18864e-05 -3.00997e-07 -1.813e-06 -2.04326e-05 -8.82719e-06 -5.11467e-08 
+Saturation w  Min = 0 Max = 0.214197
+Coats Number mean: 0.0135117 max: 0.830341
+deltaT = 4666.08
+ExecutionTime = 1.22 s  ClockTime = 1 s
+
+Time = 1.864655e+04
+
+BiCGStab:  Solving for Swp, Initial residual = (2.22944e-12 2.78662e-12), Final residual = (5.85196e-14 1.29551e-12), No Iterations 1
+S: -0.0834364 0.214161.  Bounding.
+0.000167381	0
+1	0.380591
+CNV numbers: water.CNV 0.00249521, oil.CNV 0.00568422
+time step continuity errors : sum local = 0.000152362, global = 2.49002e-21, cumulative = 1.31232e-20
+0.000801956 4.23208 0.0134413 0.679641 2.46451 0.673415 0.0848647 0.518764 3.53587 0.000225601 0.0565689 5.39219 2.32819 
+-3.23785e-09 -1.70868e-05 -5.42683e-08 -2.74401e-06 -9.95029e-06 -2.71887e-06 -3.42636e-07 -2.09448e-06 -1.42759e-05 -9.10848e-10 -2.28393e-07 -2.17706e-05 -9.39992e-06 
+Saturation w  Min = 0 Max = 0.21167
+Coats Number mean: 0.0166924 max: 0.852473
+deltaT = 5856.41
+ExecutionTime = 1.27 s  ClockTime = 1 s
+
+Time = 2.450296e+04
+
+BiCGStab:  Solving for Swp, Initial residual = (1.69544e-12 2.24639e-12), Final residual = (3.73566e-14 1.04949e-12), No Iterations 1
+S: -0.104673 0.211426.  Bounding.
+0.000149662	0
+1	0.389652
+CNV numbers: water.CNV 0.0029566, oil.CNV 0.00660504
+time step continuity errors : sum local = 0.00017918, global = 4.17631e-21, cumulative = 1.72996e-20
+0.00100301 3.77618 1.90772e-10 0.83858 2.11338 0.831095 0.00133374 0.651041 4.04827 0.00047688 5.38908 2.32452 
+-4.05073e-09 -1.52504e-05 -7.70444e-16 -3.38666e-06 -8.53504e-06 -3.35643e-06 -5.38639e-09 -2.62927e-06 -1.63492e-05 -1.92591e-09 -2.17642e-05 -9.38772e-06 
+Saturation w  Min = 0 Max = 0.211424
+Coats Number mean: 0.0207128 max: 0.938934
+deltaT = 6815.72
+ExecutionTime = 1.31 s  ClockTime = 1 s
+
+Time = 3.131868e+04
+
+BiCGStab:  Solving for Swp, Initial residual = (1.38463e-12 1.83347e-12), Final residual = (3.32341e-14 8.75173e-13), No Iterations 1
+S: -0.118392 0.21126.  Bounding.
+0.00014802	0
+1	0.390544
+CNV numbers: water.CNV 0.00294934, oil.CNV 0.00708521
+time step continuity errors : sum local = 0.000195337, global = 6.42618e-21, cumulative = 2.37257e-20
+0.00122247 3.28684 1.00909 1.76241 1.00041 0.796021 4.5425 5.29096 2.27889 
+-4.93865e-09 -1.32785e-05 -4.07662e-06 -7.11998e-06 -4.04158e-06 -3.21585e-06 -1.83512e-05 -2.1375e-05 -9.2065e-06 
+Saturation w  Min = 0 Max = 0.21126
+Coats Number mean: 0.0239463 max: 1.01175
+deltaT = 7435.33
+ExecutionTime = 1.36 s  ClockTime = 1 s
+
+Time = 3.875400e+04
+
+BiCGStab:  Solving for Swp, Initial residual = (9.99358e-13 1.48685e-12), Final residual = (2.80284e-14 7.41219e-13), No Iterations 1
+S: -0.124867 0.211088.  Bounding.
+0.000146939	0
+1	0.391136
+CNV numbers: water.CNV 0.00304499, oil.CNV 0.00713347
+time step continuity errors : sum local = 0.000200911, global = 9.27007e-21, cumulative = 3.29958e-20
+0.00142721 2.87652 1.1659 1.48275 1.15631 0.931723 4.96211 5.16443 2.22042 
+-5.76775e-09 -1.16248e-05 -4.71174e-06 -5.99218e-06 -4.67295e-06 -3.76535e-06 -2.00532e-05 -2.08709e-05 -8.97333e-06 
+Saturation w  Min = 0 Max = 0.211088
+Coats Number mean: 0.0260156 max: 1.05232
+deltaT = 7819.52
+ExecutionTime = 1.4 s  ClockTime = 1 s
+
+Time = 4.657353e+04
+
+BiCGStab:  Solving for Swp, Initial residual = (8.58646e-13 1.22401e-12), Final residual = (2.45548e-14 6.37289e-13), No Iterations 1
+S: -0.126778 0.211042.  Bounding.
+0.000145807	0
+1	0.39176
+CNV numbers: water.CNV 0.00273474, oil.CNV 0.00695825
+time step continuity errors : sum local = 0.00020082, global = -2.84426e-21, cumulative = 3.01515e-20
+0.00158397 2.58731 1.28449 1.29346 1.27436 1.03588 5.26089 5.05054 2.16725 
+-6.40311e-09 -1.04591e-05 -5.19248e-06 -5.22876e-06 -5.15155e-06 -4.18751e-06 -2.12669e-05 -2.04166e-05 -8.76101e-06 
+Saturation w  Min = 0 Max = 0.211042
+Coats Number mean: 0.0272341 max: 1.06196
+deltaT = 8128.84
+ExecutionTime = 1.45 s  ClockTime = 1 s
+
+Time = 5.470237e+04
+
+BiCGStab:  Solving for Swp, Initial residual = (6.29785e-13 1.04112e-12), Final residual = (2.11861e-14 5.55142e-13), No Iterations 1
+S: -0.127587 0.210975.  Bounding.
+0.000145502	0
+1	0.391929
+CNV numbers: water.CNV 0.00270355, oil.CNV 0.00675736
+time step continuity errors : sum local = 0.000199079, global = -1.8402e-20, cumulative = 1.17495e-20
+0.00167899 2.4198 1.35561 1.18671 1.34533 1.09913 5.43526 4.97666 2.13148 
+-6.78865e-09 -9.78393e-06 -5.48112e-06 -4.79821e-06 -5.43956e-06 -4.44409e-06 -2.19763e-05 -2.01221e-05 -8.61817e-06 
+Saturation w  Min = 0 Max = 0.210975
+Coats Number mean: 0.028188 max: 1.05717
+deltaT = 8478.18
+ExecutionTime = 1.49 s  ClockTime = 1 s
+
+Time = 6.318054e+04
+
+BiCGStab:  Solving for Swp, Initial residual = (5.85776e-13 9.00369e-13), Final residual = (1.86781e-14 4.89264e-13), No Iterations 1
+S: -0.129222 0.210893.  Bounding.
+0.000145067	0
+1	0.392172
+CNV numbers: water.CNV 0.00239412, oil.CNV 0.00663096
+time step continuity errors : sum local = 0.000198762, global = 1.01036e-20, cumulative = 2.18532e-20
+0.00171676 2.35261 1.38348 1.14425 1.37331 1.12427 5.50628 4.94797 2.1155 
+-6.94216e-09 -9.51334e-06 -5.59444e-06 -4.62705e-06 -5.55331e-06 -4.54628e-06 -2.2266e-05 -2.00083e-05 -8.55454e-06 
+Saturation w  Min = 0 Max = 0.210893
+Coats Number mean: 0.0292662 max: 1.05408
+deltaT = 8859.55
+ExecutionTime = 1.53 s  ClockTime = 1 s
+
+Time = 7.204009e+04
+
+BiCGStab:  Solving for Swp, Initial residual = (4.74381e-13 7.95751e-13), Final residual = (1.65253e-14 4.35582e-13), No Iterations 1
+S: -0.131265 0.210805.  Bounding.
+0.000144529	0
+1	0.392471
+CNV numbers: water.CNV 0.00239465, oil.CNV 0.00655557
+time step continuity errors : sum local = 0.000199462, global = 3.81619e-22, cumulative = 2.22348e-20
+0.00171285 2.35652 1.38015 1.14609 1.37021 1.12163 5.50458 4.95321 2.11459 
+-6.92656e-09 -9.5295e-06 -5.58117e-06 -4.63467e-06 -5.54096e-06 -4.53573e-06 -2.22599e-05 -2.00302e-05 -8.55115e-06 
+Saturation w  Min = 0 Max = 0.210805
+Coats Number mean: 0.0304469 max: 1.05549
+deltaT = 9260.8
+ExecutionTime = 1.58 s  ClockTime = 1 s
+
+Time = 8.130089e+04
+
+BiCGStab:  Solving for Swp, Initial residual = (4.4328e-13 7.16431e-13), Final residual = (1.48242e-14 3.91055e-13), No Iterations 1
+S: -0.133482 0.21072.  Bounding.
+0.000143957	0
+1	0.392791
+CNV numbers: water.CNV 0.00211006, oil.CNV 0.00651182
+time step continuity errors : sum local = 0.000200787, global = 9.52933e-21, cumulative = 3.17641e-20
+0.00168827 2.3986 1.36147 1.1715 1.35175 1.10519 5.46533 4.97301 2.12048 
+-6.82706e-09 -9.69952e-06 -5.50556e-06 -4.73733e-06 -5.46622e-06 -4.46917e-06 -2.21008e-05 -2.011e-05 -8.57484e-06 
+Saturation w  Min = 0 Max = 0.21072
+Coats Number mean: 0.0316927 max: 1.06024
+deltaT = 9664.2
+ExecutionTime = 1.62 s  ClockTime = 1 s
+
+Time = 9.096509e+04
+
+BiCGStab:  Solving for Swp, Initial residual = (3.63293e-13 6.47328e-13), Final residual = (1.33182e-14 3.53604e-13), No Iterations 1
+S: -0.135481 0.210641.  Bounding.
+0.000143404	0
+1	0.393102
+CNV numbers: water.CNV 0.0021243, oil.CNV 0.00647991
+time step continuity errors : sum local = 0.000202221, global = -6.47544e-22, cumulative = 3.11166e-20
+0.00166442 2.44525 1.34351 1.19953 1.33388 1.08921 5.42431 4.98764 2.12471 
+-6.73039e-09 -9.88781e-06 -5.43271e-06 -4.85052e-06 -5.39377e-06 -4.40442e-06 -2.19342e-05 -2.01684e-05 -8.59166e-06 
+Saturation w  Min = 0 Max = 0.210641
+Coats Number mean: 0.0329371 max: 1.06541
+deltaT = 10065.3
+ExecutionTime = 1.66 s  ClockTime = 2 s
+
+Time = 1.010304e+05
+
+BiCGStab:  Solving for Swp, Initial residual = (3.56223e-13 5.88829e-13), Final residual = (1.21617e-14 3.21702e-13), No Iterations 1
+S: -0.137264 0.21057.  Bounding.
+0.000142894	0
+1	0.393389
+CNV numbers: water.CNV 0.00184888, oil.CNV 0.00645526
+time step continuity errors : sum local = 0.000203654, global = -3.42027e-21, cumulative = 2.76963e-20
+0.00165977 2.46565 1.34013 1.21073 1.33041 1.08599 5.41387 4.98122 2.1204 
+-6.71145e-09 -9.97013e-06 -5.41897e-06 -4.89572e-06 -5.37964e-06 -4.3913e-06 -2.18916e-05 -2.01421e-05 -8.57406e-06 
+Saturation w  Min = 0 Max = 0.21057
+Coats Number mean: 0.0341563 max: 1.07091
+deltaT = 10458.8
+ExecutionTime = 1.72 s  ClockTime = 2 s
+
+Time = 1.114892e+05
+
+BiCGStab:  Solving for Swp, Initial residual = (2.77083e-13 5.51084e-13), Final residual = (1.09987e-14 2.94314e-13), No Iterations 1
+S: -0.138758 0.210506.  Bounding.
+0.000142434	0
+1	0.39365
+CNV numbers: water.CNV 0.00187117, oil.CNV 0.00643332
+time step continuity errors : sum local = 0.00020496, global = 6.45723e-21, cumulative = 3.41535e-20
+0.00168881 2.43505 1.36224 1.18949 1.35217 1.10516 5.45949 4.94197 2.10236 
+-6.82902e-09 -9.84659e-06 -5.50849e-06 -4.80996e-06 -5.46775e-06 -4.46894e-06 -2.20765e-05 -1.99838e-05 -8.50131e-06 
+Saturation w  Min = 0 Max = 0.210506
+Coats Number mean: 0.035355 max: 1.07595
+deltaT = 10815.6
+ExecutionTime = 1.76 s  ClockTime = 2 s
+
+Time = 1.223048e+05
+
+BiCGStab:  Solving for Swp, Initial residual = (3.1002e-13 5.20282e-13), Final residual = (1.02373e-14 2.70567e-13), No Iterations 1
+S: -0.139653 0.210448.  Bounding.
+0.000142022	0
+1	0.393883
+CNV numbers: water.CNV 0.00159997, oil.CNV 0.00639701
+time step continuity errors : sum local = 0.000205604, global = 8.72219e-21, cumulative = 4.28757e-20
+0.00176233 2.33725 1.4178 1.12638 1.40708 1.15395 5.57728 4.86015 2.06629 
+-7.12693e-09 -9.45194e-06 -5.73363e-06 -4.55513e-06 -5.6903e-06 -4.66661e-06 -2.25547e-05 -1.96546e-05 -8.35617e-06 
+Saturation w  Min = 0 Max = 0.210448
+Coats Number mean: 0.0364295 max: 1.07757
+deltaT = 11198.4
+ExecutionTime = 1.81 s  ClockTime = 2 s
+
+Time = 1.335032e+05
+
+BiCGStab:  Solving for Swp, Initial residual = (2.2246e-13 4.8841e-13), Final residual = (9.28061e-15 2.49827e-13), No Iterations 1
+S: -0.140787 0.210397.  Bounding.
+0.000141653	0
+1	0.394093
+CNV numbers: water.CNV 0.00163234, oil.CNV 0.00638364
+time step continuity errors : sum local = 0.000206802, global = 2.89419e-21, cumulative = 4.57699e-20
+0.00188879 2.16541 1.51273 1.01913 1.50105 1.23805 5.77357 4.72531 2.0076 
+-7.63958e-09 -8.75841e-06 -6.11853e-06 -4.12204e-06 -6.07126e-06 -5.00754e-06 -2.33523e-05 -1.91124e-05 -8.12012e-06 
+Saturation w  Min = 0 Max = 0.210397
+Coats Number mean: 0.0375947 max: 1.08202
+deltaT = 11557.2
+ExecutionTime = 1.85 s  ClockTime = 2 s
+
+Time = 1.450604e+05
+
+BiCGStab:  Solving for Swp, Initial residual = (2.68251e-13 4.53713e-13), Final residual = (8.74737e-15 2.31584e-13), No Iterations 1
+S: -0.141544 0.210351.  Bounding.
+0.000141323	0
+1	0.394282
+CNV numbers: water.CNV 0.00137514, oil.CNV 0.00636308
+time step continuity errors : sum local = 0.000207609, global = 1.32751e-21, cumulative = 4.70974e-20
+0.00207371 1.92388 1.65038 0.873787 1.63738 1.36131 6.04253 4.52681 1.92166 
+-8.38957e-09 -7.7834e-06 -6.67694e-06 -3.53507e-06 -6.62433e-06 -5.50743e-06 -2.44462e-05 -1.83141e-05 -7.77442e-06 
+Saturation w  Min = 0 Max = 0.210351
+Coats Number mean: 0.0386739 max: 1.08538
+deltaT = 11912.4
+ExecutionTime = 1.9 s  ClockTime = 2 s
+
+Time = 1.569728e+05
+
+BiCGStab:  Solving for Swp, Initial residual = (1.84283e-13 4.23136e-13), Final residual = (7.96873e-15 2.15462e-13), No Iterations 1
+S: -0.142206 0.210309.  Bounding.
+0.000141028	0
+1	0.39445
+CNV numbers: water.CNV 0.00141638, oil.CNV 0.0063468
+time step continuity errors : sum local = 0.000208417, global = -1.41392e-20, cumulative = 3.29582e-20
+0.00231905 1.6281 1.83104 0.703774 1.81639 1.52528 6.36571 4.25572 1.80463 
+-9.38535e-09 -6.58906e-06 -7.41036e-06 -2.84822e-06 -7.35106e-06 -6.17293e-06 -2.57625e-05 -1.72232e-05 -7.30348e-06 
+Saturation w  Min = 0 Max = 0.210309
+Coats Number mean: 0.0397451 max: 1.0888
+deltaT = 12291
+ExecutionTime = 1.94 s  ClockTime = 2 s
+
+Time = 1.692638e+05
+
+BiCGStab:  Solving for Swp, Initial residual = (2.27083e-13 3.94245e-13), Final residual = (7.56405e-15 2.01131e-13), No Iterations 1
+S: -0.143098 0.210273.  Bounding.
+0.000140765	0
+1	0.3946
+CNV numbers: water.CNV 0.00117449, oil.CNV 0.00634802
+time step continuity errors : sum local = 0.000209685, global = -3.17656e-21, cumulative = 2.97816e-20
+0.00262184 1.30316 2.05098 0.527418 2.0344 1.72831 6.71285 3.90916 1.65537 
+-1.06154e-08 -5.27631e-06 -8.3041e-06 -2.13543e-06 -8.23696e-06 -6.99765e-06 -2.71793e-05 -1.58276e-05 -6.70233e-06 
+Saturation w  Min = 0 Max = 0.210273
+Coats Number mean: 0.0408909 max: 1.09451
+deltaT = 12631.6
+ExecutionTime = 1.98 s  ClockTime = 2 s
+
+Time = 1.818954e+05
+
+BiCGStab:  Solving for Swp, Initial residual = (1.58537e-13 3.69294e-13), Final residual = (6.94611e-15 1.88336e-13), No Iterations 1
+S: -0.143518 0.21024.  Bounding.
+0.000140532	0
+1	0.394734
+CNV numbers: water.CNV 0.00122678, oil.CNV 0.00633427
+time step continuity errors : sum local = 0.000210358, global = -4.83641e-22, cumulative = 2.9298e-20
+0.00297039 0.981842 2.30001 0.364967 2.28132 1.96291 7.04346 3.49783 1.47857 
+-1.20329e-08 -3.9774e-06 -9.31724e-06 -1.47847e-06 -9.24152e-06 -7.95167e-06 -2.85327e-05 -1.41695e-05 -5.98964e-06 
+Saturation w  Min = 0 Max = 0.21024
+Coats Number mean: 0.0418965 max: 1.097
+deltaT = 12992.5
+ExecutionTime = 2.03 s  ClockTime = 2 s
+
+Time = 1.948879e+05
+
+BiCGStab:  Solving for Swp, Initial residual = (1.94581e-13 3.44961e-13), Final residual = (6.62314e-15 1.76855e-13), No Iterations 1
+S: -0.144146 0.210227.  Bounding.
+0.000140326	0
+1	0.394853
+CNV numbers: water.CNV 0.000995212, oil.CNV 0.00633497
+time step continuity errors : sum local = 0.000211424, global = 7.67953e-21, cumulative = 3.69775e-20
+0.00334763 0.693924 2.56434 0.231479 2.54351 2.21795 7.31914 3.04441 1.28409 
+-1.35691e-08 -2.81271e-06 -1.03941e-05 -9.38262e-07 -1.03097e-05 -8.99007e-06 -2.96669e-05 -1.234e-05 -5.20485e-06 
+Saturation w  Min = 0 Max = 0.210227
+Coats Number mean: 0.0429712 max: 1.10147
+deltaT = 13339.9
+ExecutionTime = 2.07 s  ClockTime = 2 s
+
+Time = 2.082277e+05
+
+BiCGStab:  Solving for Swp, Initial residual = (1.31959e-13 3.1885e-13), Final residual = (6.11269e-15 1.66504e-13), No Iterations 1
+S: -0.144614 0.210222.  Bounding.
+0.000140243	0
+1	0.3949
+CNV numbers: water.CNV 0.00105999, oil.CNV 0.00633287
+time step continuity errors : sum local = 0.000212323, global = -3.67109e-21, cumulative = 3.33064e-20
+0.00373204 0.460374 2.82778 0.134017 2.80492 2.47911 7.51184 2.58186 1.08611 
+-1.51367e-08 -1.86722e-06 -1.14691e-05 -5.43556e-07 -1.13764e-05 -1.00549e-05 -3.04671e-05 -1.04717e-05 -4.40513e-06 
+Saturation w  Min = 0 Max = 0.210222
+Coats Number mean: 0.0439902 max: 1.10498
+deltaT = 13669.7
+ExecutionTime = 2.12 s  ClockTime = 2 s
+
+Time = 2.218974e+05
+
+BiCGStab:  Solving for Swp, Initial residual = (1.65015e-13 2.98882e-13), Final residual = (5.85688e-15 1.57152e-13), No Iterations 1
+S: -0.144887 0.210217.  Bounding.
+0.000140208	0
+1	0.39492
+CNV numbers: water.CNV 0.000866619, oil.CNV 0.00632602
+time step continuity errors : sum local = 0.000212998, global = -1.93e-21, cumulative = 3.13764e-20
+0.00410339 0.288023 3.07607 0.0707298 3.05143 2.73274 7.61182 2.14333 0.898837 
+-1.66534e-08 -1.16893e-06 -1.24841e-05 -2.87054e-07 -1.23841e-05 -1.10907e-05 -3.08922e-05 -8.69862e-06 -3.64789e-06 
+Saturation w  Min = 0 Max = 0.210217
+Coats Number mean: 0.0449525 max: 1.10725
+deltaT = 13977.8
+ExecutionTime = 2.16 s  ClockTime = 2 s
+
+Time = 2.358752e+05
+
+BiCGStab:  Solving for Swp, Initial residual = (1.21999e-13 2.82958e-13), Final residual = (5.45968e-15 1.48669e-13), No Iterations 1
+S: -0.144946 0.210211.  Bounding.
+0.000140174	0
+1	0.39494
+CNV numbers: water.CNV 0.000910468, oil.CNV 0.00631283
+time step continuity errors : sum local = 0.000213401, global = -1.23761e-20, cumulative = 1.90003e-20
+0.0044469 0.171227 3.29978 0.03403 3.27365 2.96867 7.62704 1.75325 0.732643 
+-1.80588e-08 -6.95348e-07 -1.34003e-05 -1.38195e-07 -1.32942e-05 -1.20557e-05 -3.09732e-05 -7.1199e-06 -2.97525e-06 
+Saturation w  Min = 0 Max = 0.210211
+Coats Number mean: 0.0458637 max: 1.10805
+deltaT = 14342.4
+ExecutionTime = 2.21 s  ClockTime = 2 s
+
+Time = 2.502176e+05
+
