@@ -1,0 +1,21 @@
+saturation
+{
+    type dynamic;
+    idNr 1;
+    name saturation;
+    theTitle "Canonical Phase Saturation";
+    expr "(.+) saturation: Min = (%f%) Max = (%f%)";
+    titles ("{Min}" "{Max}");
+
+    ylabel "Saturation";
+}
+
+CoatsNo
+{
+    name coats;
+    theTitle "Coats Number";
+    expr "Coats Number mean: (%f%) max: (%f%)";
+    titles ("Mean" "Max");
+
+    ylabel "CoatsNo";
+}

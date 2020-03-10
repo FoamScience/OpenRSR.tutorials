@@ -1,6 +1,4 @@
-!0.orig/
-!0/
-!constant/polyMesh/blockMeshDict
+0.orig/**
 anisoGRDC
 **/*csv
 **/PyFoam*
