@@ -17,16 +17,10 @@ FoamFile
 
 solvers
 {
-    Swp
+    water.alpha
     {
-        solver           BiCGStab;
-        preconditioner   Cholesky;
-
-        tolerance        1e-12;
-        relTol           0.1;
-
-        minIter          1;
-        maxIter          1000;
+        solver           diagonal;
+        relTol           0.0;
     }
     p
     {
@@ -36,12 +30,6 @@ solvers
         relTol          0.1;
     }
 
-}
-
-blockSolver
-{
-    pRefCell    99;
-    pRefValue   100;
 }
 
 fieldBounds

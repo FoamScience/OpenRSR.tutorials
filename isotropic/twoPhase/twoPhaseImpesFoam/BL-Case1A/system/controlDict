@@ -17,20 +17,22 @@ FoamFile
 
 application     impesFoam;
 
-startFrom       latestTime;
+startFrom       startTime;
 
 startTime       0;
 
 stopAt          endTime;
 
-endTime         302400000; // 3500 days, 9.6 years
-
 deltaT          100;  // 3 days
+endTime         302400000; // 3500 days, 9.6 years
+//endTime         $deltaT; // 3500 days, 9.6 years
+
 //deltaT          100;  // 3 days
 
 writeControl    adjustableRunTime;
 
 writeInterval   8640000; // each year
+//writeInterval    100; // each year
 
 purgeWrite      0;
 
@@ -46,7 +48,7 @@ timePrecision   6;
 
 runTimeModifiable yes;
 
-dSmax           0.05;
+dSmax           0.03;
 Cm              0.75;
 //dSmax           0.01;// needed with capillary effect
 

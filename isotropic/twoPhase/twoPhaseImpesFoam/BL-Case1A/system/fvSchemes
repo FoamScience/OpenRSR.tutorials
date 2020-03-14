@@ -17,7 +17,7 @@ FoamFile
 
 ddtSchemes
 {
-    default         backward;
+    default         Euler;
 }
 
 gradSchemes
@@ -43,7 +43,8 @@ interpolationSchemes
     pc		    linear;
     water.kr    upwind water.phi;
     oil.kr      upwind oil.phi;
-    ".*.dkrdS"  linear;
+    water.dkrdS    upwind water.phi;
+    oil.dkrdS      upwind oil.phi;
     flux(U)     linear;
     "(mu|rho|rhon|rhow|mun|muw|rFVF)" linear;
     // For anisotropic cases
